@@ -1,0 +1,1374 @@
+left_id,right_id,celltype,additional_annotations,level_7_cluster
+no pair,2532841,sensory,visual,0
+no pair,16267292,sensory,visual,0
+no pair,2544902,sensory,visual,0
+2216445,no pair,sensory,visual,0
+2216131,no pair,sensory,visual,0
+10241716,no pair,sensory,visual,0
+2215622,no pair,sensory,visual,0
+2215447,no pair,sensory,visual,0
+2215247,no pair,sensory,visual,0
+no pair,7566199,sensory,visual,0
+2206279,no pair,sensory,visual,0
+no pair,1856512,sensory,visual,0
+no pair,8447845,sensory,visual,0
+no pair,946481,sensory,visual,0
+no pair,902038,sensory,visual,0
+no pair,900032,sensory,visual,0
+37365,no pair,sensory,visual,0
+2200028,no pair,sensory,visual,0
+3464773,3827211,sensory,olfactory,1
+6791927,3790004,sensory,olfactory,1
+3716797,3963891,sensory,olfactory,1
+3465659,3840345,sensory,olfactory,1
+7527710,4073353,sensory,olfactory,1
+7542938,3885215,sensory,olfactory,1
+3511996,3958234,sensory,olfactory,1
+3410499,2608843,sensory,olfactory,1
+8877795,3805641,LN,no official annotation,1
+3774568,3980315,sensory,olfactory,1
+3410506,3893195,sensory,olfactory,2
+2611805,2582391,sensory,olfactory,2
+2610744,3985829,sensory,thermo-warm,2
+5090549,3813723,sensory,olfactory,2
+3158543,7719547,sensory,olfactory,2
+3771794,7658146,sensory,olfactory,2
+3768025,2584838,sensory,olfactory,2
+5093516,4023881,sensory,thermo-warm,2
+6340439,4076389,sensory,olfactory,2
+40045,3954014,sensory,olfactory,2
+3694515,3896629,sensory,olfactory,2
+3592997,3865952,sensory,olfactory,2
+3547397,2571761,sensory,olfactory,2
+3708875,3872653,sensory,olfactory,2
+15716934,15746421,sensory,gustatory-external,3
+15714639,15595950,sensory,gustatory-external,3
+12882387,7563413,LN,no official annotation,3
+3586984,3966683,sensory,gustatory-external,3
+4338596,15652529,sensory,gustatory-external,3
+15716701,15556868,sensory,gustatory-external,3
+15690093,15615042,sensory,gustatory-external,3
+15689373,15588691,sensory,gustatory-external,3
+15674262,15556081,sensory,gustatory-external,3
+12260696,15615589,sensory,gustatory-external,3
+15679577,18625446,sensory,gustatory-external,3
+15938337,15595607,sensory,gustatory-external,3
+15681740,15589411,sensory,gustatory-external,3
+5327961,11184236,PN,gustatory-external 2nd_order PN,3
+15677323,15653288,sensory,gustatory-external,3
+11671564,15522777,sensory,gustatory-pharyngeal,3
+13380660,14517691,DN-SEZ,mPN,3
+11821320,6220384,PN,gustatory-external 2nd_order PN,3
+11745381,15653432,sensory,gustatory-external,3
+5322337,6219781,LN,no official annotation,3
+17062823,16393165,DN-SEZ,no official annotation,3
+5186461,9853425,sensory,gustatory-external,3
+18934019,15609885,sensory,gustatory-external,3
+3054101,3199456,sensory,gustatory-pharyngeal,3
+15716309,15736147,sensory,gustatory-external,4
+17814107,10167116,DN-SEZ,no official annotation,4
+3539170,8159396,DN-SEZ,no official annotation,4
+17740547,13580849,DN-SEZ,no official annotation,4
+12073881,12253020,sensory,gustatory-external,4
+13313410,16586265,DN-SEZ,no official annotation,4
+15995929,15506094,sensory,gustatory-pharyngeal,4
+15997645,15592696,sensory,gustatory-pharyngeal,4
+15997692,15507888,sensory,gustatory-pharyngeal,4
+15715643,16341399,sensory,gustatory-external,4
+15688358,15588800,sensory,gustatory-external,4
+4991243,8227502,DN-SEZ,no official annotation,4
+15680093,10934438,sensory,gustatory-external,4
+5088293,4097554,sensory,gustatory-external,4
+11736972,15595823,sensory,gustatory-external,4
+17732291,17659219,DN-SEZ,no official annotation,4
+17355745,16158918,DN-SEZ,no official annotation,4
+15716127,3071301,sensory,gustatory-external,4
+17356454,2557644,DN-SEZ,no official annotation,4
+5116147,4017089,sensory,gustatory-external,4
+15673867,15651438,sensory,gustatory-external,4
+12000033,9750356,DN-SEZ,no official annotation,4
+3652587,3822523,sensory,gustatory-external,5
+15716094,15589362,sensory,gustatory-external,5
+15677030,15656435,sensory,gustatory-external,5
+15686512,15615081,sensory,gustatory-external,5
+15673925,15615776,sensory,gustatory-external,5
+5120097,4096703,sensory,gustatory-external,5
+3797420,5558724,DN-SEZ,no official annotation,5
+18440675,12335381,DN-SEZ,no official annotation,5
+15590761,15409328,sensory,gustatory-pharyngeal,5
+3486867,5478818,DN-SEZ,PL-1,5
+3609202,3487306,sensory,thermo-cold,5
+3639968,18630153,sensory,thermo-cold,5
+1706716,15541976,sensory,gustatory-pharyngeal,5
+16288872,15639171,sensory,gustatory-pharyngeal,5
+7439909,15531033,sensory,gustatory-pharyngeal,5
+7556564,15640893,sensory,gustatory-pharyngeal,5
+15998817,15530882,sensory,gustatory-pharyngeal,5
+15998782,15531916,sensory,gustatory-pharyngeal,5
+15998768,15525858,sensory,gustatory-pharyngeal,5
+15998469,16341507,sensory,gustatory-pharyngeal,5
+17351780,19054481,DN-SEZ,no official annotation,5
+15998307,15573283,sensory,gustatory-pharyngeal,5
+15998218,16341966,sensory,gustatory-pharyngeal,5
+15998100,15458316,sensory,gustatory-pharyngeal,5
+11229136,17529547,DN-SEZ,no official annotation,5
+15997983,15434200,sensory,gustatory-pharyngeal,5
+15997929,18620885,sensory,gustatory-pharyngeal,5
+15997807,15398807,sensory,gustatory-pharyngeal,5
+8055671,5448622,sensory,gustatory-external,5
+15996518,3795498,sensory,gustatory-pharyngeal,5
+15995404,15461769,sensory,gustatory-pharyngeal,5
+15998261,15451084,sensory,gustatory-pharyngeal,5
+17359133,869360,DN-SEZ,no official annotation,5
+1715990,15573331,sensory,gustatory-pharyngeal,5
+9842383,6219445,DN-SEZ,no official annotation,5
+15717736,15639020,sensory,gustatory-pharyngeal,5
+13830600,16057212,DN-SEZ,no official annotation,5
+3608397,3650600,sensory,thermo-cold,5
+15717935,3123905,sensory,gustatory-pharyngeal,5
+17728571,10221622,DN-SEZ,no official annotation,5
+17423125,5559657,DN-SEZ,no official annotation,5
+17728605,16463097,DN-SEZ,no official annotation,5
+9808022,15658013,sensory,gustatory-external,6
+1347886,7160160,sensory,gustatory-pharyngeal,6
+15723727,15641926,sensory,gustatory-pharyngeal,6
+15996160,15533421,sensory,gustatory-pharyngeal,6
+15717426,8810739,sensory,gustatory-external,6
+1427012,15547732,sensory,gut,6
+5057916,16115501,sensory,gustatory-external,6
+15718275,15645825,sensory,gustatory-pharyngeal,6
+15715151,15653927,sensory,gustatory-external,6
+15690711,15762568,sensory,gustatory-external,7
+15714845,15615475,sensory,gustatory-external,7
+15712024,15620606,sensory,gustatory-external,7
+15717229,15629241,sensory,gustatory-external,7
+15711289,18679889,sensory,gustatory-external,7
+15698623,15594123,sensory,gustatory-external,7
+15996271,15505837,sensory,gustatory-pharyngeal,7
+15727304,15672153,sensory,gustatory-pharyngeal,7
+15725545,15639275,sensory,gustatory-pharyngeal,7
+15678849,15618976,sensory,gustatory-external,7
+15725127,15637893,sensory,gustatory-pharyngeal,7
+15724636,15671848,sensory,gustatory-pharyngeal,7
+15724520,15638520,sensory,gustatory-pharyngeal,7
+15713374,15620432,sensory,gustatory-external,7
+15700147,15743905,sensory,gustatory-external,7
+17608754,16362243,sensory,gustatory-pharyngeal,7
+no pair,766246,sensory,visual,8
+no pair,902877,sensory,visual,8
+19101351,3848843,PN,gustatory-external 2nd_order PN,8
+2216187,no pair,sensory,visual,8
+7480731,no pair,sensory,visual,8
+15608355,6252764,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,8
+no pair,7778722,sensory,visual,8
+no pair,7485368,sensory,visual,8
+12089601,11838242,PN,gustatory-pharyngeal 2nd_order PN,8
+7483922,no pair,sensory,visual,8
+2209091,no pair,sensory,visual,8
+5116861,4059758,sensory,gustatory-external,9
+15723479,15640548,sensory,gustatory-pharyngeal,9
+5095269,4030526,sensory,gustatory-external,9
+15995327,15748726,sensory,gut,9
+17359101,865151,DN-SEZ,no official annotation,9
+17380936,15542354,sensory,gut,9
+15714330,15638742,sensory,gustatory-external,9
+15994926,15576194,sensory,gut,9
+1351125,15564911,sensory,gut,9
+15690955,15617459,sensory,gustatory-external,9
+3032520,15640425,sensory,gustatory-pharyngeal,9
+no pair,15574508,sensory,gut,9
+no pair,15575052,sensory,gut,9
+15711222,15607180,sensory,gustatory-external,9
+1419315,15575232,sensory,gut,9
+15699715,18833414,sensory,gustatory-external,9
+5030808,10831005,LN,no official annotation,10
+8273369,4247099,LN,no official annotation,10
+5291791,8199671,LN,no official annotation,10
+7941642,8198513,LN,no official annotation,10
+7941652,8198416,LN,_broad D1,10
+8877971,3806573,LN,no official annotation,10
+7939979,8198317,LN,no official annotation,10
+7939890,6557581,LN,no official annotation,10
+8274021,11051276,LN,no official annotation,10
+8311264,8198238,LN,no official annotation,10
+10555409,5247102,LN,no official annotation,10
+8102935,7600311,LN,no official annotation,10
+7394271,8231264,LN,no official annotation,10
+16795838,16795524,PN,mPN; mPN iACT bilateral UPPER; Multiglomerular PN 1; mPN; olfactory 2nd_order PN; thermo-warm 2nd_order PN,10
+10865025,4116174,DN-SEZ,FFN-39,10
+3050645,15639548,sensory,gustatory-pharyngeal,11
+3267019,15612241,sensory,gustatory-external,11
+15728017,15640567,sensory,gustatory-pharyngeal,11
+15730645,15914721,sensory,gustatory-pharyngeal,11
+15730680,15618756,sensory,gustatory-external,11
+1428271,15572414,sensory,gut,11
+1432836,15564782,sensory,gut,11
+3036249,15672957,sensory,gustatory-pharyngeal,11
+15714173,15671481,sensory,gustatory-external,11
+15675901,15615877,sensory,gustatory-external,11
+15678833,3562954,sensory,gustatory-external,11
+15995861,15445198,sensory,gustatory-pharyngeal,11
+8021456,13589251,PN,33a PN; uPN; olfactory 2nd_order PN,12
+7852250,8247451,PN,45a PN; uPN; olfactory 2nd_order PN,12
+7843730,8140109,PN,74a PN; uPN; olfactory 2nd_order PN,12
+4354933,14604028,PN,85c PN; uPN; olfactory 2nd_order PN,12
+7864823,8245014,PN,59a PN; uPN; olfactory 2nd_order PN,12
+8399890,4651929,PN,94a&94b PN; uPN; olfactory 2nd_order PN,12
+16259595,8246081,PN,67b PN; uPN; olfactory 2nd_order PN,12
+7865652,8248631,PN,22c PN; uPN; olfactory 2nd_order PN,12
+7198338,8245869,PN,24a PN; uPN; olfactory 2nd_order PN,12
+7865696,8252067,PN,1a PN; uPN; olfactory 2nd_order PN,12
+7865767,8243455,PN,83a PN; uPN; olfactory 2nd_order PN,12
+4493199,8244823,PN,13a PN; uPN; olfactory 2nd_order PN,12
+7107433,8253413,PN,45b PN; uPN; olfactory 2nd_order PN,12
+7873135,8245692,PN,42b PN; uPN; olfactory 2nd_order PN,12
+7916593,8256186,PN,30a PN; uPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN,12
+7934904,7935088,PN,35a PN; uPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,12
+3486381,8244723,PN,42a PN; uPN; olfactory 2nd_order PN,12
+7515491,11279244,PN,49a PN; uPN; olfactory 2nd_order PN,12
+7092417,8246750,PN,47a&33b PN; uPN; olfactory 2nd_order PN,12
+7851153,8245146,PN,82a PN; uPN; olfactory 2nd_order PN,12
+7845346,8245513,PN,63a PN; uPN; olfactory 2nd_order PN,12
+1415168,945309,sensory,gut,13
+19180425,15609427,sensory,gustatory-external,13
+1924051,17698681,DN-SEZ,no official annotation,13
+15725673,18785124,sensory,gustatory-pharyngeal,13
+15680710,15629355,sensory,gustatory-external,13
+15678441,15611642,sensory,gustatory-external,13
+15674083,15611791,sensory,gustatory-external,13
+2123422,2784471,ascending,mechano-Ch,14
+11717014,21591037,pre-DN-VNC,no official annotation,14
+11286854,8942413,PN-somato,mechano-Ch 2nd_order PN,14
+5778133,21590958,pre-DN-VNC,no official annotation,14
+17360286,17360225,pre-DN-VNC,no official annotation,14
+16490014,1141813,PN-somato,noci 2nd_order PN,14
+17729424,8821758,PN-somato,noci 2nd_order PN,14
+12923749,10663559,pre-DN-SEZ,no official annotation,14
+12367135,16666673,pre-DN-VNC,no official annotation,14
+2910892,2885630,PN-somato,mechano-Ch 2nd_order PN,14
+7766016,10937355,ascending,mechano-Ch,14
+17729195,5545085,PN-somato,mechano-Ch 2nd_order PN,14
+11105182,10158972,DN-SEZ,mPN,15
+17356450,17355872,DN-SEZ,no official annotation,15
+11195708,13968203,DN-SEZ,no official annotation,15
+14437742,3806652,DN-SEZ,mPN,15
+15998753,3192952,sensory,gustatory-pharyngeal,16
+16588928,17355892,DN-SEZ,no official annotation,16
+15984231,15567466,sensory,gut,16
+15724385,15638968,sensory,gustatory-pharyngeal,16
+15766999,18231999,sensory,gut,16
+15983225,15587166,sensory,gut,16
+7424178,15564882,sensory,gut,16
+15984797,15564661,sensory,gut,16
+15770945,17951153,sensory,gut,16
+1435466,15546924,sensory,gut,16
+15982306,15569561,sensory,gut,16
+3709977,13789482,PN,Gustatory PN 2; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,17
+no pair,4620453,LN,no official annotation,17
+4985759,9291474,LN,Thermo PN 2,17
+8012953,8254894,PN,Unknown PN 2; gustatory-external 2nd_order PN,17
+18740553,3814635,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,17
+12336493,4983938,PN,gustatory-external 2nd_order PN,17
+11067379,4393049,PN,Gustatory PN 4; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,17
+4154421,3690921,PN,Thermo PN 4; tPN; thermo-cold 2nd_order PN,17
+3991518,9747710,PN,Thermo PN 3; tPN; thermo-cold 2nd_order PN,17
+11333054,17884299,PN,Gustatory PN 1; gustatory-external 2nd_order PN,17
+16014701,16574328,PN-somato,mechano-Ch 2nd_order PN,18
+16485518,9621307,PN-somato,noci 2nd_order PN,18
+11263687,6692908,PN-somato,noci 2nd_order PN,18
+10982951,8697453,PN-somato,noci 2nd_order PN,18
+20343986,2881070,PN-somato,noci 2nd_order PN,18
+16595001,21591033,PN-somato,mechano-Ch 2nd_order PN,18
+11719626,20278329,PN-somato,mechano-Ch 2nd_order PN,18
+17360254,4393350,PN-somato,noci 2nd_order PN,18
+12273754,17654624,PN-somato,noci 2nd_order PN,18
+5755261,2846555,PN-somato,mechano-Ch 2nd_order PN,18
+17464168,8641784,PN-somato,mechano-Ch 2nd_order PN,18
+12367568,12884490,PN-somato,mechano-Ch 2nd_order PN,18
+17224013,14759661,pre-DN-SEZ,no official annotation,18
+17729020,15684934,PN-somato,mechano-Ch 2nd_order PN,18
+9739780,3182103,pre-DN-SEZ,no official annotation,18
+9508724,17541953,PN-somato,mechano-Ch 2nd_order PN,18
+18656202,18655517,PN-somato,noci 2nd_order PN,18
+19102929,15668869,PN-somato,mechano-Ch 2nd_order PN,18
+19919566,1137946,PN-somato,mechano-Ch 2nd_order PN,18
+21250110,9640873,ascending,noci,18
+8529400,7449767,pre-DN-VNC,no official annotation,18
+17223685,8880781,DN-VNC,no official annotation,18
+16961482,10403609,PN-somato,mechano-Ch 2nd_order PN,18
+11717001,10683313,PN-somato,mechano-Ch 2nd_order PN,18
+10714526,2911847,PN-somato,mechano-Ch 2nd_order PN,18
+17105977,8970595,PN-somato,noci 2nd_order PN,18
+10929797,8198913,ascending,mechano-Ch,18
+15669682,17658672,pre-DN-VNC,no official annotation,19
+15586949,3180681,pre-DN-SEZ,no official annotation,19
+17729410,9161929,PN-somato,noci 2nd_order PN,19
+8005609,10852875,sensory,respiratory,20
+8154054,858479,DN-SEZ,no official annotation,20
+1400725,15561413,sensory,gut,20
+9820270,15574328,sensory,gut,20
+1405493,15548694,sensory,gut,20
+1431256,9716858,sensory,gut,20
+1392771,15563553,sensory,gut,20
+1377586,15562137,sensory,gut,20
+1375101,6883831,sensory,gut,20
+19120772,891237,sensory,respiratory,20
+1406463,15573450,sensory,gut,20
+3795424,11291344,sensory,respiratory,20
+9838294,15586536,sensory,gut,21
+1391179,15573381,sensory,gut,21
+1414206,15564807,sensory,gut,21
+15769680,15575327,sensory,gut,21
+7012280,4061049,sensory,respiratory,21
+16911458,12178825,sensory,respiratory,21
+12740290,2432564,PN,gut 2nd_order PN,21
+4363883,5382876,sensory,respiratory,21
+15770904,15543394,sensory,gut,21
+15724175,15640724,sensory,gustatory-pharyngeal,21
+7340629,7331555,sensory,respiratory,21
+19017854,19037563,sensory,respiratory,21
+7168356,11714576,pre-DN-VNC,no official annotation,22
+11007420,16884962,DN-SEZ,no official annotation,22
+8542422,8069432,PN,LHN-22; CN-58; gustatory-external 2nd_order PN,22
+9119558,10990803,PN,mPN; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN,22
+8480221,4324898,PN,mPN; mPN seahorse; mPN; olfactory 2nd_order PN,22
+9589146,7503199,PN,mPN; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,22
+2612527,4391978,PN,mPN; Multiglomerular PN 3; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,22
+6451332,3538129,PN,mPN; mPN D; mPN; olfactory 2nd_order PN,22
+2628785,4311586,PN,LHN-19; CN-55; gustatory-external 2nd_order PN,22
+8349454,1591351,PN,FFN-30; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,22
+8704079,16735586,PN,mPN; mPN iACT B3; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN,22
+17545695,14154154,pre-DN-SEZ,mPN,22
+12225666,4327684,PN,mPN; FFN-21; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; thermo-warm 2nd_order PN,22
+17743170,13858824,PN,PN; gustatory-external 2nd_order PN,22
+13849557,6143930,pre-DN-VNC,no official annotation,22
+17844900,18598859,LN,no official annotation,22
+3450442,4700078,PN,mPN; mPN iACT B2; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; thermo-warm 2nd_order PN,22
+3450751,10160250,PN,mPN; Multiglomerular PN 5; olfactory 2nd_order PN; gustatory-external 2nd_order PN,22
+5261424,4679139,PN,mPN; mPN iACT A2; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,22
+9971209,8812078,LN,no official annotation,22
+3712893,11543212,PN,mPN; mPN iACT bilateral LOWER; Multiglomerular PN 2; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN,22
+11455472,8257672,ascending,unknown modality,23
+8644484,14531828,ascending,mechano-Ch,23
+12366224,19857577,pre-DN-VNC,no official annotation,23
+10527147,7573476,DN-SEZ,no official annotation,23
+10915553,11905911,DN-VNC,no official annotation,23
+16303262,7627878,sensory,respiratory,23
+3220616,16278312,ascending,unknown modality,23
+4555763,5108525,ascending,noci,23
+no pair,2552701,sensory,visual,23
+5343578,7184082,ascending,mechano-Ch,23
+17732270,6125806,DN-VNC,no official annotation,23
+2816457,2619565,ascending,A00c_a5; noci,23
+5080991,10959064,pre-DN-VNC,no official annotation,23
+no pair,7555204,sensory,visual,23
+8057753,10949030,ascending,unknown modality,23
+no pair,7568455,sensory,visual,23
+15679484,15610387,sensory,gustatory-external,24
+no pair,15564706,sensory,gut,24
+no pair,15574941,sensory,gut,24
+19470184,3732322,DN-SEZ,no official annotation,24
+no pair,9748269,sensory,gut,24
+15690392,15615305,sensory,gustatory-external,24
+992646,15599768,DN-SEZ,no official annotation,24
+8216541,4541081,DN-SEZ,no official annotation,24
+15715796,15606918,sensory,gustatory-external,24
+1709802,15532105,sensory,gustatory-pharyngeal,24
+15983156,16442344,sensory,gut,24
+1429969,15543068,sensory,gut,24
+17951049,10263287,DN-SEZ,no official annotation,24
+8700125,7897051,LN,no official annotation,25
+13422280,7589765,DN-VNC,no official annotation,25
+no pair,8480418,LN,no official annotation,25
+8118929,2775943,PN,Pdf-LaNs; visual 2nd_order PN,25
+16087799,2775707,PN,Pdf-LaNs; visual 2nd_order PN,25
+9927082,7874184,PN,Pdf-LaNs; visual 2nd_order PN,25
+4108016,3002410,PN,Thermo PN 7; tPN; thermo-cold 2nd_order PN,25
+3928652,12704360,RGN,no official annotation,25
+2204467,2512602,PN,Pdf-LaNs; visual 2nd_order PN,25
+17414715,8247641,LN,no official annotation,25
+14338439,8805777,PN-somato,noci 2nd_order PN,26
+4663875,11271082,pre-DN-VNC,no official annotation,26
+15689046,8979434,pre-DN-SEZ,no official annotation,26
+9822593,15023987,pre-DN-VNC,no official annotation,26
+17729088,9637388,LHN,noci 2nd_order PN,26
+5762666,17777259,LHN,noci 2nd_order PN; mechano-Ch 2nd_order PN,26
+16472086,16433177,PN-somato,mechano-Ch 2nd_order PN,26
+16594752,9530532,PN-somato,noci 2nd_order PN,26
+5750884,20443420,PN-somato,Tel5; noci 2nd_order PN,27
+20730780,9202326,PN-somato,noci 2nd_order PN,27
+21220994,8229118,PN-somato,noci 2nd_order PN; mechano-Ch 2nd_order PN,27
+15096548,13841523,pre-DN-VNC,no official annotation,27
+9348984,2772093,pre-DN-VNC,no official annotation,27
+14797760,15679639,PN-somato,mechano-Ch 2nd_order PN,27
+6633635,9241349,PN-somato,noci 2nd_order PN; mechano-Ch 2nd_order PN,27
+16059134,10725068,pre-DN-VNC,no official annotation,27
+16059078,4130960,PN-somato,mechano-Ch 2nd_order PN,27
+15587533,11029851,PN-somato,mechano-Ch 2nd_order PN,27
+9481869,14762026,PN-somato,mechano-Ch 2nd_order PN,27
+17165621,9422291,PN-somato,noci 2nd_order PN; mechano-Ch 2nd_order PN,27
+16098538,8670503,LHN,no official annotation,28
+4260935,3756659,PN,Thermo PN 5; tPN; thermo-cold 2nd_order PN,28
+4279887,10293348,LHN,no official annotation,28
+7582412,2776773,LN,no official annotation,28
+7952981,8717219,PN,vPN; visual 2nd_order PN,28
+9747418,4127707,LHN,no official annotation,28
+8293958,3869488,PN,PN; tPN; gustatory-external 2nd_order PN; thermo-cold 2nd_order PN,28
+4635057,7971031,LHN,Thermo PN 1; Thermo PN 6,28
+4570270,2921933,LN,no official annotation,28
+17962513,8842220,LHN,no official annotation,28
+12948470,9275210,LN,Thermo PN 1; Thermo PN 6,28
+19611917,8138616,LHN,no official annotation,28
+4926999,21664445,LN,no official annotation,28
+4636432,9808146,LN,no official annotation,28
+17244655,17360593,LHN,no official annotation,28
+17776906,4101295,LN,no official annotation,28
+12745771,2914206,LHN,no official annotation,28
+5959820,8943485,pre-DN-SEZ,no official annotation,28
+5289042,9291938,LHN,no official annotation,28
+12156009,7020344,PN,Gustatory PN 3; gustatory-external 2nd_order PN,28
+8509534,16515871,PN,mPN; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN,29
+16444327,no pair,KC,KC,30
+16627861,no pair,KC,KC,30
+16630385,no pair,KC,KC,30
+no pair,9766793,KC,KC,30
+no pair,7868195,KC,KC,30
+11691603,4444354,KC,KC,30
+8262503,no pair,KC,KC,30
+no pair,5836206,KC,KC,30
+16435965,no pair,KC,KC,30
+no pair,10056280,KC,KC,30
+11725803,8066542,KC,KC,30
+14898816,4230739,KC,KC,30
+11725127,4230061,KC,KC,30
+15721919,no pair,KC,KC,30
+no pair,16850888,KC,KC,30
+no pair,5836197,KC,KC,30
+4518546,no pair,KC,KC,30
+no pair,4227304,KC,KC,30
+16629788,7786053,KC,KC,30
+16630264,5836163,KC,KC,30
+15722867,9609048,KC,KC,30
+16631114,9556700,KC,KC,30
+16058860,11813287,KC,KC,30
+4412315,3347708,KC,KC,30
+16630941,5835799,KC,KC,30
+16039470,4241192,KC,KC,30
+4411505,no pair,KC,KC,30
+4412036,no pair,KC,KC,30
+16627838,8413663,KC,KC,30
+no pair,5836035,KC,KC,30
+8262302,5051342,KC,KC,30
+no pair,5019924,KC,KC,30
+16977881,9796812,KC,KC,30
+5937084,8850802,KC,KC,30
+8687096,9643439,pre-DN-VNC,no official annotation,31
+15718981,1591270,pre-DN-VNC,no official annotation,31
+5708994,17654617,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,31
+9488991,5585799,LHN,no official annotation,31
+4664256,17326218,PN-somato,noci 2nd_order PN,31
+12121795,11788830,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,31
+4393026,16131474,LHN,no official annotation,31
+15517247,16335254,pre-DN-VNC,no official annotation,31
+9940382,8124177,PN,vPN; visual 2nd_order PN,31
+8347613,8349553,LHN,no official annotation,31
+5688091,5038920,DN-SEZ,no official annotation,31
+3650006,15829660,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,31
+17354392,15636958,pre-DN-SEZ,no official annotation,31
+11934107,3844961,PN,gustatory-external 2nd_order PN,31
+12498338,3913629,LHN,LHN-14; CN-50,32
+2568465,10167078,PN,mPN; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN,32
+12476851,16070049,LHN,CN-1,32
+17434825,16485079,LN,Multiglomerular PN 4; LHN-11; CN-47,32
+11782821,3913613,LN,no official annotation,32
+9567051,9539868,PN,vPN; visual 2nd_order PN,32
+5453333,13803032,LHN,LHN-15; CN-51,32
+8037197,17822238,LN,CN-2,32
+9447255,16295025,LN,LHN-6,32
+7982896,8177199,LHN,no official annotation,32
+16486385,11178891,LN,LHN-10; CN-46,32
+8276782,4119387,PN,mPN; Multiglomerular PN 7; mPN; olfactory 2nd_order PN; gustatory-external 2nd_order PN; thermo-warm 2nd_order PN,32
+8340950,8270683,PN,vPN; visual 2nd_order PN,32
+4665186,17671219,LN,LHN-13; CN-49,32
+14333495,13858797,LHN,LHN-9; CN-45,32
+14319185,8565131,LHN,LHN-21; CN-57,32
+18566501,15588389,LHN,no official annotation,32
+16438190,no pair,KC,KC,33
+16210988,no pair,KC,KC,33
+14898295,no pair,KC,KC,33
+16629757,no pair,KC,KC,33
+14522124,no pair,KC,KC,33
+16629931,no pair,KC,KC,33
+14519048,no pair,KC,KC,33
+16440649,no pair,KC,KC,33
+16627773,no pair,KC,KC,33
+no pair,9531722,KC,KC,33
+9983191,no pair,KC,KC,33
+no pair,5835815,KC,KC,33
+no pair,5836387,KC,KC,33
+no pair,4414426,KC,KC,33
+no pair,7690945,KC,KC,33
+no pair,7828725,KC,KC,33
+no pair,7829784,KC,KC,33
+no pair,7840203,KC,KC,33
+no pair,7891312,KC,KC,33
+8177991,no pair,KC,KC,33
+3819157,no pair,KC,KC,33
+no pair,3587612,KC,KC,33
+8263140,no pair,KC,KC,33
+8263285,no pair,KC,KC,33
+no pair,8274902,KC,KC,33
+8513389,no pair,KC,KC,33
+8865199,no pair,KC,KC,33
+no pair,8891315,KC,KC,33
+no pair,9525492,KC,KC,33
+no pair,5836181,KC,KC,33
+no pair,9809626,KC,KC,33
+no pair,9813188,KC,KC,33
+no pair,9889095,KC,KC,33
+14460113,no pair,KC,KC,33
+6704232,8559607,KC,KC,33
+no pair,9897223,KC,KC,34
+17147410,no pair,KC,KC,34
+3820148,2920554,LN,PL-5,35
+15639216,15639331,pre-DN-SEZ,no official annotation,35
+2979486,9585145,LHN,no official annotation,35
+11853038,12842593,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,35
+16316916,5592307,PN,FFN-37; gustatory-pharyngeal 2nd_order PN,35
+5053417,16188942,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,35
+11656349,16297403,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,35
+5744058,4128002,PN-somato,noci 2nd_order PN,35
+4117305,16720240,KC,KC,36
+8348277,18302665,pre-DN-VNC,no official annotation,37
+11986594,6218461,PN,gustatory-external 2nd_order PN,37
+5606265,19718010,ascending,unknown modality,37
+16141217,13722516,LHN,no official annotation,37
+12387154,8723267,LHN,no official annotation,38
+4398543,17380092,CN,no official annotation,38
+16494105,4108720,LHN,no official annotation,38
+9201911,17591687,LHN,no official annotation,38
+10958210,17671375,pre-DN-SEZ,no official annotation,38
+16474159,9291437,LHN,no official annotation,38
+14461238,18292832,LHN,no official annotation,38
+6494274,13986583,LHN,LHN-1,38
+11193510,3930411,LHN,no official annotation,38
+11146422,19276024,PN,gustatory-external 2nd_order PN,38
+11144258,9800178,LN,no official annotation,38
+14450919,18220289,LHN,no official annotation,38
+9421292,5507096,LHN,no official annotation,38
+14514597,13986477,LHN,LHN-5,38
+10955244,11248536,LHN,no official annotation,38
+8755914,8741619,DN-VNC,no official annotation,38
+12424328,16457812,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,38
+15686444,15638932,pre-DN-VNC,no official annotation,38
+17420035,8705088,LHN,no official annotation,38
+19051762,17913032,pre-DN-VNC,no official annotation,38
+7313896,8135412,MB-FFN,FFN-19,38
+4778745,4319395,LHN,no official annotation,38
+3814701,9761454,DN-SEZ,no official annotation,38
+16409132,17896997,LHN,no official annotation,38
+8111135,7555968,PN,Vision PN 1; vPN; visual 2nd_order PN,38
+12425856,13173311,PN,gustatory-pharyngeal 2nd_order PN,38
+14333371,2932028,LHN,no official annotation,38
+9792178,2920061,LN,PL-4,38
+3946569,8813113,LHN,no official annotation,38
+9445876,4102413,LN,no official annotation,38
+17696578,16260741,LHN,no official annotation,38
+2379529,3815483,LHN,no official annotation,38
+no pair,4227544,KC,KC,39
+4134539,no pair,KC,KC,39
+8118474,4229950,KC,KC,40
+8262372,8068173,KC,KC,40
+7187384,3664102,KC,KC,40
+12726582,4415241,KC,KC,40
+4780707,15683275,LHN,no official annotation,41
+5474852,17591442,LN,CN-5,41
+8238322,11210000,LHN,LHN-2,41
+11135340,11645541,LN,no official annotation,41
+no pair,7196392,KC,KC,42
+6702830,no pair,KC,KC,42
+16631222,no pair,KC,KC,42
+no pair,7838405,KC,KC,42
+no pair,9847388,KC,KC,42
+8248706,no pair,KC,KC,42
+no pair,29,KC,KC,42
+12217572,no pair,KC,KC,42
+no pair,3497901,KC,KC,42
+no pair,3347834,KC,KC,42
+8864096,no pair,KC,KC,42
+no pair,10259967,KC,KC,42
+11785627,no pair,KC,KC,42
+no pair,8835968,KC,KC,42
+no pair,8997281,KC,KC,42
+16015738,no pair,KC,KC,42
+16939375,8924186,KC,KC,42
+15861524,no pair,KC,KC,42
+16630024,no pair,KC,KC,42
+8393981,no pair,KC,KC,42
+15734988,no pair,KC,KC,42
+no pair,9730873,KC,KC,42
+no pair,8419602,KC,KC,42
+6494382,2963280,LHN,no official annotation,43
+2439067,3814853,LHN,LHN-8,43
+5118060,15605987,LHN,mechano-Ch 2nd_order PN,43
+12325227,9507904,PN-somato,FFN-29; noci 2nd_order PN,43
+16799939,15676571,CN,no official annotation,43
+14818307,3932136,LHN,no official annotation,43
+2964760,10855798,pre-DN-VNC,no official annotation,44
+18087179,17587452,PN,gustatory-external 2nd_order PN,44
+14756000,13634759,PN,gustatory-external 2nd_order PN,44
+12360656,17819985,PN,gustatory-external 2nd_order PN,44
+11029359,3232277,CN,no official annotation,44
+17732791,15334461,DN-SEZ,no official annotation,44
+10961507,3232808,LHN,no official annotation,44
+17557290,10946002,CN,no official annotation,44
+18527962,19508873,DN-VNC,no official annotation,44
+17036160,15547235,PN,gustatory-external 2nd_order PN,44
+17732085,8698941,LHN,no official annotation,44
+18648531,13665529,CN,no official annotation,44
+5746180,20443501,pre-DN-VNC,no official annotation,44
+13832416,5591201,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,44
+17036132,11157622,PN,gustatory-external 2nd_order PN,44
+16422744,15589591,pre-DN-VNC,no official annotation,44
+17360022,9565674,pre-DN-VNC,no official annotation,44
+2568522,12612426,PN,gustatory-external 2nd_order PN,44
+19880740,16223688,pre-DN-VNC,no official annotation,44
+13833814,16316981,DN-SEZ,no official annotation,44
+15519213,5791548,CN,no official annotation,44
+17277623,10013517,PN,gustatory-external 2nd_order PN,44
+11037238,7719118,LHN,noci 2nd_order PN,46
+14519756,7467027,pre-DN-VNC,no official annotation,46
+10893103,9720614,PN-somato,noci 2nd_order PN,46
+5691934,3862443,PN-somato,noci 2nd_order PN,46
+17732031,11081239,pre-DN-VNC,no official annotation,46
+11291653,8412625,PN-somato,noci 2nd_order PN,46
+5657004,5134110,pre-DN-VNC,no official annotation,46
+16848497,9798791,MB-FFN,FFN-33,46
+21136945,17654638,PN-somato,mechano-Ch 2nd_order PN,46
+8253620,18639459,pre-DN-VNC,no official annotation,46
+11084320,8461082,pre-DN-VNC,no official annotation,46
+5679304,8689148,MB-FFN,FFN-34,47
+16100461,8711574,LHN,no official annotation,47
+12839441,17125520,LHN,LHN-18; CN-54,47
+10018260,17379372,LHN,no official annotation,47
+17038587,8065771,LHN,CN-29,47
+19045334,9585036,LHN,no official annotation,47
+10209260,17437719,MB-FBN,FBN-18,47
+11004239,8069478,LHN,LHN-17; CN-53,47
+4680995,17806341,LHN,LHN-4; PL-2; noci 2nd_order PN,47
+8203947,17952967,LHN,no official annotation,47
+2988292,19046339,pre-DN-VNC,_Two-headed cobra,47
+12667895,17425996,PN-somato,noci 2nd_order PN,47
+12617396,3844799,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,47
+8423405,11137808,LHN,CN-3,47
+8539175,13988443,CN,CN-40,47
+4433960,13806524,CN,no official annotation,47
+8838927,17107661,MB-FFN,FFN-32,47
+4422289,11605861,LHN,no official annotation,47
+14319498,17942676,LHN,no official annotation,47
+12670738,17847543,MB-FFN,FFN-31,47
+17361757,12813847,LHN,CN-27,47
+2979675,7422253,pre-DN-VNC,no official annotation,48
+8167696,7429933,pre-DN-VNC,no official annotation,48
+5745110,4127926,pre-DN-VNC,no official annotation,48
+16096934,13049485,pre-DN-SEZ,no official annotation,48
+no pair,10169396,KC,KC,49
+no pair,8504660,KC,KC,49
+no pair,8427677,KC,KC,49
+16631248,no pair,KC,KC,49
+16627950,no pair,KC,KC,49
+no pair,16625432,KC,KC,49
+16440704,no pair,KC,KC,49
+16017113,no pair,KC,KC,49
+no pair,4982172,KC,KC,49
+no pair,9707941,KC,KC,49
+15722306,no pair,KC,KC,49
+15691114,no pair,KC,KC,49
+no pair,8509987,KC,KC,49
+14319960,no pair,KC,KC,49
+14255342,no pair,KC,KC,49
+no pair,677717,KC,KC,49
+3819171,no pair,KC,KC,49
+11691640,no pair,KC,KC,49
+8318678,no pair,KC,KC,49
+no pair,3522293,KC,KC,49
+5033480,5700090,pre-DN-VNC,no official annotation,50
+17804729,11050498,pre-DN-VNC,no official annotation,50
+17729110,16399845,LHN,no official annotation,50
+17360038,17378483,pre-DN-VNC,no official annotation,50
+15608953,15632120,pre-DN-VNC,no official annotation,50
+17360010,15638906,pre-DN-VNC,no official annotation,50
+10885466,12548756,pre-DN-VNC,no official annotation,50
+3060480,17380080,pre-DN-VNC,no official annotation,50
+10282065,5946241,PN-somato,mechano-Ch 2nd_order PN,50
+12371688,9811608,LHN,no official annotation,50
+3048606,3009700,DN-VNC,no official annotation,50
+10922020,17123466,LHN,no official annotation,50
+10922928,3149791,pre-DN-VNC,no official annotation,50
+2438653,10627239,pre-DN-VNC,no official annotation,50
+9835169,9503203,sensory,respiratory,51
+16424131,13167025,DN-SEZ,no official annotation,51
+5671303,8696919,pre-DN-VNC,no official annotation,52
+17360076,15655801,pre-DN-VNC,no official annotation,52
+5764924,10947427,DN-SEZ,no official annotation,52
+10716080,3595837,DN-VNC,no official annotation,52
+10949382,16945771,ascending,mechano-Ch,52
+3882998,11261332,DN-SEZ,no official annotation,52
+15588711,10945795,DN-VNC,no official annotation,52
+4400767,13751194,RGN,no official annotation,52
+7227010,16115575,DN-VNC,no official annotation,52
+6723364,10198121,PN-somato,noci 2nd_order PN,52
+18058644,8939384,PN-somato,noci 2nd_order PN,52
+16636860,11623145,pre-DN-VNC,no official annotation,52
+16366055,17654645,pre-DN-VNC,no official annotation,52
+16356967,10319019,PN-somato,Tel10; noci 2nd_order PN,52
+10728323,2655798,DN-SEZ,no official annotation,52
+15365184,5512988,DN-VNC,no official annotation,52
+18149325,14757050,pre-DN-VNC,no official annotation,52
+5763407,10945111,DN-VNC,no official annotation,52
+2511238,3093284,ascending,A00c_a4; noci,52
+17086412,17362538,pre-DN-VNC,no official annotation,52
+3928574,5890323,RGN,no official annotation,52
+9795662,15250080,DN-SEZ,no official annotation,52
+10728318,3598000,DN-VNC,no official annotation,52
+7694589,8271034,LN,no official annotation,52
+8347907,5503982,pre-DN-VNC,no official annotation,52
+8347720,18302610,pre-DN-VNC,no official annotation,52
+5684940,7982324,DN-SEZ,no official annotation,52
+8391330,5993765,DN-VNC,no official annotation,52
+1042538,1690576,ascending,A00c_a6; noci,52
+10609443,6114695,DN-VNC,no official annotation,52
+1011675,15541944,sensory,gustatory-pharyngeal,52
+6623049,17654634,LN,no official annotation,52
+15676016,3058132,pre-DN-VNC,PL-7,52
+9787859,11941255,DN-SEZ,no official annotation,52
+17321919,4215611,DN-SEZ,no official annotation,52
+6604203,2670619,DN-SEZ,no official annotation,52
+17473163,16571210,DN-VNC,no official annotation,52
+11003707,17525174,LN,no official annotation,53
+4379603,8307514,LHN,no official annotation,53
+16089738,9641919,CN,no official annotation,53
+17047087,7431625,LHN,no official annotation,53
+4391317,11826171,LHN,no official annotation,53
+9207332,8305958,LHN,no official annotation,53
+11051740,7421507,MB-FFN,FFN-13,53
+9983417,17658884,pre-DN-VNC,no official annotation,53
+7582489,7977834,LHN,no official annotation,53
+13852833,9457719,MB-FBN,FB2N-4,53
+2439134,4099900,LHN,no official annotation,53
+10710503,18142558,LHN,no official annotation,53
+5963873,4101621,LHN,no official annotation,53
+3543931,13795090,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,53
+12281339,9585013,LHN,no official annotation,53
+11703922,16181377,LHN,LHN-16; CN-52,53
+15343835,4114133,MB-FBN,FB2N-9,53
+12356747,19857573,MB-FFN,FFN-11,53
+14434314,13369670,LHN,no official annotation,53
+16906721,5590611,PN,gustatory-external 2nd_order PN; gustatory-pharyngeal 2nd_order PN,53
+12138418,8310087,LHN,CN-15,53
+16386470,17013169,LHN,no official annotation,53
+13206239,8847957,LHN,LHN-3,53
+3945454,11637003,PN,FFN-4; FFN-5; gustatory-pharyngeal 2nd_order PN; gut 2nd_order PN; respiratory 2nd_order PN; mechano-II/III 2nd_order PN,54
+3420915,3622234,PN,FFN-18; gustatory-pharyngeal 2nd_order PN; gut 2nd_order PN,54
+3945394,3729504,PN,gut 2nd_order PN; mechano-II/III 2nd_order PN,54
+9787933,867393,PN,gut 2nd_order PN,54
+12479019,5560620,PN,FFN-17; gut 2nd_order PN,54
+9006142,5783868,CN,no official annotation,54
+3945225,3793681,PN,gut 2nd_order PN; mechano-II/III 2nd_order PN,54
+13854190,5476653,pre-DN-SEZ,no official annotation,54
+17176866,17176882,PN,FFN-12; gut 2nd_order PN; mechano-II/III 2nd_order PN,54
+3945232,9841469,PN,FFN-4; FFN-5; gustatory-pharyngeal 2nd_order PN; gut 2nd_order PN,54
+3157405,8752697,MB-FBN,FAN-1,55
+8582134,8469124,LHN,no official annotation,55
+8974428,9294475,LHN,no official annotation,55
+10427055,17437725,LHN,no official annotation,55
+16985194,15068806,PN-somato,mechano-Ch 2nd_order PN,55
+11011058,2667061,CN,FFN-2,55
+2142817,17415439,pre-DN-SEZ,no official annotation,56
+16742642,8546775,pre-DN-SEZ,no official annotation,56
+13395814,17756162,pre-DN-SEZ,no official annotation,56
+9503414,13950464,PN-somato,mechano-II/III 2nd_order PN,56
+17641913,13429045,LHN,no official annotation,56
+4379508,3794023,LHN,no official annotation,56
+3158123,15225589,LHN,no official annotation,56
+9436520,20536322,pre-DN-SEZ,no official annotation,56
+9372642,9842000,RGN,no official annotation,56
+2439150,11851588,LHN,no official annotation,56
+17423412,13038489,LHN,no official annotation,56
+3814651,15732471,LHN,no official annotation,56
+9524538,11946903,PN-somato,mechano-II/III 2nd_order PN,56
+17927604,11605567,pre-DN-SEZ,no official annotation,56
+4595609,19120853,ascending,mechano-II/III,56
+3946432,2935173,LHN,_WS,56
+3928522,16434842,RGN,no official annotation,56
+4785242,2935198,LN,no official annotation,56
+15421363,3299214,MBON,MBON-j1,57
+7983899,7616956,MBIN,OAN-e1,57
+15571194,3234817,LN,APL,57
+3886356,5966099,MBIN,DAN-d1,57
+12871993,4884579,MBIN,DAN-k1,57
+17295912,16353832,MBIN,MBIN-b2,57
+4381377,10673895,MBIN,DAN-g1,57
+15592096,16240569,MBIN,DAN-c1,57
+4381129,15404207,MBIN,MBIN-l1,57
+8689674,8319311,MBIN,MBIN-b1,57
+7901791,2506050,MBIN,DAN-f1,57
+12475432,3890028,MBIN,MBIN-e2,57
+7057894,6611894,MBIN,DAN-i1,57
+4414163,4414184,MBIN,DAN-j1,57
+4721538,8069365,LHN,no official annotation,58
+5675990,15688523,pre-DN-VNC,no official annotation,58
+11216417,8451818,CN,no official annotation,58
+12389097,15674269,MB-FFN,FFN-10,58
+2797480,13713529,pre-DN-VNC,no official annotation,58
+17639784,17438424,CN,CN-9,58
+16444758,17762417,pre-DN-SEZ,no official annotation,58
+12868041,17340931,CN,CN-35,58
+16444552,16339645,CN,CN-35,58
+17360262,14758420,LN,no official annotation,58
+16545179,14501257,pre-DN-VNC,no official annotation,58
+17360296,14757992,LN,no official annotation,58
+10875625,4067286,LHN,CN-26,58
+8798010,4195012,MBON,MBON-h1; MBON-h2,59
+16883909,4234009,MBON,MBON-b3,59
+8877158,10163418,MBON,MBON-a1,59
+16782830,9469519,MBON,MBON-b2,59
+17147698,8094859,MBON,MBON-b1,59
+16846805,18028397,MBON,MBON-k1,59
+16223537,8980589,MBON,MBON-c1; CN-59,59
+17355757,15617305,MBON,MBON-a2,59
+8338584,4230749,MBON,MBON-h1; MBON-h2,59
+7055857,4241237,MBON,MBON-d1,59
+7802210,16797672,MBON,MBON-i1,59
+5395823,11524047,MBON,MBON-g2,59
+4401350,4598363,MBON,MBON-g1,59
+10612094,12122924,MB-FBN,FBN-28; mechano-Ch 2nd_order PN,60
+5938794,8310955,LHN,no official annotation,61
+16442113,3814175,LHN,FFN-3,61
+13197236,8075484,LN,FBN-17; CN-7,61
+15766806,13863331,MB-FBN,FBN-15; LHN-12; CN-48,61
+12299621,8034919,LHN,CN-17,61
+11409587,17019327,CN,mechano-II/III 2nd_order PN,61
+15566333,15568333,CN,PL-6,61
+9015745,9583435,MB-FFN,FFN-14,61
+16089743,10340880,LHN,no official annotation,61
+11013351,11909406,LN,CN-11; FBN-12,61
+2369444,10119916,LHN,no official annotation,61
+9078240,7688300,pre-DN-VNC,no official annotation,61
+16433696,19132527,pre-DN-SEZ,no official annotation,62
+16428373,5369028,pre-DN-VNC,no official annotation,62
+10523825,17455871,pre-DN-VNC,no official annotation,62
+17777981,16685117,pre-DN-VNC,no official annotation,62
+16348875,15601640,pre-DN-SEZ,no official annotation,62
+10600188,8571259,pre-DN-VNC,no official annotation,62
+16167914,13834125,pre-DN-VNC,no official annotation,62
+10880408,10875178,pre-DN-VNC,no official annotation,62
+5769582,9753418,PN-somato,noci 2nd_order PN,62
+16468935,10781924,pre-DN-VNC,no official annotation,62
+10842047,14914182,pre-DN-SEZ,no official annotation,62
+9236708,9212816,CN,CN-23,62
+10382686,16100103,LHN,no official annotation,62
+16937815,13411525,CN,no official annotation,62
+10842099,10882750,pre-DN-VNC,no official annotation,62
+10400440,18264509,CN,no official annotation,62
+17237305,14948339,CN,CN-18,62
+17354414,3021609,pre-DN-VNC,no official annotation,62
+10100020,1868538,pre-DN-VNC,no official annotation,62
+18500915,16846902,CN,no official annotation,62
+21300466,18644088,pre-DN-SEZ,no official annotation,62
+15792643,15610774,pre-DN-VNC,no official annotation,62
+10411574,17379420,DN-VNC,CN-28; PL-17,62
+12782494,15585114,pre-DN-SEZ,no official annotation,62
+16683883,5956787,RGN,no official annotation,63
+11874130,10868477,sensory,respiratory,63
+2138427,5038703,RGN,no official annotation,63
+10563755,13535387,RGN,no official annotation,63
+7476468,3762787,RGN,no official annotation,63
+15639294,7571966,DN-VNC,no official annotation,63
+4874953,5469039,RGN,no official annotation,63
+16683943,7530253,RGN,no official annotation,63
+1398253,15574199,sensory,gut,63
+3926669,3727026,RGN,no official annotation,63
+15770032,3556191,sensory,gut,63
+3926438,3727004,RGN,no official annotation,63
+3925724,5955853,RGN,no official annotation,63
+5617164,10963761,sensory,respiratory,63
+3915835,5638694,sensory,respiratory,63
+15769419,15548107,sensory,gut,63
+1367171,15559195,sensory,gut,63
+3729496,3762317,DN-SEZ,no official annotation,63
+40152,15573396,sensory,gut,63
+5615961,5601924,RGN,no official annotation,63
+1395971,15574231,sensory,gut,63
+3926904,7529574,RGN,no official annotation,63
+10418394,2260755,RGN,no official annotation,63
+17150791,8712361,MB-FBN,CN-10; FAN-2,64
+14082322,7840791,MBON,MBON-e1,64
+16475849,16823703,MB-FBN,CN-25; FAN-12,64
+15398730,6703240,MBON,MBON-n1,64
+17176911,4575178,CN,CN-42,64
+15253921,4598109,MBON,MBON-f1,64
+14540633,4473922,MB-FBN,CN-36; FAN-4; PL-9,64
+10702736,14206030,CN,CN-16,64
+14541927,4235139,MBIN,MBIN-e1,64
+7056904,17176927,pre-DN-SEZ,CN-30,64
+12832017,19091931,MB-FFN,FFN-16,64
+10202724,5480553,PN,FBN-3; gut 2nd_order PN,64
+15810983,6699205,MBON,MBON-d2,64
+15668309,17165711,MB-FBN,CN-14; FAN-11,64
+17140424,9753530,CN,no official annotation,64
+9109799,9074101,MBON,MBON-d3,64
+16868923,17013073,MBON,MBON-o1; CN-60,64
+11257084,7612147,LHN,LHN-20; CN-56,64
+7540581,5516552,MB-FBN,FBN-13; mechano-Ch 2nd_order PN,64
+10543751,11464638,CN,CN-4,64
+8922644,8297018,MBON,MBON-e2,64
+8078096,4514494,MB-FBN,CN-44; FAN-3,64
+9409359,3913620,CN,CN-6,64
+12478620,16318521,PN,gustatory-pharyngeal 2nd_order PN,64
+11003660,16594509,MB-FBN,FBN-1,64
+5321459,10809383,MB-FBN,CN-43; FBN-14,64
+7910624,7897469,MBON,MBON-q1,64
+15997666,15508735,sensory,gustatory-pharyngeal,65
+17356442,16443509,pre-DN-VNC,no official annotation,65
+16713227,17659014,DN-SEZ,no official annotation,65
+8801736,6049565,pre-DN-VNC,PL-14,65
+3944330,15732050,DN-SEZ,no official annotation,65
+16935790,11359482,PN-somato,proprio 2nd_order PN,65
+16383966,7371184,pre-DN-VNC,no official annotation,65
+16545101,4812481,pre-DN-VNC,no official annotation,65
+17728781,13644685,pre-DN-VNC,no official annotation,65
+15431408,16714214,pre-DN-VNC,no official annotation,65
+9787592,13191017,DN-SEZ,no official annotation,65
+10797407,14760757,pre-DN-VNC,no official annotation,66
+11329998,13365464,CN,no official annotation,66
+10792617,11278919,pre-DN-VNC,no official annotation,66
+16848475,17980792,MB-FBN,FB2N-17,66
+17177103,17177115,MB-FFN,FFN-22,66
+16492104,10617840,MB-FFN,FFN-40,66
+14034311,5976168,DN-SEZ,no official annotation,66
+19088042,8717042,CN,no official annotation,66
+12279909,8471817,pre-DN-SEZ,no official annotation,66
+7388340,15606239,pre-DN-SEZ,no official annotation,66
+10583715,11306294,pre-DN-VNC,no official annotation,66
+15568134,5973097,pre-DN-SEZ,no official annotation,66
+13199414,11234536,MB-FFN,FFN-20,66
+9428865,13674287,pre-DN-VNC,no official annotation,66
+9527333,13210358,MB-FBN,FB2N-19,66
+16051878,8951591,pre-DN-SEZ,no official annotation,66
+3044500,6317793,DN-SEZ,no official annotation,66
+10345590,15048530,pre-DN-SEZ,no official annotation,66
+3946166,3620633,DN-VNC,no official annotation,66
+5091874,9287906,MB-FBN,FB2N-15,66
+15605301,15607335,pre-DN-SEZ,no official annotation,67
+2597151,3158085,pre-DN-VNC,no official annotation,67
+12299704,10768709,pre-DN-SEZ,no official annotation,67
+17096642,16751955,MB-FFN,FFN-28,67
+12233237,11528017,MB-FBN,FB2N-1,67
+3931398,3793760,PN-somato,mechano-II/III 2nd_order PN,67
+7557604,3276003,pre-DN-VNC,no official annotation,67
+15576292,17384874,pre-DN-SEZ,no official annotation,67
+12364717,11356523,pre-DN-SEZ,no official annotation,67
+11073313,16347476,pre-DN-VNC,no official annotation,68
+11079069,10986253,pre-DN-VNC,no official annotation,68
+5754346,3764792,DN-VNC,_telegoro-1,68
+5690425,19010160,DN-VNC,no official annotation,68
+8047280,7587948,DN-VNC,no official annotation,68
+17729335,8592501,pre-DN-VNC,no official annotation,68
+5680013,17658978,DN-VNC,no official annotation,68
+12654063,12990900,pre-DN-SEZ,no official annotation,68
+5462159,6446394,DN-VNC,no official annotation,68
+19166349,13167730,pre-DN-VNC,no official annotation,68
+17280216,4337398,MB-FBN,FB2N-13,69
+14539753,12962772,DN-SEZ,no official annotation,69
+17315288,5326407,pre-DN-SEZ,no official annotation,69
+8802069,4665627,MB-FFN,FFN-9,69
+10918898,4228105,pre-DN-VNC,no official annotation,69
+17813457,17083341,pre-DN-VNC,PL-24,69
+9048462,10612630,MB-FFN,FFN-1,69
+9072237,4201020,PN-somato,FFN-8; proprio 2nd_order PN,69
+9251793,4190567,MB-FBN,FBN-20,69
+9252296,4201555,MB-FBN,FB2N-10; proprio 2nd_order PN,69
+18412747,17336347,PN-somato,proprio 2nd_order PN,69
+17373283,10339991,CN,no official annotation,69
+16933362,4234016,MB-FFN,FFN-41,69
+15974183,15662776,CN,PL-8,69
+11908619,8318813,CN,no official annotation,69
+17177419,4227880,pre-DN-VNC,no official annotation,69
+8052161,4152272,MB-FBN,FB2N-14,69
+15629759,2659504,pre-DN-VNC,no official annotation,70
+10018161,17379360,DN-SEZ,no official annotation,70
+18458734,13775497,ascending,unknown modality,70
+17359111,16316973,DN-SEZ,no official annotation,70
+18123575,17543765,DN-VNC,no official annotation,70
+18305433,17587730,DN-VNC,no official annotation,70
+17827011,17654973,pre-DN-VNC,no official annotation,70
+14638686,11891098,pre-DN-VNC,no official annotation,70
+4110483,17587726,DN-VNC,no official annotation,70
+12390459,19989037,PN-somato,proprio 2nd_order PN,70
+12420377,13242252,pre-DN-VNC,no official annotation,70
+17102002,1065967,DN-VNC,no official annotation,70
+17354403,12030078,DN-VNC,no official annotation,70
+10355356,5898284,pre-DN-VNC,no official annotation,70
+16544712,5730322,pre-DN-VNC,no official annotation,70
+13370624,14756440,pre-DN-VNC,no official annotation,70
+5768240,1805418,pre-DN-SEZ,no official annotation,70
+10382824,17297936,pre-DN-VNC,no official annotation,70
+16937799,17654991,pre-DN-VNC,PL-16,70
+18088813,17660233,pre-DN-VNC,no official annotation,70
+17732346,17378648,DN-VNC,no official annotation,70
+10018150,17379298,DN-VNC,no official annotation,70
+6729443,17937991,pre-DN-VNC,no official annotation,70
+10317031,2504517,pre-DN-VNC,no official annotation,70
+8723983,16115255,DN-VNC,no official annotation,70
+8142831,17655000,pre-DN-VNC,PL-15,70
+20379247,17658602,pre-DN-VNC,no official annotation,70
+17729347,20479904,pre-DN-VNC,no official annotation,70
+16693923,17654967,pre-DN-VNC,no official annotation,70
+17352824,13137623,pre-DN-VNC,no official annotation,70
+17732334,16347786,DN-VNC,no official annotation,70
+20316708,19167389,pre-DN-VNC,no official annotation,70
+16928740,15560623,DN-VNC,no official annotation,70
+8810141,12422355,pre-DN-VNC,no official annotation,70
+19091995,18302931,pre-DN-VNC,no official annotation,70
+17359501,13763548,DN-VNC,no official annotation,71
+13818467,17813001,pre-DN-SEZ,no official annotation,71
+17087885,17324711,DN-SEZ,no official annotation,71
+13749806,14034206,DN-VNC,no official annotation,71
+14723506,17850822,pre-DN-SEZ,no official annotation,71
+17360266,14755393,pre-DN-VNC,no official annotation,71
+6572414,13081886,DN-VNC,no official annotation,71
+14586769,19048289,pre-DN-VNC,no official annotation,71
+15514582,8826198,PN-somato,noci 2nd_order PN,71
+14655602,15672269,pre-DN-VNC,no official annotation,71
+3945136,13948718,pre-DN-VNC,no official annotation,71
+18501001,1805669,pre-DN-VNC,no official annotation,71
+11217208,5993001,DN-SEZ,no official annotation,71
+12195879,20443598,PN-somato,noci 2nd_order PN,71
+10449035,17658948,pre-DN-VNC,no official annotation,71
+8070872,12422147,pre-DN-SEZ,no official annotation,71
+16676038,13645610,DN-SEZ,no official annotation,71
+19298644,17537254,DN-VNC,no official annotation,71
+1980134,7982307,DN-VNC,no official annotation,71
+12279941,17328632,pre-DN-SEZ,no official annotation,71
+18023286,9753494,pre-DN-VNC,no official annotation,71
+7130033,5996485,DN-SEZ,no official annotation,71
+4901087,18133444,pre-DN-VNC,no official annotation,71
+16361363,13953184,pre-DN-SEZ,no official annotation,71
+16422727,20443571,pre-DN-VNC,no official annotation,71
+16434560,17328580,pre-DN-SEZ,no official annotation,71
+1961182,9177218,pre-DN-VNC,no official annotation,71
+18035063,17937986,pre-DN-VNC,no official annotation,71
+17729973,10870424,pre-DN-VNC,no official annotation,71
+19298625,16154290,DN-VNC,no official annotation,71
+11009492,17304269,DN-SEZ,no official annotation,71
+5745929,16617920,pre-DN-VNC,no official annotation,71
+4188290,5010581,DN-VNC,no official annotation,71
+9351843,17990556,pre-DN-SEZ,no official annotation,71
+17728922,9234420,DN-SEZ,no official annotation,71
+11027071,3010486,pre-DN-VNC,no official annotation,71
+8814524,17340973,PN-somato,proprio 2nd_order PN,72
+17574013,9085808,pre-DN-VNC,no official annotation,72
+12998937,14938436,ascending,proprio,72
+17109286,6653450,pre-DN-SEZ,no official annotation,72
+17975547,15018449,pre-DN-VNC,no official annotation,72
+14522404,13774384,ascending,proprio,72
+19881737,2505266,PN-somato,proprio 2nd_order PN,72
+17110189,6182848,PN-somato,proprio 2nd_order PN,72
+15315491,15556861,ascending,proprio,72
+17110024,9037152,PN-somato,PL-3; proprio 2nd_order PN,72
+3945246,19271710,LN,FB2N-6,73
+16415910,9116228,pre-DN-VNC,no official annotation,73
+11348509,3765735,pre-DN-VNC,no official annotation,73
+9424902,3027876,DN-SEZ,no official annotation,73
+16848587,14753815,pre-DN-VNC,no official annotation,73
+6591182,6597872,LN,FB2N-11,73
+3944626,16195633,DN-SEZ,no official annotation,73
+10281116,10351681,MB-FFN,FFN-24,73
+10872426,8572353,pre-DN-VNC,no official annotation,73
+17176767,17176781,LN,FB2N-18,73
+12551020,14756061,pre-DN-VNC,no official annotation,73
+3945756,8566140,pre-DN-VNC,no official annotation,73
+4274518,19156025,pre-DN-VNC,no official annotation,74
+1646076,10276161,pre-DN-VNC,no official annotation,74
+13743125,17854345,MB-FBN,CN-31; FBN-26; noci 2nd_order PN,74
+11525714,12805363,MBIN,OAN-g1,74
+14329745,19786464,CN,no official annotation,74
+16026677,14495367,CN,no official annotation,74
+12587013,9015568,LHN,CN-39,74
+10758204,2650887,pre-DN-VNC,no official annotation,74
+14493841,11361875,PN-somato,FFN-27; noci 2nd_order PN,74
+16342197,12031406,pre-DN-VNC,no official annotation,74
+14260575,16987409,MB-FBN,FAN-9,74
+16464284,8184598,CN,no official annotation,74
+6298455,6193472,pre-DN-VNC,no official annotation,74
+11871574,11102156,CN,no official annotation,74
+16445338,16350988,pre-DN-VNC,no official annotation,74
+8993049,17867309,pre-DN-SEZ,no official annotation,74
+11018254,15480928,MB-FBN,CN-13; FBN-6,75
+8118947,14077615,MB-FBN,FBN-16,75
+12398622,4103336,MB-FBN,FB2N-7,75
+2966602,12704069,MB-FBN,CN-21; FBN-4,75
+12262910,5738449,MB-FBN,CN-38; FAN-6,75
+7053966,4214582,CN,no official annotation,75
+14313750,11889676,MB-FBN,CN-12; FBN-8,75
+18062678,7065182,LN,CN-20,75
+16160495,8814922,MB-FBN,FB2N-16,75
+15510288,6300434,MB-FFN,FFN-7,75
+7026287,7980369,MB-FBN,FBN-23,75
+9527522,14083681,MB-FBN,CN-19; FBN-9,75
+9057998,14214039,CN,no official annotation,76
+10323628,8370111,PN,respiratory 2nd_order PN,76
+14071613,4411542,CN,CN-22,76
+8540770,15488316,MB-FBN,FB2N-8,76
+16385470,18098174,MB-FFN,FFN-23,76
+9051960,17813006,CN,no official annotation,76
+14071449,13953546,CN,no official annotation,76
+14133114,17166682,LHN,no official annotation,76
+9083312,14077179,MB-FBN,FB2N-2,76
+15594113,15590555,pre-DN-SEZ,no official annotation,76
+15522152,15548844,DN-VNC,no official annotation,77
+16445073,15481779,pre-DN-VNC,no official annotation,77
+19017386,8127390,pre-DN-VNC,no official annotation,77
+16978882,14127447,MB-FFN,FFN-15,77
+10596949,13411445,pre-DN-VNC,no official annotation,77
+14617508,14680483,pre-DN-VNC,CN-34,77
+17176808,17176819,MB-FFN,FFN-6,77
+17360282,14754777,pre-DN-VNC,no official annotation,77
+16444544,8981761,LHN,no official annotation,77
+9480916,9077224,pre-DN-VNC,no official annotation,78
+20151537,12474815,pre-DN-VNC,no official annotation,78
+10017944,16913476,pre-DN-VNC,no official annotation,78
+15468308,17330632,CN,no official annotation,78
+17067625,16340011,pre-DN-VNC,no official annotation,78
+18111410,4876839,pre-DN-VNC,no official annotation,78
+9384504,5935744,pre-DN-VNC,no official annotation,78
+10229852,16347283,PN-somato,noci 2nd_order PN,78
+16340977,18232369,DN-SEZ,no official annotation,78
+16340998,8007556,MB-FFN,FFN-25,78
+16541149,10079731,PN-somato,noci 2nd_order PN,78
+10234576,19090042,pre-DN-VNC,no official annotation,78
+14621584,17355864,pre-DN-VNC,no official annotation,78
+14492757,14656798,pre-DN-VNC,no official annotation,78
+10581624,13564607,pre-DN-VNC,no official annotation,78
+15722990,9604434,pre-DN-VNC,no official annotation,78
+1679034,14374534,pre-DN-VNC,no official annotation,78
+8357933,13764822,DN-SEZ,no official annotation,78
+9239759,9034378,pre-DN-VNC,no official annotation,78
+16931001,8709865,pre-DN-VNC,no official annotation,78
+15055590,14492880,pre-DN-VNC,no official annotation,78
+16851791,16340461,pre-DN-VNC,no official annotation,78
+17728695,10367190,pre-DN-VNC,no official annotation,78
+8864785,4617479,MB-FBN,FBN-7,79
+15588620,7594047,MB-FBN,FBN-5,79
+18035864,4411688,MB-FBN,FB2N-3,79
+17300165,9848760,MB-FBN,FAN-5,79
+15623649,20443457,PN,FB2N-12; gustatory-pharyngeal 2nd_order PN,79
+14073503,5669107,CN,no official annotation,79
+14158399,17784367,MB-FBN,FB2N-21,79
+12789813,16405545,CN,no official annotation,79
+14342744,15618614,CN,no official annotation,80
+12199095,17435678,MB-FFN,FFN-35,80
+16950097,4847079,pre-DN-VNC,no official annotation,80
+7005145,7590264,DN-VNC,no official annotation,80
+14579509,13835439,pre-DN-VNC,no official annotation,80
+16435325,8995807,PN,gustatory-external 2nd_order PN,80
+16547268,15732485,pre-DN-SEZ,no official annotation,80
+15897280,2669844,DN-VNC,no official annotation,80
+5902352,5936935,pre-DN-VNC,no official annotation,80
+17000062,17755491,pre-DN-VNC,no official annotation,80
+4408397,4199033,MB-FBN,FAN-8,81
+18500988,14334367,pre-DN-SEZ,no official annotation,81
+17276867,6611100,CN,CN-41,81
+9062992,8792477,MB-FBN,FBN-21,81
+11003551,17913199,PN-somato,noci 2nd_order PN,81
+17177005,8019816,MB-FBN,FB2N-5,81
+9238937,9103732,MB-FBN,FAN-10,81
+9064208,5934511,MB-FBN,FBN-19,81
+17016974,4022539,MBON,MBON-m1; CN-62,82
+15741865,6290724,MB-FBN,CN-32; FBN-10,82
+14000746,16699958,MB-FBN,CN-33; FAN-7,82
+11017761,16178283,MBON,MBON-p1; CN-61,82
+9141404,16691937,MB-FBN,CN-37; FBN-2,82
+11600886,7980189,CN,CN-24,82
+7335439,5500958,DN-VNC,no official annotation,83
+4453485,2283495,RGN,no official annotation,83
+3281684,15202263,RGN,no official annotation,83
+10059655,11639192,DN-SEZ,no official annotation,83
+4506509,2852273,RGN,no official annotation,83
+7338309,17352470,DN-SEZ,no official annotation,83
+3498479,3414508,DN-SEZ,no official annotation,83
+4523584,2659386,RGN,no official annotation,83
+4523803,13793212,RGN,no official annotation,83
+10329208,3561724,RGN,no official annotation,83
+17776982,6554358,DN-SEZ,no official annotation,83
+6978585,5869204,RGN,no official annotation,83
+6445994,3436420,DN-SEZ,no official annotation,83
+13744425,2340336,sensory,gut,83
+12634154,2357110,RGN,no official annotation,83
+7005184,7569260,DN-VNC,no official annotation,83
+3046503,2355126,RGN,no official annotation,83
+2284021,2456826,sensory,gut,83
+10459723,13535380,RGN,no official annotation,83
+12252572,16651566,pre-DN-VNC,no official annotation,84
+17105218,9067063,pre-DN-VNC,PL-18,84
+17383431,9532295,pre-DN-VNC,no official annotation,84
+11303036,15823055,pre-DN-VNC,no official annotation,84
+20421224,17466463,pre-DN-VNC,no official annotation,84
+16635345,5859372,pre-DN-VNC,no official annotation,84
+16992171,17356024,pre-DN-VNC,no official annotation,84
+9237734,15800115,pre-DN-VNC,no official annotation,84
+16562142,15894278,DN-VNC,no official annotation,84
+17053270,5319633,DN-VNC,no official annotation,84
+18485293,17647621,DN-VNC,no official annotation,84
+18267838,4173633,pre-DN-VNC,no official annotation,84
+14241490,16924423,pre-DN-VNC,no official annotation,84
+18106257,17031293,PN-somato,mechano-Ch 2nd_order PN; proprio 2nd_order PN,84
+10240382,5895651,pre-DN-VNC,no official annotation,84
+16547292,15732497,pre-DN-VNC,no official annotation,84
+15525711,9068346,pre-DN-VNC,no official annotation,84
+10921106,16388736,DN-VNC,no official annotation,85
+11625573,18545747,pre-DN-VNC,no official annotation,85
+16345627,16671014,pre-DN-VNC,PL-22,85
+6623089,17897230,pre-DN-VNC,no official annotation,85
+12935706,16852421,pre-DN-VNC,no official annotation,85
+14726012,9091922,pre-DN-VNC,no official annotation,85
+14726069,5805651,pre-DN-VNC,no official annotation,85
+14999928,4591713,pre-DN-VNC,PL-21,85
+15028907,11362589,PN-somato,proprio 2nd_order PN,85
+4966994,16578252,pre-DN-VNC,PL-23,85
+9235545,17435815,pre-DN-VNC,no official annotation,85
+10728328,18464581,DN-VNC,no official annotation,85
+16937395,9519425,pre-DN-VNC,no official annotation,85
+9594273,16934932,pre-DN-VNC,PL-20,85
+16545264,5164129,pre-DN-VNC,no official annotation,85
+15539984,8271875,pre-DN-VNC,no official annotation,85
+12928099,15474790,CN,no official annotation,85
+8025665,6190181,pre-DN-VNC,no official annotation,85
+9961098,4311241,pre-DN-VNC,no official annotation,85
+10248031,17380319,pre-DN-VNC,no official annotation,85
+9870483,12935696,CN,PL-12,85
+10238739,5893912,pre-DN-VNC,no official annotation,85
+13714311,8710444,pre-DN-VNC,no official annotation,85
+9612903,17535542,pre-DN-SEZ,no official annotation,85
+18538744,11362334,pre-DN-VNC,no official annotation,85
+17110007,6188181,pre-DN-VNC,no official annotation,85
+17108278,9051500,PN-somato,noci 2nd_order PN,85
+9714476,16709072,pre-DN-VNC,no official annotation,85
+10447988,16540741,pre-DN-VNC,no official annotation,85
+18566361,16471422,pre-DN-VNC,no official annotation,85
+10728333,13557064,DN-VNC,no official annotation,85
+9429085,17247877,pre-DN-SEZ,no official annotation,86
+5760480,4127096,pre-DN-VNC,no official annotation,86
+17353986,18604097,DN-VNC,no official annotation,86
+8801715,19092010,pre-DN-VNC,no official annotation,86
+12736001,15155348,pre-DN-VNC,no official annotation,86
+14651659,13760954,DN-VNC,no official annotation,86
+7439913,15934458,DN-VNC,no official annotation,86
+16863538,20443362,pre-DN-VNC,no official annotation,86
+16547297,15589738,pre-DN-VNC,no official annotation,86
+12420898,5162462,pre-DN-VNC,no official annotation,86
+16561660,13652117,DN-VNC,PL-19,86
+17075832,14039007,DN-VNC,no official annotation,86
+17358891,19190681,DN-VNC,no official annotation,86
+3564452,3571478,ascending,unknown modality,86
+20139548,17380345,DN-SEZ,no official annotation,86
+15512404,5786898,pre-DN-VNC,no official annotation,87
+1622901,6156152,DN-VNC,no official annotation,87
+11841664,5856647,pre-DN-VNC,no official annotation,87
+10682660,16856539,MB-FBN,FBN-22,87
+11468088,4188325,pre-DN-VNC,no official annotation,87
+12598741,15706875,pre-DN-VNC,no official annotation,87
+15512408,4917442,pre-DN-VNC,no official annotation,87
+7057730,4017464,pre-DN-VNC,no official annotation,87
+16327998,17173852,pre-DN-VNC,no official annotation,87
+16545113,15732503,pre-DN-VNC,no official annotation,87
+7058243,15478720,MB-FFN,FFN-26,87
+5681132,7574701,MB-FBN,FBN-25,87
+16561284,17173922,PN-somato,noci 2nd_order PN,87
+16427492,4180774,MB-FBN,FBN-24,87
+4324567,15732509,pre-DN-VNC,no official annotation,87
+16952691,5052370,DN-VNC,no official annotation,87
+17448356,13675374,pre-DN-VNC,no official annotation,87
+16851577,16950798,DN-VNC,no official annotation,87
+16950121,4849988,PN-somato,proprio 2nd_order PN,87
+17022668,12474164,DN-VNC,no official annotation,87
+16950115,6609380,pre-DN-VNC,no official annotation,87
+15513540,5790355,pre-DN-VNC,no official annotation,87
+5870071,4144377,MB-FBN,FBN-27,87
+9154024,16947349,pre-DN-VNC,no official annotation,87
+16547281,13722900,pre-DN-VNC,no official annotation,87
+13736919,17877682,DN-VNC,no official annotation,88
+16547287,5167842,pre-DN-VNC,no official annotation,88
+18058793,14588375,DN-VNC,no official annotation,88
+17732256,17656886,DN-VNC,no official annotation,88
+17732311,5995125,DN-VNC,no official annotation,88
+16675987,13646473,DN-VNC,no official annotation,88
+18305476,13007383,DN-SEZ,no official annotation,88
+18695745,17587734,DN-SEZ,no official annotation,88
+17777031,15672263,DN-VNC,no official annotation,88
+17736755,15964206,DN-VNC,no official annotation,88
+11013583,17589475,DN-VNC,no official annotation,88
+4206755,7124156,ascending,noci,88
+20556072,17025508,DN-VNC,no official annotation,88
+16972043,4507955,MB-FFN,FFN-36,88
+8059283,14913093,ascending,proprio,88
+20172310,9521722,LN,no official annotation,88
+17736748,17639824,DN-VNC,no official annotation,88
+16952671,6154200,DN-VNC,no official annotation,88
+16952648,5900426,DN-VNC,no official annotation,88
+7955278,12026822,DN-SEZ,no official annotation,88
+16852622,16950767,DN-VNC,no official annotation,89
+16952665,6154921,DN-VNC,no official annotation,89
+16856617,16561429,LN,no official annotation,89
+10473853,16355225,pre-DN-VNC,no official annotation,89
+10756813,2648254,DN-SEZ,no official annotation,89
+11022546,17663944,pre-DN-VNC,no official annotation,89
+16856369,4185530,PN-somato,proprio 2nd_order PN,89
+17360404,4390116,pre-DN-VNC,no official annotation,89
+16670540,16950443,DN-VNC,no official annotation,89
+16952642,6155577,DN-VNC,no official annotation,89
+17736641,20911955,DN-VNC,no official annotation,89
+11876076,15674282,pre-DN-VNC,no official annotation,89
+15516413,5816138,pre-DN-VNC,no official annotation,89
+17358864,13842372,DN-SEZ,no official annotation,89
+18929470,6700147,DN-VNC,no official annotation,89
+18076102,17654514,DN-VNC,no official annotation,89
+19835787,17380309,pre-DN-VNC,no official annotation,89
+15995958,18080008,pre-DN-VNC,no official annotation,89
+4324479,19950281,pre-DN-VNC,no official annotation,89
+17736654,20911961,DN-VNC,no official annotation,89
+13028455,4142619,pre-DN-VNC,no official annotation,89
+17809869,17654519,DN-SEZ,no official annotation,89
+7025831,5782947,pre-DN-VNC,no official annotation,89
+9423829,9057043,MB-FBN,FBN-11,90
+3979181,5794678,DN-VNC,no official annotation,91
+7700444,16910799,pre-DN-VNC,no official annotation,91
+17165755,13727202,DN-VNC,no official annotation,91
+9061235,13836327,CN,no official annotation,91
+10964258,17357979,pre-DN-VNC,PL-13,91
+11476614,18084995,MB-FBN,FB2N-20,91
+15525794,9069084,pre-DN-VNC,no official annotation,91
+15005403,15894178,DN-VNC,no official annotation,91
+16667306,16520950,DN-VNC,no official annotation,91
+4749004,17323054,pre-DN-VNC,no official annotation,91
+16667592,16950550,DN-VNC,no official annotation,91
+16560178,9068024,pre-DN-VNC,no official annotation,91
+16561224,6702943,DN-SEZ,no official annotation,91
+16852589,6610913,pre-DN-SEZ,no official annotation,91
+19361427,16950354,DN-VNC,no official annotation,91
+7025064,8161142,pre-DN-VNC,no official annotation,92
+16851496,16339338,DN-VNC,no official annotation,92
+16851718,9097065,pre-DN-VNC,no official annotation,92
+10553248,8496618,DN-VNC,no official annotation,92
+1678567,6153877,DN-VNC,no official annotation,92
+18551732,8161148,pre-DN-VNC,no official annotation,92
+17454636,15467736,pre-DN-VNC,no official annotation,92
+17015609,8790590,MB-FFN,FFN-38,no cluster
+no pair,15542199,sensory,gustatory-pharyngeal,no cluster
+no pair,8199012,sensory,gustatory-pharyngeal,no cluster
+15713206,15629888,sensory,gustatory-external,no cluster
+15998319,15594038,sensory,gustatory-pharyngeal,no cluster
+5120990,4044654,sensory,gustatory-external,no cluster
+15998913,15508475,sensory,gustatory-pharyngeal,no cluster
+15998899,15605657,sensory,gustatory-pharyngeal,no cluster
