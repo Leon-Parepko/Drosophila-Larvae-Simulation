@@ -1,6 +1,6 @@
 //#define INDEX(X) clamp(X.x, 0, sizes[0] - 1)*sizes[1] + clamp(X.y, 0, sizes[1] - 1)
 #define INDEX(X) (X.x % sizes[0])*sizes[1] + (X.y % sizes[1])
-#define dt 0.05f
+#define dt 0.02f
 
 #define C_coof 1.f
 #define ENa 120.f
@@ -70,7 +70,7 @@ __kernel void update_params(__global float* V, __global float* M, __global float
 
 __kernel void clear(__global float* array, __global const float* value, __global const int* sizes){
     int2 pos = (int2)(get_global_id(0), get_global_id(1));
-    array[INDEX(pos)] = 0.0f;
+    array[INDEX(pos)] = *value;
 }
 
 __kernel void get_image(__global float* V, __global float* M, __global float* H, __global float* N, __global float* change_rate, __global int* image, __global const int* sizes){
