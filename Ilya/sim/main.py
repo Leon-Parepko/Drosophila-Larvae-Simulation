@@ -8,84 +8,83 @@ class cl_ctx:
     def __init__(self, sizes) -> None:
         self.ctx = cl.create_some_context(0)
         self.queqe = cl.CommandQueue(self.ctx)
-
         self.sizes = np.array(sizes)
 
-        self.Ugrid = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=0.0*np.ones((sizes[0]*sizes[1]), np.float32))
-        self.Ugrid = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=0.0*np.ones((sizes[0]*sizes[1]), np.float32))
-        # self.current_wawe = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf = np.array(100.1*(np.random.sample((universe_size[0]*universe_size[1]*2))*0.5 - 0.25), np.float32))
-        self.next_wawe = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=np.zeros(
-            (sizes[0]*sizes[1]*2), np.float32))
-        self.U = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=np.zeros(
-            (sizes[0]*sizes[1]), np.float32))
+        def create_grid_buff(value = .0): 
+            return cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=value*np.ones((sizes[0]*sizes[1]), np.float32))
+        
+        self.Vgrid, self.Vgrid_next = create_grid_buff(), create_grid_buff()
+        self.mgrid, self.mgrid_next = create_grid_buff(), create_grid_buff()
+        self.hgrid, self.hgrid_next = create_grid_buff(), create_grid_buff()
+        self.ngrid, self.ngrid_next = create_grid_buff(), create_grid_buff()
+        self.change_grid = create_grid_buff(0.0)
+        self.sizes_b = cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(self.sizes, np.int32))
 
-        self.sizes_b = cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(
-            self.sizes, np.int32))
-
-        with open("kernels.cl", 'r') as j:
+        with open("Ilya/sim/kernel.cl", 'r') as j:
             self.program = cl.Program(self.ctx, j.read()).build()
 
-        self.movement_update = self.program.movement_update
-        self.Posd_update = self.program.Posd_update
-        self._get_image = self.program.get_image
-        self._draw_wawe = self.program.draw_wawe
-        self._clear = self.program.clear
-        self._draw_particle = self.program.draw_particle
+        self.__update_params = self.program.update_params
+        self.__clear = self.program.clear
+        self.__get_image = self.program.get_image
+        self.__add_I = self.program.add_I
+        self.__set_change_coof = self.program.set_change_coof
 
-        self.image_buff = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=np.zeros(
-            (sizes[0]*sizes[1]*3), np.int32))
+        self.image_buff = cl.Buffer(self.ctx, mf.COPY_HOST_PTR, hostbuf=np.zeros((sizes[0]*sizes[1]*3), np.int32))
 
     def update(self):
-        self.movement_update(self.queqe, self.sizes,
-                             None, self.Ugrid, self.movement, self.sizes_b)
-        self.Posd_update(self.queqe, self.sizes, None,
-                         self.Ugrid, self.next_wawe, self.movement, self.sizes_b)
-        self.Ugrid, self.next_wawe = self.next_wawe, self.Ugrid
+        self.__update_params(self.queqe, self.sizes, None,
+                           self.Vgrid, self.mgrid, self.hgrid, self.ngrid, 
+                           self.Vgrid_next, self.mgrid_next, self.hgrid_next, self.ngrid_next,
+                           self.change_grid, self.sizes_b)
 
-    def draw_wawe(self, position, radius, value):
-        self._draw_wawe(self.queqe, (2*radius, 2*radius), None, self.Ugrid, self.movement, self.sizes_b,
-                        cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(
-                            position, np.int32) - np.array(radius, np.int32)),
-                        cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY,
-                                  hostbuf=np.array(radius, np.float32)),
-                        cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)))
+        self.Vgrid, self.Vgrid_next = self.Vgrid_next, self.Vgrid
+        self.mgrid, self.mgrid_next = self.mgrid_next, self.mgrid
+        self.hgrid, self.hgrid_next = self.hgrid_next, self.hgrid
+        self.ngrid, self.ngrid_next = self.ngrid_next, self.ngrid
 
-    def draw_particle(self, position, radius, value):
-        self._draw_particle(self.queqe, (2*radius, 2*radius), None, self.Ugrid, self.movement, self.sizes_b,
-                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(
-                                position, np.int32) - np.array(radius, np.int32)),
-                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY,
-                                      hostbuf=np.array(radius, np.float32)),
+    def add_I(self, position, radius, value):
+        self.__add_I(self.queqe, (2*radius, 2*radius), None, 
+                            self.Vgrid, self.change_grid, self.sizes_b,
+                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(position, np.int32) - np.array(radius, np.int32)),
+                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(radius, np.float32)),
+                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)))
+
+    def set_change_coof(self, position, radius, value = 1.0):
+        self.__set_change_coof(self.queqe, (2*radius, 2*radius), None, 
+                            self.change_grid, self.sizes_b,
+                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(position, np.int32) - np.array(radius, np.int32)),
+                            cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(radius, np.float32)),
                             cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)))
 
     def clear(self):
-        self._clear(self.queqe, self.sizes, None,
-                    self.Ugrid, self.next_wawe, self.movement, self.sizes_b)
-
+        value = 0
+        self.__clear(self.queqe, self.sizes, None, self.Vgrid, cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)), self.sizes_b)
+        self.__clear(self.queqe, self.sizes, None, self.mgrid, cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)), self.sizes_b)
+        self.__clear(self.queqe, self.sizes, None, self.hgrid, cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)), self.sizes_b)
+        self.__clear(self.queqe, self.sizes, None, self.ngrid, cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)), self.sizes_b)
+        self.__clear(self.queqe, self.sizes, None, self.change_grid, cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(0.0, np.float32)), self.sizes_b)
+    
     def get_image(self):
-        self._get_image(self.queqe, self.sizes, None,
-                        self.Ugrid, self.movement, self.image_buff, self.sizes_b)
-        im = np.zeros(
-            (self.sizes[0]*self.sizes[1]*3), np.int32)
-
+        self.__get_image(self.queqe, self.sizes, None,
+                        self.Vgrid, self.mgrid, self.hgrid, self.ngrid,
+                        self.change_grid, self.image_buff, self.sizes_b)
+        im = np.zeros((self.sizes[0]*self.sizes[1]*3), np.int32)
         cl.enqueue_copy(self.queqe, im, self.image_buff)
         im.resize((self.sizes[0], self.sizes[1], 3))
         return im
-
 
 screensize = np.array((1920, 1080))
 
 sc = pg.display.set_mode(screensize)
 Clock = pg.time.Clock()
 work = True
-s = 1
+s = 10
 p = cl_ctx((1920//s, 1080//s))
 
 time = 0
 
 pause = 1
 while work:
-    time += 0.05
     im = p.get_image()
     im = pg.pixelcopy.make_surface(im)
     im = pg.transform.scale(im, screensize)
@@ -100,14 +99,14 @@ while work:
                 pause *= -1
             if ev.key == pg.K_c:
                 p.clear()
-
+    
     mkey = pg.mouse.get_pressed()
     if mkey[2]:
-        p.draw_particle(p.sizes * np.array(pg.mouse.get_pos()) /
-                        screensize, 20, [5, 0])
+        p.set_change_coof(p.sizes * np.array(pg.mouse.get_pos())/screensize, 1, 1.0)
     if mkey[0]:
-        p.draw_wawe(p.sizes * np.array(pg.mouse.get_pos()) /
-                    screensize, 10, [5, 0])
-    if (pause == 1):
+        p.add_I(p.sizes * np.array(pg.mouse.get_pos())/screensize, 10, 10.0)
+    
+    if (pause > 0):
         p.update()
+    
     pg.display.update()

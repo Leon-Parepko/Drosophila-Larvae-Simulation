@@ -1,86 +1,120 @@
-#define gp(A, X) A[X.x*world_sizes[1] + X.y]  
-#define sp(A, X) A[X.x*world_sizes[1] + X.y]  
+//#define INDEX(X) clamp(X.x, 0, sizes[0] - 1)*sizes[1] + clamp(X.y, 0, sizes[1] - 1)
+#define INDEX(X) (X.x % sizes[0])*sizes[1] + (X.y % sizes[1])
+#define dt 0.05f
 
-#define diff 0.05f
+#define C_coof 1.f
+#define ENa 120.f
+#define EK -12.f
+#define EL 10.6f
+#define gNa 120.f
+#define gK 36.f
+#define gL 0.3f
+#define conductivity 1.0f
 
+#define max_image_V 70.0f
+#define min_image_V -70.0f
 
-__kernel void movement_update(__global float* Posd, __global float* movement, __global const int* world_sizes){
-    int2 pos = (int2)(get_global_id(0), get_global_id(1));
-    int ind = pos.x*world_sizes[1] + pos.y;
-    float POS = Posd[ind];
-
-    int2 left = (pos + (int2) (1, 0));
-    left.x = max(min(left.x, world_sizes[0] - 1), 0);
-    int2 up = (pos + (int2) (0, 1));
-    up.y = max(min(up.y, world_sizes[1] - 1), 0);
-    int2 mleft = (pos - (int2) (1, 0));
-    mleft.x = max(min(mleft.x, world_sizes[0] - 1), 0);   
-    int2 mup = (pos - (int2) (0, 1));
-    mup.y = max(min(mup.y , world_sizes[1] - 1), 0);
-    
-    float ddx = 2.0f*((gp(Posd, mleft) + gp(Posd, left))/2.0f - POS)/(diff*diff);
-
-    float ddy = 2.0f*((gp(Posd, mup) + gp(Posd, up))/2.0f - POS)/(diff*diff);
-
-    float F = 10.0f*(ddx + ddy);
-
-    //float dmov = movement[ind] + F*diff*diff * max(sin((float)pos.x*pos.x / 10000.0f) * sin((float)pos.y / 10.0f) + 0.1, 0.0)/2.0f;
-    float dmov = movement[ind] + F*diff*diff * max(length(((float2) (pos.x, pos.y))/ (float2)(world_sizes[0], world_sizes[0]) - (float2)(0.5f, 0.25)) - 0.02f, 0.0005f);
-    movement[ind] = dmov;
+float alpha_n(float V){
+    return 0.01*(V-10.0f)/(1.0f-exp((10.0f-V)/10.0f));
+}
+float beta_n(float V){
+    return 0.125*exp(-V/80.0f);
+}
+float alpha_m(float V){
+    return 0.1f*(V-25.f)/(1-exp((25.f-V)/10.f));
+}
+float beta_m(float V){
+    return 4.0f*exp(-V/18.0f);
+}
+float alpha_h(float V){
+    return 0.07f*exp(-V/20.f);
+}
+float beta_h(float V){
+    return 1.0f/(1.0f + exp((30.0f-V)/10.0f));
 }
 
-__kernel void Posd_update(__global float* Posd, __global float* next_Posd, __global float* movement, __global const int* world_sizes){
+__kernel void update_params(__global float* V, __global float* M, __global float* H, __global float* N,
+                            __global float* V_next, __global float* M_next, __global float* H_next, __global float* N_next,
+                            __global float* change_rate, __global const int* sizes){
     int2 pos = (int2)(get_global_id(0), get_global_id(1));
-    int ind = pos.x*world_sizes[1] + pos.y;
-    float POS = Posd[ind];
-    next_Posd[ind] = POS + movement[ind]*diff;
+    int center = INDEX(pos);
+    int left = INDEX((pos + (int2) (1, 0)));
+    int up = INDEX((pos + (int2) (0, 1)));
+    int right = INDEX((pos - (int2) (1, 0)));
+    int down = INDEX((pos - (int2) (0, 1)));
+
+    float v = V[center];
+    float m = M[center];
+    float h = H[center];
+    float n = N[center];
+
+    float INa = gNa*h*m*m*m * (v - ENa);
+    float IK = gK*n*n*n*n*(v - EK);
+    float Ileak = gL*(v - EL);
+
+    float I = (change_rate[left ]*(V[left ] - V[center]) +
+               change_rate[right]*(V[right] - V[center]) +
+               change_rate[up   ]*(V[up   ] - V[center]) +
+               change_rate[down ]*(V[down ] - V[center]))*conductivity;
+
+    float dv_dt = (I-(INa + IK + Ileak)/C_coof);
+    float dm_dt = (alpha_m(v)*(1-m) - beta_m(v)*m);
+    float dh_dt = (alpha_h(v)*(1-h) - beta_h(v)*h);
+    float dn_dt = (alpha_n(v)*(1-n) - beta_n(v)*n);
+
+    V_next[center] = V[center] + change_rate[center]*dv_dt*dt;
+    M_next[center] = M[center] + change_rate[center]*dm_dt*dt;
+    H_next[center] = H[center] + change_rate[center]*dh_dt*dt;
+    N_next[center] = N[center] + change_rate[center]*dn_dt*dt;
 }
 
-
-/*
-__kernel void upd_buffers(__global float* buff1, __global float* buff2){
-    int i = get_global_id(0);
-    float super_a = buff1[i];
-    float super_b = buff2[i];
-    buff1[i] = super_b;
-    buff2[i] = super_a;
-
-}*/
-
-__kernel void get_image(__global float* psi, __global float* movement, __global int* image, __global const int* world_sizes){
+__kernel void clear(__global float* array, __global const float* value, __global const int* sizes){
     int2 pos = (int2)(get_global_id(0), get_global_id(1));
-    int ind = pos.x*world_sizes[1] + pos.y;
-    float r = psi[ind];
-    float m = movement[ind];
-    int C = max((int)(255.0f*min(r + 50.0f, 100.0f)/100.0f), 0);
-    int C1 = max((int)(255.0f*min(m + 50.0f, 100.0f)/100.0f), 0);
-    image[ind*3 + 0] = C;
-    image[ind*3 + 1] = C;
-    image[ind*3 + 2] = C;
+    array[INDEX(pos)] = 0.0f;
 }
 
-
-__kernel void clear(__global float* Posd, __global float* next_Posd, __global float* movement, __global const int* world_sizes){
+__kernel void get_image(__global float* V, __global float* M, __global float* H, __global float* N, __global float* change_rate, __global int* image, __global const int* sizes){
     int2 pos = (int2)(get_global_id(0), get_global_id(1));
-    int ind = pos.x*world_sizes[1] + pos.y;
-    next_Posd[ind] = 0.0f;
-    Posd[ind] = 0.f;
-    movement[ind] = 0.f;
+    int ind = INDEX(pos);
+
+    //float3 yellow = (float3)(1.0f, 1.0f, 0.0f);
+    //float3 blue = (float3)(0.0f, 0.0f, 1.0f);
+    //float3 color = (yellow*(clamp(V[ind] - min_image_V, .0f, max_image_V - min_image_V)/(max_image_V - min_image_V)) + blue*clamp(change_rate[ind], 0.0f, 1.0f))*255.0f;
+
+    float Vcol = clamp(V[ind] - min_image_V, .0f, max_image_V - min_image_V)/(max_image_V - min_image_V);
+    float Mcol = clamp(M[ind], 0.f, 1.f);
+    float Hcol = clamp(H[ind], 0.f, 1.f);
+    float Ncol = clamp(N[ind], 0.f, 1.f);
+    float chRateCol = clamp(change_rate[ind], 0.0f, 1.0f);
+    float3 color = (float3)(Mcol, Hcol, 0.5f + Ncol*0.5f)*chRateCol*255.0f;
+    image[ind*3 + 0] = (int)color.r;
+    image[ind*3 + 1] = (int)color.g;
+    image[ind*3 + 2] = (int)color.b;
 }
 
-__kernel void draw_wawe( __global float* Posd, __global float* movement, __global const int* world_sizes, __global const int* position, __global const float* radius, __global float* value){
+__kernel void add_I(__global float* V, __global float* change_rate, __global const int* sizes, __global const int* position, __global const float* radius, __global float* value){
     int2 pos = (int2)(get_global_id(0) + position[0], get_global_id(1) + position[1]);
-    pos.x = min(max(pos.x, 0), world_sizes[0]);
-    pos.y = min(max(pos.y, 0), world_sizes[1]);
+    
     float2 p = (float2)(get_global_id(0), get_global_id(1)) - *radius;
-    int ind = pos.x*world_sizes[1] + pos.y;
+
+    int ind = INDEX(pos);
     float L = length(p);
-    if (L <= radius[0]*1.0f){
-        Posd[ind] += value[0]*(1.0f - L/radius[0]);
-        movement[ind] += value[1]*(1.0f - L/radius[0]);
+    if (L <= radius[0]){
+        V[ind] += (*value)*(1.0f - L/radius[0])*dt * change_rate[ind];
     }
 }
 
+__kernel void set_change_coof(__global float* change_rate, __global const int* sizes, __global const int* position, __global const float* radius, __global float* value){
+    int2 pos = (int2)(get_global_id(0) + position[0], get_global_id(1) + position[1]);
+    
+    float2 p = (float2)(get_global_id(0), get_global_id(1)) - *radius;
+    int ind = INDEX(pos);
+    float L = length(p);
+    if (L <= radius[0]){
+        change_rate[ind] = (*value);
+    }
+}
+/*
 __kernel void draw_particle( __global float* Posd, __global float* movement, __global const int* world_sizes, __global const int* position, __global const float* radius, __global float* value){
     int2 pos = (int2)(get_global_id(0) + position[0], get_global_id(1) + position[1]);
     pos.x = min(max(pos.x, 0), world_sizes[0]);
@@ -90,15 +124,5 @@ __kernel void draw_particle( __global float* Posd, __global float* movement, __g
     float L = length(p);
     if (L <= radius[0]){
         Posd[ind] += value[0]*(sin(10.0*(p.x)))*(1.0f - L/radius[0]);
-        //Posd[ind] += value[0]*sin(L/radius[0]);
-
     }
-}
-
-/*
-__kernel void draw_U(__global float* psi, __global int* world_sizes, __global float* value){
-    int2 pos = (int2)(get_global_id(0), get_global_id(1));
-    int ind = pos.x*world_sizes[1] + pos.y;
-    psi[ind*2 + 0] = value[0];
-    psi[ind*2 + 1] = value[1];
 }*/
