@@ -1,6 +1,6 @@
 //#define INDEX(X) clamp(X.x, 0, sizes[0] - 1)*sizes[1] + clamp(X.y, 0, sizes[1] - 1)
 #define INDEX(X) (X.x % sizes[0])*sizes[1] + (X.y % sizes[1])
-#define dt 0.02f
+#define dt 0.01f
 
 #define C_coof 1.f
 #define ENa 120.f
@@ -77,16 +77,17 @@ __kernel void get_image(__global float* V, __global float* M, __global float* H,
     int2 pos = (int2)(get_global_id(0), get_global_id(1));
     int ind = INDEX(pos);
 
-    //float3 yellow = (float3)(1.0f, 1.0f, 0.0f);
-    //float3 blue = (float3)(0.0f, 0.0f, 1.0f);
-    //float3 color = (yellow*(clamp(V[ind] - min_image_V, .0f, max_image_V - min_image_V)/(max_image_V - min_image_V)) + blue*clamp(change_rate[ind], 0.0f, 1.0f))*255.0f;
+    float chRateCol = clamp(change_rate[ind], 0.0f, 1.0f);
 
+    float3 yellow = (float3)(1.0f, 1.0f, 0.0f);
+    float3 blue = (float3)(0.0f, 0.0f, 1.0f);
+    float3 color = (yellow*(clamp(V[ind] - min_image_V, .0f, max_image_V - min_image_V)/(max_image_V - min_image_V)) + blue*clamp(change_rate[ind], 0.0f, 1.0f))*255.0f*chRateCol;
+    /*
     float Vcol = clamp(V[ind] - min_image_V, .0f, max_image_V - min_image_V)/(max_image_V - min_image_V);
     float Mcol = clamp(M[ind], 0.f, 1.f);
     float Hcol = clamp(H[ind], 0.f, 1.f);
     float Ncol = clamp(N[ind], 0.f, 1.f);
-    float chRateCol = clamp(change_rate[ind], 0.0f, 1.0f);
-    float3 color = (float3)(Mcol, Hcol, 0.5f + Ncol*0.5f)*chRateCol*255.0f;
+    float3 color = (float3)(Mcol, Hcol, 0.5f + Ncol*0.5f)*chRateCol*255.0f;*/
     image[ind*3 + 0] = (int)color.r;
     image[ind*3 + 1] = (int)color.g;
     image[ind*3 + 2] = (int)color.b;
@@ -100,7 +101,7 @@ __kernel void add_I(__global float* V, __global float* change_rate, __global con
     int ind = INDEX(pos);
     float L = length(p);
     if (L <= radius[0]){
-        V[ind] += (*value)*(1.0f - L/radius[0])*dt * change_rate[ind];
+        V[ind] = (*value) * change_rate[ind];
     }
 }
 

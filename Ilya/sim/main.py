@@ -66,7 +66,7 @@ class cl_ctx:
                             cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(value, np.float32)))
 
     def set_change_coof(self, position, radius, value = 1.0):
-        self.__set_change_coof(self.queqe, (2*radius, 2*radius), None, 
+        self.__set_change_coof(self.queqe, (int(2*radius), int(2*radius)), None, 
                             self.change_grid, self.sizes_b,
                             cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(position, np.int32) - np.array(radius, np.int32)),
                             cl.Buffer(self.ctx, mf.COPY_HOST_PTR | mf.READ_ONLY, hostbuf=np.array(radius, np.float32)),
@@ -108,7 +108,6 @@ while work:
     im = pg.pixelcopy.make_surface(im)
     im = pg.transform.scale(im, screensize)
     sc.blit(im, (0, 0))
-    # Clock.tick(30)
     for ev in pg.event.get():
         if ev.type == pg.QUIT:
             work = False
@@ -121,12 +120,13 @@ while work:
     
     mkey = pg.mouse.get_pressed()
     if mkey[2]:
-        p.set_change_coof(p.sizes * np.array(pg.mouse.get_pos())/screensize, 1, 1.0)
+        p.set_change_coof(p.sizes * np.array(pg.mouse.get_pos())/screensize, 1.0, 1.0)
     if mkey[0]:
-        p.add_I(p.sizes * np.array(pg.mouse.get_pos())/screensize, 2, 20.0)
+        p.add_I(p.sizes * np.array(pg.mouse.get_pos())/screensize, 2, 9.99)
     
     if (pause > 0):
-        p.update()
+        for _ in range(20):
+            p.update()
     
     pg.display.update()
 
