@@ -22,10 +22,16 @@ class activity_system:
 def some_activity_system(group_count = 100, group_complexity = 20, dt = 0.01):
     return activity_system(group_count, group_complexity, noise_density=0.1, noise_level=1.0, group_self_connections=0.5, dt = dt)
 
-def generate_activity_df(system:activity_system, size:int, df = None) -> pd.DataFrame:
+def generate_activity_df(system:activity_system, size:int, df = None) -> tuple[pd.DataFrame]: # df_w, #df
     if df is None:
         df = pd.DataFrame(columns=[i for i in range(system.x.shape[0])])
     for i in range(size):
         system.update()
         df.loc[i] = np.copy(system.x)
-    return df
+
+    # создаем датафрейм с весами
+    activity_len = system.w.shape[0]
+    df_w = pd.DataFrame(columns=[i for i in range(activity_len)])
+    for i in range(activity_len):
+        df_w.loc[i] = system.w[i]
+    return (df_w, df)

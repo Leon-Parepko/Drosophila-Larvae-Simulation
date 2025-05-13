@@ -1,4 +1,4 @@
-#define get_activity(t, i) activity[*t**activity_size + i]
+#define get_activity(t, i) activity[*t*activity_size[0] + i]
 #define W(i, j) w[i*activity_size[0] + j]
 
 __kernel void difference_matrix(__global float* a, __global float *b, __global int *size_a, __global int *size_b, __global float* result){
@@ -16,7 +16,11 @@ float pulling_function(float m){
     return 1.0f - 1.0f/(1.0f + m*m);
 }
 
-__kernel void simulate_clasters(__global const float *activity, __global const float *w, __global float *positions, __global float *next_positions, __global const int* activity_size, __global const int *t, __global const float* _dt){
+__kernel void simulate_clasters(
+    __global const float *activity,
+ __global const float *w, __global float *positions,
+  __global float *next_positions, __global const int* activity_size,
+   __global const int *t, __global const float* _dt){
     int ind = get_global_id(0);
     const float dt = *_dt;
 
