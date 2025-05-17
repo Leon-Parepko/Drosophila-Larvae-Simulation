@@ -13,6 +13,7 @@ def process(pushing_force=5.0, pulling_force=5.0, chunksize=100):
         "./data/generated_positions.csv",
         pushing_force=pushing_force,
         pulling_force=pulling_force,
+        dt = 0.1,
     )
 
 
@@ -26,8 +27,8 @@ def a(ignore_neurons):
         "./data/generated_positions.csv",
         update_axis_limits=True,
         path_to_scales=path_to_scales,
-        max_size=100,
-        min_size=0,
+        max_size=10,
+        min_size=1,
         ignore_scale_for_inds=ignore_neurons,
         #scale_activation_function=scale_activation_function,
     )
@@ -40,8 +41,8 @@ def b(ignore_neurons):
         "./data/generated_positions.csv",
         update_axis_limits=True,
         path_to_scales=path_to_scales,
-        max_size=100,
-        min_size=0,
+        max_size=10,
+        min_size=1,
         save_path="./data/animation.gif",
         ignore_scale_for_inds=ignore_neurons,
         #scale_activation_function=scale_activation_function,
@@ -62,6 +63,6 @@ def get_indexes_by_ids(ids:list[int]):
 
 ignore_neurons = get_indexes_by_ids([8980589])
 #print(ignore_neurons)
-#process(pushing_force=10.0, pulling_force=20.0, chunksize = 100) # просчитать позиции
-a(ignore_neurons) # показать анимацию в окне
-#b(ignore_neurons) # сохранить анимацию в файл
+process(pushing_force=2.0, pulling_force=10.0, chunksize = 300) # просчитать позиции
+#a(ignore_neurons) # показать анимацию в окне
+b(ignore_neurons) # сохранить анимацию в файл

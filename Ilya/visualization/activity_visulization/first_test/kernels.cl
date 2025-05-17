@@ -32,9 +32,11 @@ __kernel void simulate_clasters(
             direction.x = positions[ind*2 + 0] - positions[i*2 + 0];
             direction.y = positions[ind*2 + 1] - positions[i*2 + 1];
             float r = length(direction);
+            r += 0.1f; // Avoid division by zero
             direction = normalize(direction);
 
             speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, i) - get_activity(t - 1, i))));
+            
         }
     }
     next_positions[ind*2 + 0] = positions[ind*2 + 0] + speed.x*dt;

@@ -165,13 +165,13 @@ class context:
         if self.pulling_force is not None:
             code = (
                 f""" 
-#define PULLING_FORCE {self.pulling_force}\n"""
+#define PULLING_FORCE {self.pulling_force}f\n"""
                 + code
             )
         if self.pushing_force is not None:
             code = (
                 f"""
-#define PUSHING_FORCE {self.pushing_force}\n"""
+#define PUSHING_FORCE {self.pushing_force}f\n"""
                 + code
             )
         return code
@@ -190,22 +190,24 @@ class context:
         next_positions_ = self.cdb(np.empty_like(flattened_positions))
         dt_ = self.ccb(np.array(dt))
         activity_size_ = self.ccb(np.array(activity.shape), np.int32)
+        N = int(1/dt)
 
         for ti in range(len(activity)):
             t = self.ccb(np.array(ti), np.int32)
-            self.program.simulate_clasters(
-                self.queqe,
-                (self.activity_dim,),
-                None,
-                ab,
-                w,
-                positions_,
-                next_positions_,
-                activity_size_,
-                t,
-                dt_,
-            )
-            positions_, next_positions_ = next_positions_, positions_
+            for i in range(N):
+                self.program.simulate_clasters(
+                    self.queqe,
+                    (self.activity_dim,),
+                    None,
+                    ab,
+                    w,
+                    positions_,
+                    next_positions_,
+                    activity_size_,
+                    t,
+                    dt_,
+                )
+                positions_, next_positions_ = next_positions_, positions_
             if ti % save_positions_every == 0:
                 op = np.empty_like(flattened_positions)
                 cl.enqueue_copy(self.queqe, op, positions_)
