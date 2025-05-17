@@ -21,7 +21,7 @@ def a():
     visualize_positions(
         "./data/generated_positions.csv",
         update_axis_limits=True,
-        path_to_scales=path_to_scales,
+        
         max_size=100,
         min_size=0,
     )
@@ -40,6 +40,6 @@ def b():
     )
 
 
-# process(pushing_force=5.0, pulling_force=5.0, chunksize = 100)
-# a()
-# b()
+process(pushing_force=5.0, pulling_force=5.0, chunksize = 100) # просчитать позиции
+#a() # показать анимацию в окне
+# b() # сохранить анимацию в файл

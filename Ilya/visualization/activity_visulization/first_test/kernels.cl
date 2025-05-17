@@ -29,14 +29,14 @@ __kernel void simulate_clasters(
 
     for (int i = 0; i < *activity_size; i++){
         if (i != ind){
-            direction.x = positions[ind + 0] - positions[i + 0];
-            direction.y = positions[ind + 1] - positions[i + 1];
+            direction.x = positions[ind*2 + 0] - positions[i*2 + 0];
+            direction.y = positions[ind*2 + 1] - positions[i*2 + 1];
             float r = length(direction);
             direction = normalize(direction);
 
             speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, i) - get_activity(t - 1, i))));
         }
-    }   
-    next_positions[ind + 0] = positions[ind + 0] + speed.x*dt;
-    next_positions[ind + 1] = positions[ind + 1] + speed.y*dt;
+    }
+    next_positions[ind*2 + 0] = positions[ind*2 + 0] + speed.x*dt;
+    next_positions[ind*2 + 1] = positions[ind*2 + 1] + speed.y*dt;
 }

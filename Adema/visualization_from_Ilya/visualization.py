@@ -7,6 +7,10 @@ import tempfile
 import os
 import shutil
 
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+plt.style.use('dark_background')
 
 class data:
     def __init__(self, data_path, w_path: str, chunk_size=500):
@@ -205,3 +209,62 @@ class context:
                 output_positions.append(op)
 
         return output_positions
+
+
+def visualize_positions(path_to_positions, start=0, end=None, interval=50, save_path=None, update_axis_limits=False, path_to_scales=None, max_size=20, min_size=1):
+    """
+    Визуализирует анимацию перемещений по данным из файла.
+    :param path_to_positions: путь к generated_positions.csv
+    :param start: начальный кадр (индекс строки)
+    :param end: конечный кадр (индекс строки, не включительно)
+    :param interval: задержка между кадрами в мс
+    :param save_path: путь для сохранения анимации (если None, показать окно)
+    """
+    df = pd.read_csv(path_to_positions)
+    positions = df.values
+    if end is None or end > len(positions):
+        end = len(positions)
+    positions = positions[start:end]
+    positions = (positions := df.to_numpy()).reshape(-1, positions.shape[1] // 2, 2)
+
+    if path_to_scales is not None:
+        scales = pd.read_csv(path_to_scales).to_numpy(np.float64)
+
+    fig, ax = plt.subplots()
+    sca = ax.scatter(positions[0][:, 0], positions[0][:, 1])
+    xmin = np.min(positions[-1][:, 0])
+    xmax = np.max(positions[-1][:, 0])
+    ymin = np.min(positions[-1][:, 1])
+    ymax = np.max(positions[-1][:, 1])
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ymax)
+    ax.set_title("Positions animation")
+
+    def update(frame):
+        sca.set_offsets(positions[frame])
+        if path_to_scales is not None:
+            f = scales[frame]
+            f -= f.min()
+            f /= f.max()
+            sca.set_sizes((max_size - min_size)*f + min_size)
+        if update_axis_limits:
+            xmin = np.min(positions[frame][:, 0])
+            xmax = np.max(positions[frame][:, 0])
+            ymin = np.min(positions[frame][:, 1])
+            ymax = np.max(positions[frame][:, 1])
+            try:
+                ax.set_xlim(xmin, xmax)
+                ax.set_ylim(ymin, ymax)
+            except Exception as e:
+                print("Error updating axis limits:", e)
+                print("Frame:", frame)
+                print(xmin, xmax, ymin, ymax)
+
+        return sca,
+
+    ani = FuncAnimation(fig, update, frames=len(positions), interval=interval, blit=True)
+    if save_path:
+        ani.save(save_path)
+        print(f"Animation saved to {save_path}")
+    else:
+        plt.show()
