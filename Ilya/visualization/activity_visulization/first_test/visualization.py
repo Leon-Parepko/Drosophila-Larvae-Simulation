@@ -10,14 +10,17 @@ import shutil
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-plt.style.use('dark_background')
+plt.style.use("dark_background")
+
 
 class data:
     def __init__(self, data_path, w_path: str, chunk_size=500):
         self.path = data_path
         self.w_path = w_path
         self.chunk_size = chunk_size
-        self.chunks_dataframe = pd.read_csv(self.path, chunksize=chunk_size)
+        self.chunks_dataframe = pd.read_csv(
+            self.path, index_col=0, chunksize=chunk_size
+        )
         self.w = pd.read_csv(self.w_path).to_numpy(np.float32)
 
     def update_chunk(
@@ -211,7 +214,19 @@ class context:
         return output_positions
 
 
-def visualize_positions(path_to_positions, start=0, end=None, interval=50, save_path=None, update_axis_limits=False, path_to_scales=None, max_size=20, min_size=1):
+def visualize_positions(
+    path_to_positions,
+    start=0,
+    end=None,
+    interval=50,
+    save_path=None,
+    update_axis_limits=False,
+    path_to_scales=None,
+    max_size=20,
+    min_size=1,
+    scale_activation_function=lambda x: x,
+    ignore_scale_for_inds: list[int] = None,
+):
     """
     Визуализирует анимацию перемещений по данным из файла.
     :param path_to_positions: путь к generated_positions.csv
@@ -220,6 +235,8 @@ def visualize_positions(path_to_positions, start=0, end=None, interval=50, save_
     :param interval: задержка между кадрами в мс
     :param save_path: путь для сохранения анимации (если None, показать окно)
     """
+    if ignore_scale_for_inds is None:
+        ignore_scale_for_inds = []
     df = pd.read_csv(path_to_positions)
     positions = df.values
     if end is None or end > len(positions):
@@ -228,7 +245,7 @@ def visualize_positions(path_to_positions, start=0, end=None, interval=50, save_
     positions = (positions := df.to_numpy()).reshape(-1, positions.shape[1] // 2, 2)
 
     if path_to_scales is not None:
-        scales = pd.read_csv(path_to_scales).to_numpy(np.float64)
+        scales = pd.read_csv(path_to_scales, index_col=0).to_numpy(np.float64)
 
     fig, ax = plt.subplots()
     sca = ax.scatter(positions[0][:, 0], positions[0][:, 1])
@@ -242,11 +259,17 @@ def visualize_positions(path_to_positions, start=0, end=None, interval=50, save_
 
     def update(frame):
         sca.set_offsets(positions[frame])
+        # ax.set_title(f"Positions animation frame:{frame}")
+        # ax.text = f"Positions animation frame:{frame}"
         if path_to_scales is not None:
             f = scales[frame]
+            f = scale_activation_function(f)
+            for i in ignore_scale_for_inds:
+                f[i] = 0.1
             f -= f.min()
+            f += 0.0001
             f /= f.max()
-            sca.set_sizes((max_size - min_size)*f + min_size)
+            sca.set_sizes((max_size - min_size) * f + min_size)
         if update_axis_limits:
             xmin = np.min(positions[frame][:, 0])
             xmax = np.max(positions[frame][:, 0])
@@ -260,9 +283,11 @@ def visualize_positions(path_to_positions, start=0, end=None, interval=50, save_
                 print("Frame:", frame)
                 print(xmin, xmax, ymin, ymax)
 
-        return sca,
+        return (sca,)
 
-    ani = FuncAnimation(fig, update, frames=len(positions), interval=interval, blit=True)
+    ani = FuncAnimation(
+        fig, update, frames=len(positions), interval=interval, blit=True
+    )
     if save_path:
         ani.save(save_path)
         print(f"Animation saved to {save_path}")
