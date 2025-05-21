@@ -25,7 +25,7 @@ def a(ignore_neurons):
     global path_to_scales
     visualize_positions(
         "./data/generated_positions.csv",
-        update_axis_limits=True,
+        update_axis_limits=False,
         path_to_scales=path_to_scales,
         max_size=10,
         min_size=1,
@@ -63,6 +63,6 @@ def get_indexes_by_ids(ids:list[int]):
 
 ignore_neurons = get_indexes_by_ids([8980589])
 #print(ignore_neurons)
-process(pushing_force=2.0, pulling_force=10.0, chunksize = 300) # просчитать позиции
-#a(ignore_neurons) # показать анимацию в окне
-b(ignore_neurons) # сохранить анимацию в файл
+#process(pushing_force=10.0, pulling_force=100.0, chunksize = 300) # просчитать позиции
+a(ignore_neurons) # показать анимацию в окне
+#b(ignore_neurons) # сохранить анимацию в файл

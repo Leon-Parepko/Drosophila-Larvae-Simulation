@@ -36,6 +36,7 @@ __kernel void simulate_clasters(
             direction = normalize(direction);
 
             speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, i) - get_activity(t - 1, i))));
+            //speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, ind) - get_activity(t - 1, i))));
             
         }
     }
