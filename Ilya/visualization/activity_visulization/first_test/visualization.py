@@ -10,7 +10,7 @@ import shutil
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-plt.style.use("dark_background")
+#plt.style.use("dark_background")
 
 
 class data:
@@ -261,8 +261,7 @@ def visualize_positions(
 
     def update(frame):
         sca.set_offsets(positions[frame])
-        # ax.set_title(f"Positions animation frame:{frame}")
-        # ax.text = f"Positions animation frame:{frame}"
+        ax.set_title(f"{round(5000*frame/len(positions))} ms")
         if path_to_scales is not None:
             f = scales[frame]
             f = scale_activation_function(f)
@@ -291,7 +290,7 @@ def visualize_positions(
         fig, update, frames=len(positions), interval=interval, blit=True
     )
     if save_path:
-        ani.save(save_path)
+        ani.save(save_path)#, dpi=160)
         print(f"Animation saved to {save_path}")
     else:
         plt.show()

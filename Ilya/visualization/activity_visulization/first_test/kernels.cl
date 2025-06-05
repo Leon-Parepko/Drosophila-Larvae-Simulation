@@ -1,5 +1,5 @@
 #define get_activity(t, i) activity[*t*activity_size[0] + i]
-#define W(i, j) w[i*activity_size[0] + j]
+#define W(i, j) w[i + j*activity_size[0]]
 
 #ifndef PUSHING_FORCE
 #define PUSHING_FORCE 1.0f
@@ -35,8 +35,8 @@ __kernel void simulate_clasters(
             r += 0.1f; // Avoid division by zero
             direction = normalize(direction);
 
-            speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, i) - get_activity(t - 1, i))));
-            //speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, ind) - get_activity(t - 1, i))));
+            speed += direction*(pushing_function(W(i, ind))/r - pulling_function(W(ind, i)));
+            //speed += direction*(pushing_function(W(ind, i))/r - pulling_function(W(ind, i) * (get_activity(t, i) - get_activity(t - 1, i))));
             
         }
     }

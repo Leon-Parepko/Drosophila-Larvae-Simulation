@@ -1,19 +1,20 @@
 from math import e
 from visualization import *
 import numpy as np
-path_to_scales = "./data/echo_state_matrix (2).csv"
+path_to_scales = "./data/smooth/111/exp_3_sin/activity_matrix.csv"
 
 
 # просчитать позиции
 def process(pushing_force=5.0, pulling_force=5.0, chunksize=100):
-    path_to_activity = "./data/echo_state_matrix (2).csv"
-    path_to_weights = "./data/adj (2).csv"
+    path_to_activity = path_to_scales
+    path_to_weights = "./data/smooth/111/exp_3_sin/adj.csv"
     d = data(path_to_activity, path_to_weights, chunksize)
     d.process_and_merge_chunks(
         "./data/generated_positions.csv",
         pushing_force=pushing_force,
         pulling_force=pulling_force,
         dt = 0.1,
+        end_ind = -1
     )
 
 
@@ -43,7 +44,7 @@ def b(ignore_neurons):
         path_to_scales=path_to_scales,
         max_size=10,
         min_size=1,
-        save_path="./data/animation.gif",
+        save_path="./data/animation.mp4",
         ignore_scale_for_inds=ignore_neurons,
         #scale_activation_function=scale_activation_function,
     )
@@ -51,7 +52,7 @@ def b(ignore_neurons):
 ignore_neurons = [8980589]
 def get_indexes_by_ids(ids:list[int]):
     output = []
-    with open("./data/adj (2).csv", "r") as f:
+    with open("./data/smooth/111/exp_3_sin/adj.csv", "r") as f:
         heads = f.readline()
         heads = heads.split(",")
         for n, i in enumerate(heads):
@@ -63,6 +64,6 @@ def get_indexes_by_ids(ids:list[int]):
 
 ignore_neurons = get_indexes_by_ids([8980589])
 #print(ignore_neurons)
-#process(pushing_force=10.0, pulling_force=100.0, chunksize = 300) # просчитать позиции
-a(ignore_neurons) # показать анимацию в окне
-#b(ignore_neurons) # сохранить анимацию в файл
+#process(pushing_force=0.0, pulling_force=1.0, chunksize = 300) # просчитать позиции
+#a([]) # показать анимацию в окне
+b(ignore_neurons) # сохранить анимацию в файл
