@@ -96,11 +96,11 @@ class xwx(solver):
 
 
 W = generate_connections(
-    100, 4, group_density=1.0, noise=0.1, noise_density=1.0, group_recurent_rate=0.9
+    5, 10, group_density=1.0, noise=0.1, noise_density=0.0, group_recurent_rate=0.0
 )
 W = generate_multiple_connections(W)
 W = (W - W.T)
-dt = 0.001
-activity = generate_activity(W, t_end=1.0, dt=dt)
+dt = 0.0005
+activity = generate_activity(W, t_end=5.0, dt=dt)
 df_a = generate_activity_df(activity["x"])
-df_a.to_csv("Ilya/linar_alg/compress/a_big_one.csv")
+df_a.to_csv("Ilya/linar_alg/compress/a_medium_one.csv")
