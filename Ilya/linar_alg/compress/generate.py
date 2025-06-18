@@ -1,11 +1,10 @@
 import numpy as np
 import pandas as pd
 
-def generate_activity_df(acivity, weights, df=None) -> tuple[pd.DataFrame]:  # df_w, #df
-    size = weights.shape[0]
+def generate_activity_df(acivity, df=None) -> tuple[pd.DataFrame]:  # df_w, #df
     if df is None:
-        df = pd.DataFrame(columns=[i for i in range(weights.shape[0])])
-    for i in range(size):
+        df = pd.DataFrame(columns=[i for i in range(acivity.shape[1])])
+    for i in range(acivity.shape[0]):
         df.loc[i] = acivity[i]
 
     return df
@@ -102,6 +101,6 @@ W = generate_connections(
 W = generate_multiple_connections(W)
 W = (W - W.T)
 dt = 0.001
-activity = generate_activity(W, t_end=1, dt=dt)
-df_a = generate_activity_df(activity["x"], W)
-df_a.to_csv("Ilya/linar_alg/compress/a.csv")
+activity = generate_activity(W, t_end=1.0, dt=dt)
+df_a = generate_activity_df(activity["x"])
+df_a.to_csv("Ilya/linar_alg/compress/a_big_one.csv")
