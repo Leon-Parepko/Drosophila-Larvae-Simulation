@@ -4358,3073 +4358,3073 @@ graph [
   ]
   node [
     id 871
-    label "-3995378"
-    type "Postsynaptic"
+    label "3995378"
+    type "connector"
   ]
   node [
     id 872
-    label "-4235200"
-    type "Postsynaptic"
+    label "4235200"
+    type "connector"
   ]
   node [
     id 873
-    label "-4241235"
-    type "Postsynaptic"
+    label "4241235"
+    type "connector"
   ]
   node [
     id 874
-    label "-4295571"
-    type "Postsynaptic"
+    label "4295571"
+    type "connector"
   ]
   node [
     id 875
-    label "-4295617"
-    type "Postsynaptic"
+    label "4295617"
+    type "connector"
   ]
   node [
     id 876
-    label "-4296765"
-    type "Postsynaptic"
+    label "4296765"
+    type "connector"
   ]
   node [
     id 877
-    label "-4297188"
-    type "Postsynaptic"
+    label "4297188"
+    type "connector"
   ]
   node [
     id 878
-    label "-4409214"
-    type "Postsynaptic"
+    label "4409214"
+    type "connector"
   ]
   node [
     id 879
-    label "-4409545"
-    type "Postsynaptic"
+    label "4409545"
+    type "connector"
   ]
   node [
     id 880
-    label "-4410498"
-    type "Postsynaptic"
+    label "4410498"
+    type "connector"
   ]
   node [
     id 881
-    label "-4411049"
-    type "Postsynaptic"
+    label "4411049"
+    type "connector"
   ]
   node [
     id 882
-    label "-4422030"
-    type "Postsynaptic"
+    label "4422030"
+    type "connector"
   ]
   node [
     id 883
-    label "-4518537"
-    type "Postsynaptic"
+    label "4518537"
+    type "connector"
   ]
   node [
     id 884
-    label "-4601338"
-    type "Postsynaptic"
+    label "4601338"
+    type "connector"
   ]
   node [
     id 885
-    label "-4800016"
-    type "Postsynaptic"
+    label "4800016"
+    type "connector"
   ]
   node [
     id 886
-    label "-5807352"
-    type "Postsynaptic"
+    label "5807352"
+    type "connector"
   ]
   node [
     id 887
-    label "-5807412"
-    type "Postsynaptic"
+    label "5807412"
+    type "connector"
   ]
   node [
     id 888
-    label "-6415399"
-    type "Postsynaptic"
+    label "6415399"
+    type "connector"
   ]
   node [
     id 889
-    label "-6704774"
-    type "Postsynaptic"
+    label "6704774"
+    type "connector"
   ]
   node [
     id 890
-    label "-6704860"
-    type "Postsynaptic"
+    label "6704860"
+    type "connector"
   ]
   node [
     id 891
-    label "-6704995"
-    type "Postsynaptic"
+    label "6704995"
+    type "connector"
   ]
   node [
     id 892
-    label "-6705038"
-    type "Postsynaptic"
+    label "6705038"
+    type "connector"
   ]
   node [
     id 893
-    label "-7190602"
-    type "Postsynaptic"
+    label "7190602"
+    type "connector"
   ]
   node [
     id 894
-    label "-7190655"
-    type "Postsynaptic"
+    label "7190655"
+    type "connector"
   ]
   node [
     id 895
-    label "-7190731"
-    type "Postsynaptic"
+    label "7190731"
+    type "connector"
   ]
   node [
     id 896
-    label "-7191281"
-    type "Postsynaptic"
+    label "7191281"
+    type "connector"
   ]
   node [
     id 897
-    label "-7292901"
-    type "Postsynaptic"
+    label "7292901"
+    type "connector"
   ]
   node [
     id 898
-    label "-7293229"
-    type "Postsynaptic"
+    label "7293229"
+    type "connector"
   ]
   node [
     id 899
-    label "-7293254"
-    type "Postsynaptic"
+    label "7293254"
+    type "connector"
   ]
   node [
     id 900
-    label "-7293388"
-    type "Postsynaptic"
+    label "7293388"
+    type "connector"
   ]
   node [
     id 901
-    label "-7293524"
-    type "Postsynaptic"
+    label "7293524"
+    type "connector"
   ]
   node [
     id 902
-    label "-7293551"
-    type "Postsynaptic"
+    label "7293551"
+    type "connector"
   ]
   node [
     id 903
-    label "-7293582"
-    type "Postsynaptic"
+    label "7293582"
+    type "connector"
   ]
   node [
     id 904
-    label "-7536978"
-    type "Postsynaptic"
+    label "7536978"
+    type "connector"
   ]
   node [
     id 905
-    label "-7688914"
-    type "Postsynaptic"
+    label "7688914"
+    type "connector"
   ]
   node [
     id 906
-    label "-7901743"
-    type "Postsynaptic"
+    label "7901743"
+    type "connector"
   ]
   node [
     id 907
-    label "-8078485"
-    type "Postsynaptic"
+    label "8078485"
+    type "connector"
   ]
   node [
     id 908
-    label "-8357150"
-    type "Postsynaptic"
+    label "8357150"
+    type "connector"
   ]
   node [
     id 909
-    label "-8360611"
-    type "Postsynaptic"
+    label "8360611"
+    type "connector"
   ]
   node [
     id 910
-    label "-8390991"
-    type "Postsynaptic"
+    label "8390991"
+    type "connector"
   ]
   node [
     id 911
-    label "-8578249"
-    type "Postsynaptic"
+    label "8578249"
+    type "connector"
   ]
   node [
     id 912
-    label "-8619127"
-    type "Postsynaptic"
+    label "8619127"
+    type "connector"
   ]
   node [
     id 913
-    label "-8771690"
-    type "Postsynaptic"
+    label "8771690"
+    type "connector"
   ]
   node [
     id 914
-    label "-8806088"
-    type "Postsynaptic"
+    label "8806088"
+    type "connector"
   ]
   node [
     id 915
-    label "-8816080"
-    type "Postsynaptic"
+    label "8816080"
+    type "connector"
   ]
   node [
     id 916
-    label "-8816143"
-    type "Postsynaptic"
+    label "8816143"
+    type "connector"
   ]
   node [
     id 917
-    label "-8817709"
-    type "Postsynaptic"
+    label "8817709"
+    type "connector"
   ]
   node [
     id 918
-    label "-9020268"
-    type "Postsynaptic"
+    label "9020268"
+    type "connector"
   ]
   node [
     id 919
-    label "-9020287"
-    type "Postsynaptic"
+    label "9020287"
+    type "connector"
   ]
   node [
     id 920
-    label "-9020373"
-    type "Postsynaptic"
+    label "9020373"
+    type "connector"
   ]
   node [
     id 921
-    label "-9030830"
-    type "Postsynaptic"
+    label "9030830"
+    type "connector"
   ]
   node [
     id 922
-    label "-9035159"
-    type "Postsynaptic"
+    label "9035159"
+    type "connector"
   ]
   node [
     id 923
-    label "-9035228"
-    type "Postsynaptic"
+    label "9035228"
+    type "connector"
   ]
   node [
     id 924
-    label "-9035306"
-    type "Postsynaptic"
+    label "9035306"
+    type "connector"
   ]
   node [
     id 925
-    label "-9035349"
-    type "Postsynaptic"
+    label "9035349"
+    type "connector"
   ]
   node [
     id 926
-    label "-9035386"
-    type "Postsynaptic"
+    label "9035386"
+    type "connector"
   ]
   node [
     id 927
-    label "-9035412"
-    type "Postsynaptic"
+    label "9035412"
+    type "connector"
   ]
   node [
     id 928
-    label "-9035437"
-    type "Postsynaptic"
+    label "9035437"
+    type "connector"
   ]
   node [
     id 929
-    label "-9035460"
-    type "Postsynaptic"
+    label "9035460"
+    type "connector"
   ]
   node [
     id 930
-    label "-9035534"
-    type "Postsynaptic"
+    label "9035534"
+    type "connector"
   ]
   node [
     id 931
-    label "-9035565"
-    type "Postsynaptic"
+    label "9035565"
+    type "connector"
   ]
   node [
     id 932
-    label "-9035670"
-    type "Postsynaptic"
+    label "9035670"
+    type "connector"
   ]
   node [
     id 933
-    label "-9035721"
-    type "Postsynaptic"
+    label "9035721"
+    type "connector"
   ]
   node [
     id 934
-    label "-9036298"
-    type "Postsynaptic"
+    label "9036298"
+    type "connector"
   ]
   node [
     id 935
-    label "-9036333"
-    type "Postsynaptic"
+    label "9036333"
+    type "connector"
   ]
   node [
     id 936
-    label "-9036405"
-    type "Postsynaptic"
+    label "9036405"
+    type "connector"
   ]
   node [
     id 937
-    label "-9036464"
-    type "Postsynaptic"
+    label "9036464"
+    type "connector"
   ]
   node [
     id 938
-    label "-9036648"
-    type "Postsynaptic"
+    label "9036648"
+    type "connector"
   ]
   node [
     id 939
-    label "-9036704"
-    type "Postsynaptic"
+    label "9036704"
+    type "connector"
   ]
   node [
     id 940
-    label "-9036739"
-    type "Postsynaptic"
+    label "9036739"
+    type "connector"
   ]
   node [
     id 941
-    label "-9036779"
-    type "Postsynaptic"
+    label "9036779"
+    type "connector"
   ]
   node [
     id 942
-    label "-9036810"
-    type "Postsynaptic"
+    label "9036810"
+    type "connector"
   ]
   node [
     id 943
-    label "-9036846"
-    type "Postsynaptic"
+    label "9036846"
+    type "connector"
   ]
   node [
     id 944
-    label "-9036927"
-    type "Postsynaptic"
+    label "9036927"
+    type "connector"
   ]
   node [
     id 945
-    label "-9036961"
-    type "Postsynaptic"
+    label "9036961"
+    type "connector"
   ]
   node [
     id 946
-    label "-9037786"
-    type "Postsynaptic"
+    label "9037786"
+    type "connector"
   ]
   node [
     id 947
-    label "-9037929"
-    type "Postsynaptic"
+    label "9037929"
+    type "connector"
   ]
   node [
     id 948
-    label "-9038165"
-    type "Postsynaptic"
+    label "9038165"
+    type "connector"
   ]
   node [
     id 949
-    label "-9038298"
-    type "Postsynaptic"
+    label "9038298"
+    type "connector"
   ]
   node [
     id 950
-    label "-9038376"
-    type "Postsynaptic"
+    label "9038376"
+    type "connector"
   ]
   node [
     id 951
-    label "-9038443"
-    type "Postsynaptic"
+    label "9038443"
+    type "connector"
   ]
   node [
     id 952
-    label "-9038818"
-    type "Postsynaptic"
+    label "9038818"
+    type "connector"
   ]
   node [
     id 953
-    label "-9039464"
-    type "Postsynaptic"
+    label "9039464"
+    type "connector"
   ]
   node [
     id 954
-    label "-9039746"
-    type "Postsynaptic"
+    label "9039746"
+    type "connector"
   ]
   node [
     id 955
-    label "-9039833"
-    type "Postsynaptic"
+    label "9039833"
+    type "connector"
   ]
   node [
     id 956
-    label "-9040174"
-    type "Postsynaptic"
+    label "9040174"
+    type "connector"
   ]
   node [
     id 957
-    label "-9040220"
-    type "Postsynaptic"
+    label "9040220"
+    type "connector"
   ]
   node [
     id 958
-    label "-9040596"
-    type "Postsynaptic"
+    label "9040596"
+    type "connector"
   ]
   node [
     id 959
-    label "-9040623"
-    type "Postsynaptic"
+    label "9040623"
+    type "connector"
   ]
   node [
     id 960
-    label "-9040776"
-    type "Postsynaptic"
+    label "9040776"
+    type "connector"
   ]
   node [
     id 961
-    label "-9040831"
-    type "Postsynaptic"
+    label "9040831"
+    type "connector"
   ]
   node [
     id 962
-    label "-9041039"
-    type "Postsynaptic"
+    label "9041039"
+    type "connector"
   ]
   node [
     id 963
-    label "-9041071"
-    type "Postsynaptic"
+    label "9041071"
+    type "connector"
   ]
   node [
     id 964
-    label "-9041110"
-    type "Postsynaptic"
+    label "9041110"
+    type "connector"
   ]
   node [
     id 965
-    label "-9041186"
-    type "Postsynaptic"
+    label "9041186"
+    type "connector"
   ]
   node [
     id 966
-    label "-9041218"
-    type "Postsynaptic"
+    label "9041218"
+    type "connector"
   ]
   node [
     id 967
-    label "-9044125"
-    type "Postsynaptic"
+    label "9044125"
+    type "connector"
   ]
   node [
     id 968
-    label "-9044148"
-    type "Postsynaptic"
+    label "9044148"
+    type "connector"
   ]
   node [
     id 969
-    label "-9587147"
-    type "Postsynaptic"
+    label "9587147"
+    type "connector"
   ]
   node [
     id 970
-    label "-9984894"
-    type "Postsynaptic"
+    label "9984894"
+    type "connector"
   ]
   node [
     id 971
-    label "-10034435"
-    type "Postsynaptic"
+    label "10034435"
+    type "connector"
   ]
   node [
     id 972
-    label "-10276053"
-    type "Postsynaptic"
+    label "10276053"
+    type "connector"
   ]
   node [
     id 973
-    label "-12225040"
-    type "Postsynaptic"
+    label "12225040"
+    type "connector"
   ]
   node [
     id 974
-    label "-12225060"
-    type "Postsynaptic"
+    label "12225060"
+    type "connector"
   ]
   node [
     id 975
-    label "-12258411"
-    type "Postsynaptic"
+    label "12258411"
+    type "connector"
   ]
   node [
     id 976
-    label "-12788228"
-    type "Postsynaptic"
+    label "12788228"
+    type "connector"
   ]
   node [
     id 977
-    label "-12789243"
-    type "Postsynaptic"
+    label "12789243"
+    type "connector"
   ]
   node [
     id 978
-    label "-13531034"
-    type "Postsynaptic"
+    label "13531034"
+    type "connector"
   ]
   node [
     id 979
-    label "-13531062"
-    type "Postsynaptic"
+    label "13531062"
+    type "connector"
   ]
   node [
     id 980
-    label "-13531082"
-    type "Postsynaptic"
+    label "13531082"
+    type "connector"
   ]
   node [
     id 981
-    label "-13531181"
-    type "Postsynaptic"
+    label "13531181"
+    type "connector"
   ]
   node [
     id 982
-    label "-13531196"
-    type "Postsynaptic"
+    label "13531196"
+    type "connector"
   ]
   node [
     id 983
-    label "-13531215"
-    type "Postsynaptic"
+    label "13531215"
+    type "connector"
   ]
   node [
     id 984
-    label "-13531244"
-    type "Postsynaptic"
+    label "13531244"
+    type "connector"
   ]
   node [
     id 985
-    label "-13531264"
-    type "Postsynaptic"
+    label "13531264"
+    type "connector"
   ]
   node [
     id 986
-    label "-13531300"
-    type "Postsynaptic"
+    label "13531300"
+    type "connector"
   ]
   node [
     id 987
-    label "-13531396"
-    type "Postsynaptic"
+    label "13531396"
+    type "connector"
   ]
   node [
     id 988
-    label "-13532573"
-    type "Postsynaptic"
+    label "13532573"
+    type "connector"
   ]
   node [
     id 989
-    label "-13532904"
-    type "Postsynaptic"
+    label "13532904"
+    type "connector"
   ]
   node [
     id 990
-    label "-13533013"
-    type "Postsynaptic"
+    label "13533013"
+    type "connector"
   ]
   node [
     id 991
-    label "-13780040"
-    type "Postsynaptic"
+    label "13780040"
+    type "connector"
   ]
   node [
     id 992
-    label "-13946363"
-    type "Postsynaptic"
+    label "13946363"
+    type "connector"
   ]
   node [
     id 993
-    label "-13946460"
-    type "Postsynaptic"
+    label "13946460"
+    type "connector"
   ]
   node [
     id 994
-    label "-13946475"
-    type "Postsynaptic"
+    label "13946475"
+    type "connector"
   ]
   node [
     id 995
-    label "-13993504"
-    type "Postsynaptic"
+    label "13993504"
+    type "connector"
   ]
   node [
     id 996
-    label "-13993618"
-    type "Postsynaptic"
+    label "13993618"
+    type "connector"
   ]
   node [
     id 997
-    label "-13993662"
-    type "Postsynaptic"
+    label "13993662"
+    type "connector"
   ]
   node [
     id 998
-    label "-13993713"
-    type "Postsynaptic"
+    label "13993713"
+    type "connector"
   ]
   node [
     id 999
-    label "-13993908"
-    type "Postsynaptic"
+    label "13993908"
+    type "connector"
   ]
   node [
     id 1000
-    label "-13994023"
-    type "Postsynaptic"
+    label "13994023"
+    type "connector"
   ]
   node [
     id 1001
-    label "-13994092"
-    type "Postsynaptic"
+    label "13994092"
+    type "connector"
   ]
   node [
     id 1002
-    label "-13994302"
-    type "Postsynaptic"
+    label "13994302"
+    type "connector"
   ]
   node [
     id 1003
-    label "-13994459"
-    type "Postsynaptic"
+    label "13994459"
+    type "connector"
   ]
   node [
     id 1004
-    label "-13994649"
-    type "Postsynaptic"
+    label "13994649"
+    type "connector"
   ]
   node [
     id 1005
-    label "-13994710"
-    type "Postsynaptic"
+    label "13994710"
+    type "connector"
   ]
   node [
     id 1006
-    label "-13994895"
-    type "Postsynaptic"
+    label "13994895"
+    type "connector"
   ]
   node [
     id 1007
-    label "-13994915"
-    type "Postsynaptic"
+    label "13994915"
+    type "connector"
   ]
   node [
     id 1008
-    label "-13995030"
-    type "Postsynaptic"
+    label "13995030"
+    type "connector"
   ]
   node [
     id 1009
-    label "-13996502"
-    type "Postsynaptic"
+    label "13996502"
+    type "connector"
   ]
   node [
     id 1010
-    label "-14073053"
-    type "Postsynaptic"
+    label "14073053"
+    type "connector"
   ]
   node [
     id 1011
-    label "-14521703"
-    type "Postsynaptic"
+    label "14521703"
+    type "connector"
   ]
   node [
     id 1012
-    label "-14803804"
-    type "Postsynaptic"
+    label "14803804"
+    type "connector"
   ]
   node [
     id 1013
-    label "-14804218"
-    type "Postsynaptic"
+    label "14804218"
+    type "connector"
   ]
   node [
     id 1014
-    label "-14804746"
-    type "Postsynaptic"
+    label "14804746"
+    type "connector"
   ]
   node [
     id 1015
-    label "-14804772"
-    type "Postsynaptic"
+    label "14804772"
+    type "connector"
   ]
   node [
     id 1016
-    label "-14804816"
-    type "Postsynaptic"
+    label "14804816"
+    type "connector"
   ]
   node [
     id 1017
-    label "-14804884"
-    type "Postsynaptic"
+    label "14804884"
+    type "connector"
   ]
   node [
     id 1018
-    label "-14804936"
-    type "Postsynaptic"
+    label "14804936"
+    type "connector"
   ]
   node [
     id 1019
-    label "-14804951"
-    type "Postsynaptic"
+    label "14804951"
+    type "connector"
   ]
   node [
     id 1020
-    label "-14804978"
-    type "Postsynaptic"
+    label "14804978"
+    type "connector"
   ]
   node [
     id 1021
-    label "-14805011"
-    type "Postsynaptic"
+    label "14805011"
+    type "connector"
   ]
   node [
     id 1022
-    label "-14805037"
-    type "Postsynaptic"
+    label "14805037"
+    type "connector"
   ]
   node [
     id 1023
-    label "-14906202"
-    type "Postsynaptic"
+    label "14906202"
+    type "connector"
   ]
   node [
     id 1024
-    label "-14941588"
-    type "Postsynaptic"
+    label "14941588"
+    type "connector"
   ]
   node [
     id 1025
-    label "-14942053"
-    type "Postsynaptic"
+    label "14942053"
+    type "connector"
   ]
   node [
     id 1026
-    label "-14942307"
-    type "Postsynaptic"
+    label "14942307"
+    type "connector"
   ]
   node [
     id 1027
-    label "-15057068"
-    type "Postsynaptic"
+    label "15057068"
+    type "connector"
   ]
   node [
     id 1028
-    label "-15096717"
-    type "Postsynaptic"
+    label "15096717"
+    type "connector"
   ]
   node [
     id 1029
-    label "-15151701"
-    type "Postsynaptic"
+    label "15151701"
+    type "connector"
   ]
   node [
     id 1030
-    label "-15151757"
-    type "Postsynaptic"
+    label "15151757"
+    type "connector"
   ]
   node [
     id 1031
-    label "-15151904"
-    type "Postsynaptic"
+    label "15151904"
+    type "connector"
   ]
   node [
     id 1032
-    label "-15547227"
-    type "Postsynaptic"
+    label "15547227"
+    type "connector"
   ]
   node [
     id 1033
-    label "-15548450"
-    type "Postsynaptic"
+    label "15548450"
+    type "connector"
   ]
   node [
     id 1034
-    label "-15549065"
-    type "Postsynaptic"
+    label "15549065"
+    type "connector"
   ]
   node [
     id 1035
-    label "-15571401"
-    type "Postsynaptic"
+    label "15571401"
+    type "connector"
   ]
   node [
     id 1036
-    label "-15571421"
-    type "Postsynaptic"
+    label "15571421"
+    type "connector"
   ]
   node [
     id 1037
-    label "-15817326"
-    type "Postsynaptic"
+    label "15817326"
+    type "connector"
   ]
   node [
     id 1038
-    label "-15871698"
-    type "Postsynaptic"
+    label "15871698"
+    type "connector"
   ]
   node [
     id 1039
-    label "-15871701"
-    type "Postsynaptic"
+    label "15871701"
+    type "connector"
   ]
   node [
     id 1040
-    label "-16741385"
-    type "Postsynaptic"
+    label "16741385"
+    type "connector"
   ]
   node [
     id 1041
-    label "-16806891"
-    type "Postsynaptic"
+    label "16806891"
+    type "connector"
   ]
   node [
     id 1042
-    label "-16806994"
-    type "Postsynaptic"
+    label "16806994"
+    type "connector"
   ]
   node [
     id 1043
-    label "-16807193"
-    type "Postsynaptic"
+    label "16807193"
+    type "connector"
   ]
   node [
     id 1044
-    label "-16807300"
-    type "Postsynaptic"
+    label "16807300"
+    type "connector"
   ]
   node [
     id 1045
-    label "-16807456"
-    type "Postsynaptic"
+    label "16807456"
+    type "connector"
   ]
   node [
     id 1046
-    label "-16807470"
-    type "Postsynaptic"
+    label "16807470"
+    type "connector"
   ]
   node [
     id 1047
-    label "-16807475"
-    type "Postsynaptic"
+    label "16807475"
+    type "connector"
   ]
   node [
     id 1048
-    label "-16807512"
-    type "Postsynaptic"
+    label "16807512"
+    type "connector"
   ]
   node [
     id 1049
-    label "-16814068"
-    type "Postsynaptic"
+    label "16814068"
+    type "connector"
   ]
   node [
     id 1050
-    label "-16814175"
-    type "Postsynaptic"
+    label "16814175"
+    type "connector"
   ]
   node [
     id 1051
-    label "-16814200"
-    type "Postsynaptic"
+    label "16814200"
+    type "connector"
   ]
   node [
     id 1052
-    label "-16863829"
-    type "Postsynaptic"
+    label "16863829"
+    type "connector"
   ]
   node [
     id 1053
-    label "-16863838"
-    type "Postsynaptic"
+    label "16863838"
+    type "connector"
   ]
   node [
     id 1054
-    label "-16864914"
-    type "Postsynaptic"
+    label "16864914"
+    type "connector"
   ]
   node [
     id 1055
-    label "-16864951"
-    type "Postsynaptic"
+    label "16864951"
+    type "connector"
   ]
   node [
     id 1056
-    label "-16864957"
-    type "Postsynaptic"
+    label "16864957"
+    type "connector"
   ]
   node [
     id 1057
-    label "-16865077"
-    type "Postsynaptic"
+    label "16865077"
+    type "connector"
   ]
   node [
     id 1058
-    label "-16865140"
-    type "Postsynaptic"
+    label "16865140"
+    type "connector"
   ]
   node [
     id 1059
-    label "-16865143"
-    type "Postsynaptic"
+    label "16865143"
+    type "connector"
   ]
   node [
     id 1060
-    label "-16865177"
-    type "Postsynaptic"
+    label "16865177"
+    type "connector"
   ]
   node [
     id 1061
-    label "-16865207"
-    type "Postsynaptic"
+    label "16865207"
+    type "connector"
   ]
   node [
     id 1062
-    label "-16865276"
-    type "Postsynaptic"
+    label "16865276"
+    type "connector"
   ]
   node [
     id 1063
-    label "-16865304"
-    type "Postsynaptic"
+    label "16865304"
+    type "connector"
   ]
   node [
     id 1064
-    label "-16865334"
-    type "Postsynaptic"
+    label "16865334"
+    type "connector"
   ]
   node [
     id 1065
-    label "-16865337"
-    type "Postsynaptic"
+    label "16865337"
+    type "connector"
   ]
   node [
     id 1066
-    label "-16865366"
-    type "Postsynaptic"
+    label "16865366"
+    type "connector"
   ]
   node [
     id 1067
-    label "-16865449"
-    type "Postsynaptic"
+    label "16865449"
+    type "connector"
   ]
   node [
     id 1068
-    label "-16865451"
-    type "Postsynaptic"
+    label "16865451"
+    type "connector"
   ]
   node [
     id 1069
-    label "-16870576"
-    type "Postsynaptic"
+    label "16870576"
+    type "connector"
   ]
   node [
     id 1070
-    label "-16873311"
-    type "Postsynaptic"
+    label "16873311"
+    type "connector"
   ]
   node [
     id 1071
-    label "-16881643"
-    type "Postsynaptic"
+    label "16881643"
+    type "connector"
   ]
   node [
     id 1072
-    label "-16881687"
-    type "Postsynaptic"
+    label "16881687"
+    type "connector"
   ]
   node [
     id 1073
-    label "-16883996"
-    type "Postsynaptic"
+    label "16883996"
+    type "connector"
   ]
   node [
     id 1074
-    label "-16884027"
-    type "Postsynaptic"
+    label "16884027"
+    type "connector"
   ]
   node [
     id 1075
-    label "-16884119"
-    type "Postsynaptic"
+    label "16884119"
+    type "connector"
   ]
   node [
     id 1076
-    label "-16884129"
-    type "Postsynaptic"
+    label "16884129"
+    type "connector"
   ]
   node [
     id 1077
-    label "-16884146"
-    type "Postsynaptic"
+    label "16884146"
+    type "connector"
   ]
   node [
     id 1078
-    label "-16884395"
-    type "Postsynaptic"
+    label "16884395"
+    type "connector"
   ]
   node [
     id 1079
-    label "-16884435"
-    type "Postsynaptic"
+    label "16884435"
+    type "connector"
   ]
   node [
     id 1080
-    label "-16884483"
-    type "Postsynaptic"
+    label "16884483"
+    type "connector"
   ]
   node [
     id 1081
-    label "-16894727"
-    type "Postsynaptic"
+    label "16894727"
+    type "connector"
   ]
   node [
     id 1082
-    label "-16896746"
-    type "Postsynaptic"
+    label "16896746"
+    type "connector"
   ]
   node [
     id 1083
-    label "-16897216"
-    type "Postsynaptic"
+    label "16897216"
+    type "connector"
   ]
   node [
     id 1084
-    label "-16897316"
-    type "Postsynaptic"
+    label "16897316"
+    type "connector"
   ]
   node [
     id 1085
-    label "-16910392"
-    type "Postsynaptic"
+    label "16910392"
+    type "connector"
   ]
   node [
     id 1086
-    label "-16912736"
-    type "Postsynaptic"
+    label "16912736"
+    type "connector"
   ]
   node [
     id 1087
-    label "-16912801"
-    type "Postsynaptic"
+    label "16912801"
+    type "connector"
   ]
   node [
     id 1088
-    label "-16953604"
-    type "Postsynaptic"
+    label "16953604"
+    type "connector"
   ]
   node [
     id 1089
-    label "-16954374"
-    type "Postsynaptic"
+    label "16954374"
+    type "connector"
   ]
   node [
     id 1090
-    label "-16954846"
-    type "Postsynaptic"
+    label "16954846"
+    type "connector"
   ]
   node [
     id 1091
-    label "-16965542"
-    type "Postsynaptic"
+    label "16965542"
+    type "connector"
   ]
   node [
     id 1092
-    label "-16987045"
-    type "Postsynaptic"
+    label "16987045"
+    type "connector"
   ]
   node [
     id 1093
-    label "-16987070"
-    type "Postsynaptic"
+    label "16987070"
+    type "connector"
   ]
   node [
     id 1094
-    label "-16991836"
-    type "Postsynaptic"
+    label "16991836"
+    type "connector"
   ]
   node [
     id 1095
-    label "-16991953"
-    type "Postsynaptic"
+    label "16991953"
+    type "connector"
   ]
   node [
     id 1096
-    label "-16992023"
-    type "Postsynaptic"
+    label "16992023"
+    type "connector"
   ]
   node [
     id 1097
-    label "-16992235"
-    type "Postsynaptic"
+    label "16992235"
+    type "connector"
   ]
   node [
     id 1098
-    label "-16992247"
-    type "Postsynaptic"
+    label "16992247"
+    type "connector"
   ]
   node [
     id 1099
-    label "-17000796"
-    type "Postsynaptic"
+    label "17000796"
+    type "connector"
   ]
   node [
     id 1100
-    label "-17000801"
-    type "Postsynaptic"
+    label "17000801"
+    type "connector"
   ]
   node [
     id 1101
-    label "-17000886"
-    type "Postsynaptic"
+    label "17000886"
+    type "connector"
   ]
   node [
     id 1102
-    label "-17000966"
-    type "Postsynaptic"
+    label "17000966"
+    type "connector"
   ]
   node [
     id 1103
-    label "-17074243"
-    type "Postsynaptic"
+    label "17074243"
+    type "connector"
   ]
   node [
     id 1104
-    label "-17074300"
-    type "Postsynaptic"
+    label "17074300"
+    type "connector"
   ]
   node [
     id 1105
-    label "-17212937"
-    type "Postsynaptic"
+    label "17212937"
+    type "connector"
   ]
   node [
     id 1106
-    label "-17230529"
-    type "Postsynaptic"
+    label "17230529"
+    type "connector"
   ]
   node [
     id 1107
-    label "-17348069"
-    type "Postsynaptic"
+    label "17348069"
+    type "connector"
   ]
   node [
     id 1108
-    label "-17348147"
-    type "Postsynaptic"
+    label "17348147"
+    type "connector"
   ]
   node [
     id 1109
-    label "-17348181"
-    type "Postsynaptic"
+    label "17348181"
+    type "connector"
   ]
   node [
     id 1110
-    label "-17353041"
-    type "Postsynaptic"
+    label "17353041"
+    type "connector"
   ]
   node [
     id 1111
-    label "-17353252"
-    type "Postsynaptic"
+    label "17353252"
+    type "connector"
   ]
   node [
     id 1112
-    label "-17353653"
-    type "Postsynaptic"
+    label "17353653"
+    type "connector"
   ]
   node [
     id 1113
-    label "-17353675"
-    type "Postsynaptic"
+    label "17353675"
+    type "connector"
   ]
   node [
     id 1114
-    label "-17353723"
-    type "Postsynaptic"
+    label "17353723"
+    type "connector"
   ]
   node [
     id 1115
-    label "-17651470"
-    type "Postsynaptic"
+    label "17651470"
+    type "connector"
   ]
   node [
     id 1116
-    label "-17657603"
-    type "Postsynaptic"
+    label "17657603"
+    type "connector"
   ]
   node [
     id 1117
-    label "-17887369"
-    type "Postsynaptic"
+    label "17887369"
+    type "connector"
   ]
   node [
     id 1118
-    label "-17890177"
-    type "Postsynaptic"
+    label "17890177"
+    type "connector"
   ]
   node [
     id 1119
-    label "-17890203"
-    type "Postsynaptic"
+    label "17890203"
+    type "connector"
   ]
   node [
     id 1120
-    label "-17890210"
-    type "Postsynaptic"
+    label "17890210"
+    type "connector"
   ]
   node [
     id 1121
-    label "-17890223"
-    type "Postsynaptic"
+    label "17890223"
+    type "connector"
   ]
   node [
     id 1122
-    label "-17890384"
-    type "Postsynaptic"
+    label "17890384"
+    type "connector"
   ]
   node [
     id 1123
-    label "-17959668"
-    type "Postsynaptic"
+    label "17959668"
+    type "connector"
   ]
   node [
     id 1124
-    label "-17959709"
-    type "Postsynaptic"
+    label "17959709"
+    type "connector"
   ]
   node [
     id 1125
-    label "-18146637"
-    type "Postsynaptic"
+    label "18146637"
+    type "connector"
   ]
   node [
     id 1126
-    label "-18146666"
-    type "Postsynaptic"
+    label "18146666"
+    type "connector"
   ]
   node [
     id 1127
-    label "-18146771"
-    type "Postsynaptic"
+    label "18146771"
+    type "connector"
   ]
   node [
     id 1128
-    label "-18147109"
-    type "Postsynaptic"
+    label "18147109"
+    type "connector"
   ]
   node [
     id 1129
-    label "-18189749"
-    type "Postsynaptic"
+    label "18189749"
+    type "connector"
   ]
   node [
     id 1130
-    label "-18189997"
-    type "Postsynaptic"
+    label "18189997"
+    type "connector"
   ]
   node [
     id 1131
-    label "-18190001"
-    type "Postsynaptic"
+    label "18190001"
+    type "connector"
   ]
   node [
     id 1132
-    label "-18264212"
-    type "Postsynaptic"
+    label "18264212"
+    type "connector"
   ]
   node [
     id 1133
-    label "-18416416"
-    type "Postsynaptic"
+    label "18416416"
+    type "connector"
   ]
   node [
     id 1134
-    label "-18416420"
-    type "Postsynaptic"
+    label "18416420"
+    type "connector"
   ]
   node [
     id 1135
-    label "-18552576"
-    type "Postsynaptic"
+    label "18552576"
+    type "connector"
   ]
   node [
     id 1136
-    label "-18651910"
-    type "Postsynaptic"
+    label "18651910"
+    type "connector"
   ]
   node [
     id 1137
-    label "-18651939"
-    type "Postsynaptic"
+    label "18651939"
+    type "connector"
   ]
   node [
     id 1138
-    label "-18653243"
-    type "Postsynaptic"
+    label "18653243"
+    type "connector"
   ]
   node [
     id 1139
-    label "-18711552"
-    type "Postsynaptic"
+    label "18711552"
+    type "connector"
   ]
   node [
     id 1140
-    label "-18919426"
-    type "Postsynaptic"
+    label "18919426"
+    type "connector"
   ]
   node [
     id 1141
-    label "-18919444"
-    type "Postsynaptic"
+    label "18919444"
+    type "connector"
   ]
   node [
     id 1142
-    label "-18919468"
-    type "Postsynaptic"
+    label "18919468"
+    type "connector"
   ]
   node [
     id 1143
-    label "-18948504"
-    type "Postsynaptic"
+    label "18948504"
+    type "connector"
   ]
   node [
     id 1144
-    label "-19038449"
-    type "Postsynaptic"
+    label "19038449"
+    type "connector"
   ]
   node [
     id 1145
-    label "-19066480"
-    type "Postsynaptic"
+    label "19066480"
+    type "connector"
   ]
   node [
     id 1146
-    label "-19498823"
-    type "Postsynaptic"
+    label "19498823"
+    type "connector"
   ]
   node [
     id 1147
-    label "-19498943"
-    type "Postsynaptic"
+    label "19498943"
+    type "connector"
   ]
   node [
     id 1148
-    label "-19598578"
-    type "Postsynaptic"
+    label "19598578"
+    type "connector"
   ]
   node [
     id 1149
-    label "-19702327"
-    type "Postsynaptic"
+    label "19702327"
+    type "connector"
   ]
   node [
     id 1150
-    label "-19702498"
-    type "Postsynaptic"
+    label "19702498"
+    type "connector"
   ]
   node [
     id 1151
-    label "-19727932"
-    type "Postsynaptic"
+    label "19727932"
+    type "connector"
   ]
   node [
     id 1152
-    label "-19755052"
-    type "Postsynaptic"
+    label "19755052"
+    type "connector"
   ]
   node [
     id 1153
-    label "-19755057"
-    type "Postsynaptic"
+    label "19755057"
+    type "connector"
   ]
   node [
     id 1154
-    label "-19755060"
-    type "Postsynaptic"
+    label "19755060"
+    type "connector"
   ]
   node [
     id 1155
-    label "-19755203"
-    type "Postsynaptic"
+    label "19755203"
+    type "connector"
   ]
   node [
     id 1156
-    label "-19755390"
-    type "Postsynaptic"
+    label "19755390"
+    type "connector"
   ]
   node [
     id 1157
-    label "-19755426"
-    type "Postsynaptic"
+    label "19755426"
+    type "connector"
   ]
   node [
     id 1158
-    label "-19796890"
-    type "Postsynaptic"
+    label "19796890"
+    type "connector"
   ]
   node [
     id 1159
-    label "-19800745"
-    type "Postsynaptic"
+    label "19800745"
+    type "connector"
   ]
   node [
     id 1160
-    label "-19814472"
-    type "Postsynaptic"
+    label "19814472"
+    type "connector"
   ]
   node [
     id 1161
-    label "-19814488"
-    type "Postsynaptic"
+    label "19814488"
+    type "connector"
   ]
   node [
     id 1162
-    label "-19814494"
-    type "Postsynaptic"
+    label "19814494"
+    type "connector"
   ]
   node [
     id 1163
-    label "-19814496"
-    type "Postsynaptic"
+    label "19814496"
+    type "connector"
   ]
   node [
     id 1164
-    label "-19814537"
-    type "Postsynaptic"
+    label "19814537"
+    type "connector"
   ]
   node [
     id 1165
-    label "-19814539"
-    type "Postsynaptic"
+    label "19814539"
+    type "connector"
   ]
   node [
     id 1166
-    label "-19814540"
-    type "Postsynaptic"
+    label "19814540"
+    type "connector"
   ]
   node [
     id 1167
-    label "-19814542"
-    type "Postsynaptic"
+    label "19814542"
+    type "connector"
   ]
   node [
     id 1168
-    label "-19829177"
-    type "Postsynaptic"
+    label "19829177"
+    type "connector"
   ]
   node [
     id 1169
-    label "-19829181"
-    type "Postsynaptic"
+    label "19829181"
+    type "connector"
   ]
   node [
     id 1170
-    label "-19943746"
-    type "Postsynaptic"
+    label "19943746"
+    type "connector"
   ]
   node [
     id 1171
-    label "-19943926"
-    type "Postsynaptic"
+    label "19943926"
+    type "connector"
   ]
   node [
     id 1172
-    label "-19943943"
-    type "Postsynaptic"
+    label "19943943"
+    type "connector"
   ]
   node [
     id 1173
-    label "-19948707"
-    type "Postsynaptic"
+    label "19948707"
+    type "connector"
   ]
   node [
     id 1174
-    label "-19948971"
-    type "Postsynaptic"
+    label "19948971"
+    type "connector"
   ]
   node [
     id 1175
-    label "-19949189"
-    type "Postsynaptic"
+    label "19949189"
+    type "connector"
   ]
   node [
     id 1176
-    label "-19949227"
-    type "Postsynaptic"
+    label "19949227"
+    type "connector"
   ]
   node [
     id 1177
-    label "-19949283"
-    type "Postsynaptic"
+    label "19949283"
+    type "connector"
   ]
   node [
     id 1178
-    label "-19949817"
-    type "Postsynaptic"
+    label "19949817"
+    type "connector"
   ]
   node [
     id 1179
-    label "-19949832"
-    type "Postsynaptic"
+    label "19949832"
+    type "connector"
   ]
   node [
     id 1180
-    label "-19950975"
-    type "Postsynaptic"
+    label "19950975"
+    type "connector"
   ]
   node [
     id 1181
-    label "-20052867"
-    type "Postsynaptic"
+    label "20052867"
+    type "connector"
   ]
   node [
     id 1182
-    label "-20052893"
-    type "Postsynaptic"
+    label "20052893"
+    type "connector"
   ]
   node [
     id 1183
-    label "-20052923"
-    type "Postsynaptic"
+    label "20052923"
+    type "connector"
   ]
   node [
     id 1184
-    label "-20052926"
-    type "Postsynaptic"
+    label "20052926"
+    type "connector"
   ]
   node [
     id 1185
-    label "-20055613"
-    type "Postsynaptic"
+    label "20055613"
+    type "connector"
   ]
   node [
     id 1186
-    label "-20055631"
-    type "Postsynaptic"
+    label "20055631"
+    type "connector"
   ]
   node [
     id 1187
-    label "-20142437"
-    type "Postsynaptic"
+    label "20142437"
+    type "connector"
   ]
   node [
     id 1188
-    label "-20142439"
-    type "Postsynaptic"
+    label "20142439"
+    type "connector"
   ]
   node [
     id 1189
-    label "-20142448"
-    type "Postsynaptic"
+    label "20142448"
+    type "connector"
   ]
   node [
     id 1190
-    label "-20142471"
-    type "Postsynaptic"
+    label "20142471"
+    type "connector"
   ]
   node [
     id 1191
-    label "-20142575"
-    type "Postsynaptic"
+    label "20142575"
+    type "connector"
   ]
   node [
     id 1192
-    label "-20164639"
-    type "Postsynaptic"
+    label "20164639"
+    type "connector"
   ]
   node [
     id 1193
-    label "-20169162"
-    type "Postsynaptic"
+    label "20169162"
+    type "connector"
   ]
   node [
     id 1194
-    label "-20169598"
-    type "Postsynaptic"
+    label "20169598"
+    type "connector"
   ]
   node [
     id 1195
-    label "-20171516"
-    type "Postsynaptic"
+    label "20171516"
+    type "connector"
   ]
   node [
     id 1196
-    label "-20172070"
-    type "Postsynaptic"
+    label "20172070"
+    type "connector"
   ]
   node [
     id 1197
-    label "-20172127"
-    type "Postsynaptic"
+    label "20172127"
+    type "connector"
   ]
   node [
     id 1198
-    label "-20172129"
-    type "Postsynaptic"
+    label "20172129"
+    type "connector"
   ]
   node [
     id 1199
-    label "-20179332"
-    type "Postsynaptic"
+    label "20179332"
+    type "connector"
   ]
   node [
     id 1200
-    label "-20193419"
-    type "Postsynaptic"
+    label "20193419"
+    type "connector"
   ]
   node [
     id 1201
-    label "-20226163"
-    type "Postsynaptic"
+    label "20226163"
+    type "connector"
   ]
   node [
     id 1202
-    label "-20226164"
-    type "Postsynaptic"
+    label "20226164"
+    type "connector"
   ]
   node [
     id 1203
-    label "-20226387"
-    type "Postsynaptic"
+    label "20226387"
+    type "connector"
   ]
   node [
     id 1204
-    label "-20233114"
-    type "Postsynaptic"
+    label "20233114"
+    type "connector"
   ]
   node [
     id 1205
-    label "-20325316"
-    type "Postsynaptic"
+    label "20325316"
+    type "connector"
   ]
   node [
     id 1206
-    label "-20325435"
-    type "Postsynaptic"
+    label "20325435"
+    type "connector"
   ]
   node [
     id 1207
-    label "-20325436"
-    type "Postsynaptic"
+    label "20325436"
+    type "connector"
   ]
   node [
     id 1208
-    label "-20325440"
-    type "Postsynaptic"
+    label "20325440"
+    type "connector"
   ]
   node [
     id 1209
-    label "-20344249"
-    type "Postsynaptic"
+    label "20344249"
+    type "connector"
   ]
   node [
     id 1210
-    label "-20344548"
-    type "Postsynaptic"
+    label "20344548"
+    type "connector"
   ]
   node [
     id 1211
-    label "-20344559"
-    type "Postsynaptic"
+    label "20344559"
+    type "connector"
   ]
   node [
     id 1212
-    label "-20344563"
-    type "Postsynaptic"
+    label "20344563"
+    type "connector"
   ]
   node [
     id 1213
-    label "-20346732"
-    type "Postsynaptic"
+    label "20346732"
+    type "connector"
   ]
   node [
     id 1214
-    label "-20346738"
-    type "Postsynaptic"
+    label "20346738"
+    type "connector"
   ]
   node [
     id 1215
-    label "-20346765"
-    type "Postsynaptic"
+    label "20346765"
+    type "connector"
   ]
   node [
     id 1216
-    label "-20347118"
-    type "Postsynaptic"
+    label "20347118"
+    type "connector"
   ]
   node [
     id 1217
-    label "-20495058"
-    type "Postsynaptic"
+    label "20495058"
+    type "connector"
   ]
   node [
     id 1218
-    label "-20495067"
-    type "Postsynaptic"
+    label "20495067"
+    type "connector"
   ]
   node [
     id 1219
-    label "-20496137"
-    type "Postsynaptic"
+    label "20496137"
+    type "connector"
   ]
   node [
     id 1220
-    label "-20496509"
-    type "Postsynaptic"
+    label "20496509"
+    type "connector"
   ]
   node [
     id 1221
-    label "-20502648"
-    type "Postsynaptic"
+    label "20502648"
+    type "connector"
   ]
   node [
     id 1222
-    label "-20502653"
-    type "Postsynaptic"
+    label "20502653"
+    type "connector"
   ]
   node [
     id 1223
-    label "-20502684"
-    type "Postsynaptic"
+    label "20502684"
+    type "connector"
   ]
   node [
     id 1224
-    label "-20503041"
-    type "Postsynaptic"
+    label "20503041"
+    type "connector"
   ]
   node [
     id 1225
-    label "-20503074"
-    type "Postsynaptic"
+    label "20503074"
+    type "connector"
   ]
   node [
     id 1226
-    label "-20503104"
-    type "Postsynaptic"
+    label "20503104"
+    type "connector"
   ]
   node [
     id 1227
-    label "-20503158"
-    type "Postsynaptic"
+    label "20503158"
+    type "connector"
   ]
   node [
     id 1228
-    label "-20503160"
-    type "Postsynaptic"
+    label "20503160"
+    type "connector"
   ]
   node [
     id 1229
-    label "-20503164"
-    type "Postsynaptic"
+    label "20503164"
+    type "connector"
   ]
   node [
     id 1230
-    label "-20503167"
-    type "Postsynaptic"
+    label "20503167"
+    type "connector"
   ]
   node [
     id 1231
-    label "-20503192"
-    type "Postsynaptic"
+    label "20503192"
+    type "connector"
   ]
   node [
     id 1232
-    label "-20510283"
-    type "Postsynaptic"
+    label "20510283"
+    type "connector"
   ]
   node [
     id 1233
-    label "-20510610"
-    type "Postsynaptic"
+    label "20510610"
+    type "connector"
   ]
   node [
     id 1234
-    label "-20517804"
-    type "Postsynaptic"
+    label "20517804"
+    type "connector"
   ]
   node [
     id 1235
-    label "-20517825"
-    type "Postsynaptic"
+    label "20517825"
+    type "connector"
   ]
   node [
     id 1236
-    label "-20518450"
-    type "Postsynaptic"
+    label "20518450"
+    type "connector"
   ]
   node [
     id 1237
-    label "-20522861"
-    type "Postsynaptic"
+    label "20522861"
+    type "connector"
   ]
   node [
     id 1238
-    label "-20522908"
-    type "Postsynaptic"
+    label "20522908"
+    type "connector"
   ]
   node [
     id 1239
-    label "-20525847"
-    type "Postsynaptic"
+    label "20525847"
+    type "connector"
   ]
   node [
     id 1240
-    label "-20528391"
-    type "Postsynaptic"
+    label "20528391"
+    type "connector"
   ]
   node [
     id 1241
-    label "-20528561"
-    type "Postsynaptic"
+    label "20528561"
+    type "connector"
   ]
   node [
     id 1242
-    label "-20528610"
-    type "Postsynaptic"
+    label "20528610"
+    type "connector"
   ]
   node [
     id 1243
-    label "-20528691"
-    type "Postsynaptic"
+    label "20528691"
+    type "connector"
   ]
   node [
     id 1244
-    label "-20528935"
-    type "Postsynaptic"
+    label "20528935"
+    type "connector"
   ]
   node [
     id 1245
-    label "-20528936"
-    type "Postsynaptic"
+    label "20528936"
+    type "connector"
   ]
   node [
     id 1246
-    label "-20528985"
-    type "Postsynaptic"
+    label "20528985"
+    type "connector"
   ]
   node [
     id 1247
-    label "-20529163"
-    type "Postsynaptic"
+    label "20529163"
+    type "connector"
   ]
   node [
     id 1248
-    label "-20532994"
-    type "Postsynaptic"
+    label "20532994"
+    type "connector"
   ]
   node [
     id 1249
-    label "-20539374"
-    type "Postsynaptic"
+    label "20539374"
+    type "connector"
   ]
   node [
     id 1250
-    label "-20539384"
-    type "Postsynaptic"
+    label "20539384"
+    type "connector"
   ]
   node [
     id 1251
-    label "-20539542"
-    type "Postsynaptic"
+    label "20539542"
+    type "connector"
   ]
   node [
     id 1252
-    label "-20539786"
-    type "Postsynaptic"
+    label "20539786"
+    type "connector"
   ]
   node [
     id 1253
-    label "-20548913"
-    type "Postsynaptic"
+    label "20548913"
+    type "connector"
   ]
   node [
     id 1254
-    label "-20549317"
-    type "Postsynaptic"
+    label "20549317"
+    type "connector"
   ]
   node [
     id 1255
-    label "-20550069"
-    type "Postsynaptic"
+    label "20550069"
+    type "connector"
   ]
   node [
     id 1256
-    label "-20552052"
-    type "Postsynaptic"
+    label "20552052"
+    type "connector"
   ]
   node [
     id 1257
-    label "-20555972"
-    type "Postsynaptic"
+    label "20555972"
+    type "connector"
   ]
   node [
     id 1258
-    label "-20561977"
-    type "Postsynaptic"
+    label "20561977"
+    type "connector"
   ]
   node [
     id 1259
-    label "-20562989"
-    type "Postsynaptic"
+    label "20562989"
+    type "connector"
   ]
   node [
     id 1260
-    label "-20563024"
-    type "Postsynaptic"
+    label "20563024"
+    type "connector"
   ]
   node [
     id 1261
-    label "-20566098"
-    type "Postsynaptic"
+    label "20566098"
+    type "connector"
   ]
   node [
     id 1262
-    label "-20566191"
-    type "Postsynaptic"
+    label "20566191"
+    type "connector"
   ]
   node [
     id 1263
-    label "-20646136"
-    type "Postsynaptic"
+    label "20646136"
+    type "connector"
   ]
   node [
     id 1264
-    label "-20651899"
-    type "Postsynaptic"
+    label "20651899"
+    type "connector"
   ]
   node [
     id 1265
-    label "-20651900"
-    type "Postsynaptic"
+    label "20651900"
+    type "connector"
   ]
   node [
     id 1266
-    label "-20651909"
-    type "Postsynaptic"
+    label "20651909"
+    type "connector"
   ]
   node [
     id 1267
-    label "-20652886"
-    type "Postsynaptic"
+    label "20652886"
+    type "connector"
   ]
   node [
     id 1268
-    label "-20652890"
-    type "Postsynaptic"
+    label "20652890"
+    type "connector"
   ]
   node [
     id 1269
-    label "-20652904"
-    type "Postsynaptic"
+    label "20652904"
+    type "connector"
   ]
   node [
     id 1270
-    label "-20653165"
-    type "Postsynaptic"
+    label "20653165"
+    type "connector"
   ]
   node [
     id 1271
-    label "-20653215"
-    type "Postsynaptic"
+    label "20653215"
+    type "connector"
   ]
   node [
     id 1272
-    label "-20653243"
-    type "Postsynaptic"
+    label "20653243"
+    type "connector"
   ]
   node [
     id 1273
-    label "-20654181"
-    type "Postsynaptic"
+    label "20654181"
+    type "connector"
   ]
   node [
     id 1274
-    label "-20661872"
-    type "Postsynaptic"
+    label "20661872"
+    type "connector"
   ]
   node [
     id 1275
-    label "-20662051"
-    type "Postsynaptic"
+    label "20662051"
+    type "connector"
   ]
   node [
     id 1276
-    label "-20662066"
-    type "Postsynaptic"
+    label "20662066"
+    type "connector"
   ]
   node [
     id 1277
-    label "-20662073"
-    type "Postsynaptic"
+    label "20662073"
+    type "connector"
   ]
   node [
     id 1278
-    label "-20662147"
-    type "Postsynaptic"
+    label "20662147"
+    type "connector"
   ]
   node [
     id 1279
-    label "-20662165"
-    type "Postsynaptic"
+    label "20662165"
+    type "connector"
   ]
   node [
     id 1280
-    label "-20664159"
-    type "Postsynaptic"
+    label "20664159"
+    type "connector"
   ]
   node [
     id 1281
-    label "-20664165"
-    type "Postsynaptic"
+    label "20664165"
+    type "connector"
   ]
   node [
     id 1282
-    label "-20664167"
-    type "Postsynaptic"
+    label "20664167"
+    type "connector"
   ]
   node [
     id 1283
-    label "-20664511"
-    type "Postsynaptic"
+    label "20664511"
+    type "connector"
   ]
   node [
     id 1284
-    label "-20671715"
-    type "Postsynaptic"
+    label "20671715"
+    type "connector"
   ]
   node [
     id 1285
-    label "-20679972"
-    type "Postsynaptic"
+    label "20679972"
+    type "connector"
   ]
   node [
     id 1286
-    label "-20679995"
-    type "Postsynaptic"
+    label "20679995"
+    type "connector"
   ]
   node [
     id 1287
-    label "-20680000"
-    type "Postsynaptic"
+    label "20680000"
+    type "connector"
   ]
   node [
     id 1288
-    label "-20680050"
-    type "Postsynaptic"
+    label "20680050"
+    type "connector"
   ]
   node [
     id 1289
-    label "-20680070"
-    type "Postsynaptic"
+    label "20680070"
+    type "connector"
   ]
   node [
     id 1290
-    label "-20680088"
-    type "Postsynaptic"
+    label "20680088"
+    type "connector"
   ]
   node [
     id 1291
-    label "-20694586"
-    type "Postsynaptic"
+    label "20694586"
+    type "connector"
   ]
   node [
     id 1292
-    label "-20711374"
-    type "Postsynaptic"
+    label "20711374"
+    type "connector"
   ]
   node [
     id 1293
-    label "-20749697"
-    type "Postsynaptic"
+    label "20749697"
+    type "connector"
   ]
   node [
     id 1294
-    label "-20749698"
-    type "Postsynaptic"
+    label "20749698"
+    type "connector"
   ]
   node [
     id 1295
-    label "-20752810"
-    type "Postsynaptic"
+    label "20752810"
+    type "connector"
   ]
   node [
     id 1296
-    label "-20777837"
-    type "Postsynaptic"
+    label "20777837"
+    type "connector"
   ]
   node [
     id 1297
-    label "-20777840"
-    type "Postsynaptic"
+    label "20777840"
+    type "connector"
   ]
   node [
     id 1298
-    label "-20777843"
-    type "Postsynaptic"
+    label "20777843"
+    type "connector"
   ]
   node [
     id 1299
-    label "-20778897"
-    type "Postsynaptic"
+    label "20778897"
+    type "connector"
   ]
   node [
     id 1300
-    label "-20780478"
-    type "Postsynaptic"
+    label "20780478"
+    type "connector"
   ]
   node [
     id 1301
-    label "-20781507"
-    type "Postsynaptic"
+    label "20781507"
+    type "connector"
   ]
   node [
     id 1302
-    label "-20786510"
-    type "Postsynaptic"
+    label "20786510"
+    type "connector"
   ]
   node [
     id 1303
-    label "-20795284"
-    type "Postsynaptic"
+    label "20795284"
+    type "connector"
   ]
   node [
     id 1304
-    label "-20796445"
-    type "Postsynaptic"
+    label "20796445"
+    type "connector"
   ]
   node [
     id 1305
-    label "-20805831"
-    type "Postsynaptic"
+    label "20805831"
+    type "connector"
   ]
   node [
     id 1306
-    label "-20806374"
-    type "Postsynaptic"
+    label "20806374"
+    type "connector"
   ]
   node [
     id 1307
-    label "-20806377"
-    type "Postsynaptic"
+    label "20806377"
+    type "connector"
   ]
   node [
     id 1308
-    label "-20806378"
-    type "Postsynaptic"
+    label "20806378"
+    type "connector"
   ]
   node [
     id 1309
-    label "-20806730"
-    type "Postsynaptic"
+    label "20806730"
+    type "connector"
   ]
   node [
     id 1310
-    label "-20806753"
-    type "Postsynaptic"
+    label "20806753"
+    type "connector"
   ]
   node [
     id 1311
-    label "-20807004"
-    type "Postsynaptic"
+    label "20807004"
+    type "connector"
   ]
   node [
     id 1312
-    label "-20807020"
-    type "Postsynaptic"
+    label "20807020"
+    type "connector"
   ]
   node [
     id 1313
-    label "-20811166"
-    type "Postsynaptic"
+    label "20811166"
+    type "connector"
   ]
   node [
     id 1314
-    label "-20811168"
-    type "Postsynaptic"
+    label "20811168"
+    type "connector"
   ]
   node [
     id 1315
-    label "-20811171"
-    type "Postsynaptic"
+    label "20811171"
+    type "connector"
   ]
   node [
     id 1316
-    label "-20811609"
-    type "Postsynaptic"
+    label "20811609"
+    type "connector"
   ]
   node [
     id 1317
-    label "-20811653"
-    type "Postsynaptic"
+    label "20811653"
+    type "connector"
   ]
   node [
     id 1318
-    label "-20811977"
-    type "Postsynaptic"
+    label "20811977"
+    type "connector"
   ]
   node [
     id 1319
-    label "-20812743"
-    type "Postsynaptic"
+    label "20812743"
+    type "connector"
   ]
   node [
     id 1320
-    label "-20819146"
-    type "Postsynaptic"
+    label "20819146"
+    type "connector"
   ]
   node [
     id 1321
-    label "-20819150"
-    type "Postsynaptic"
+    label "20819150"
+    type "connector"
   ]
   node [
     id 1322
-    label "-20819171"
-    type "Postsynaptic"
+    label "20819171"
+    type "connector"
   ]
   node [
     id 1323
-    label "-20819172"
-    type "Postsynaptic"
+    label "20819172"
+    type "connector"
   ]
   node [
     id 1324
-    label "-20819200"
-    type "Postsynaptic"
+    label "20819200"
+    type "connector"
   ]
   node [
     id 1325
-    label "-20819204"
-    type "Postsynaptic"
+    label "20819204"
+    type "connector"
   ]
   node [
     id 1326
-    label "-20819225"
-    type "Postsynaptic"
+    label "20819225"
+    type "connector"
   ]
   node [
     id 1327
-    label "-20819970"
-    type "Postsynaptic"
+    label "20819970"
+    type "connector"
   ]
   node [
     id 1328
-    label "-20819995"
-    type "Postsynaptic"
+    label "20819995"
+    type "connector"
   ]
   node [
     id 1329
-    label "-20838238"
-    type "Postsynaptic"
+    label "20838238"
+    type "connector"
   ]
   node [
     id 1330
-    label "-20838248"
-    type "Postsynaptic"
+    label "20838248"
+    type "connector"
   ]
   node [
     id 1331
-    label "-20838308"
-    type "Postsynaptic"
+    label "20838308"
+    type "connector"
   ]
   node [
     id 1332
-    label "-20838309"
-    type "Postsynaptic"
+    label "20838309"
+    type "connector"
   ]
   node [
     id 1333
-    label "-20843335"
-    type "Postsynaptic"
+    label "20843335"
+    type "connector"
   ]
   node [
     id 1334
-    label "-20843338"
-    type "Postsynaptic"
+    label "20843338"
+    type "connector"
   ]
   node [
     id 1335
-    label "-20843917"
-    type "Postsynaptic"
+    label "20843917"
+    type "connector"
   ]
   node [
     id 1336
-    label "-20848668"
-    type "Postsynaptic"
+    label "20848668"
+    type "connector"
   ]
   node [
     id 1337
-    label "-20849828"
-    type "Postsynaptic"
+    label "20849828"
+    type "connector"
   ]
   node [
     id 1338
-    label "-20850375"
-    type "Postsynaptic"
+    label "20850375"
+    type "connector"
   ]
   node [
     id 1339
-    label "-20850388"
-    type "Postsynaptic"
+    label "20850388"
+    type "connector"
   ]
   node [
     id 1340
-    label "-20855410"
-    type "Postsynaptic"
+    label "20855410"
+    type "connector"
   ]
   node [
     id 1341
-    label "-20856073"
-    type "Postsynaptic"
+    label "20856073"
+    type "connector"
   ]
   node [
     id 1342
-    label "-20856140"
-    type "Postsynaptic"
+    label "20856140"
+    type "connector"
   ]
   node [
     id 1343
-    label "-20859206"
-    type "Postsynaptic"
+    label "20859206"
+    type "connector"
   ]
   node [
     id 1344
-    label "-20876292"
-    type "Postsynaptic"
+    label "20876292"
+    type "connector"
   ]
   node [
     id 1345
-    label "-20886051"
-    type "Postsynaptic"
+    label "20886051"
+    type "connector"
   ]
   node [
     id 1346
-    label "-20887044"
-    type "Postsynaptic"
+    label "20887044"
+    type "connector"
   ]
   node [
     id 1347
-    label "-20889165"
-    type "Postsynaptic"
+    label "20889165"
+    type "connector"
   ]
   node [
     id 1348
-    label "-20889591"
-    type "Postsynaptic"
+    label "20889591"
+    type "connector"
   ]
   node [
     id 1349
-    label "-20898475"
-    type "Postsynaptic"
+    label "20898475"
+    type "connector"
   ]
   node [
     id 1350
-    label "-20903510"
-    type "Postsynaptic"
+    label "20903510"
+    type "connector"
   ]
   node [
     id 1351
-    label "-20903511"
-    type "Postsynaptic"
+    label "20903511"
+    type "connector"
   ]
   node [
     id 1352
-    label "-20903517"
-    type "Postsynaptic"
+    label "20903517"
+    type "connector"
   ]
   node [
     id 1353
-    label "-20903521"
-    type "Postsynaptic"
+    label "20903521"
+    type "connector"
   ]
   node [
     id 1354
-    label "-20910464"
-    type "Postsynaptic"
+    label "20910464"
+    type "connector"
   ]
   node [
     id 1355
-    label "-20910466"
-    type "Postsynaptic"
+    label "20910466"
+    type "connector"
   ]
   node [
     id 1356
-    label "-20910472"
-    type "Postsynaptic"
+    label "20910472"
+    type "connector"
   ]
   node [
     id 1357
-    label "-20910474"
-    type "Postsynaptic"
+    label "20910474"
+    type "connector"
   ]
   node [
     id 1358
-    label "-20910508"
-    type "Postsynaptic"
+    label "20910508"
+    type "connector"
   ]
   node [
     id 1359
-    label "-20910712"
-    type "Postsynaptic"
+    label "20910712"
+    type "connector"
   ]
   node [
     id 1360
-    label "-20924916"
-    type "Postsynaptic"
+    label "20924916"
+    type "connector"
   ]
   node [
     id 1361
-    label "-20924930"
-    type "Postsynaptic"
+    label "20924930"
+    type "connector"
   ]
   node [
     id 1362
-    label "-20925315"
-    type "Postsynaptic"
+    label "20925315"
+    type "connector"
   ]
   node [
     id 1363
-    label "-20925429"
-    type "Postsynaptic"
+    label "20925429"
+    type "connector"
   ]
   node [
     id 1364
-    label "-20925491"
-    type "Postsynaptic"
+    label "20925491"
+    type "connector"
   ]
   node [
     id 1365
-    label "-20925551"
-    type "Postsynaptic"
+    label "20925551"
+    type "connector"
   ]
   node [
     id 1366
-    label "-20925552"
-    type "Postsynaptic"
+    label "20925552"
+    type "connector"
   ]
   node [
     id 1367
-    label "-20925554"
-    type "Postsynaptic"
+    label "20925554"
+    type "connector"
   ]
   node [
     id 1368
-    label "-20926244"
-    type "Postsynaptic"
+    label "20926244"
+    type "connector"
   ]
   node [
     id 1369
-    label "-20926604"
-    type "Postsynaptic"
+    label "20926604"
+    type "connector"
   ]
   node [
     id 1370
-    label "-20933010"
-    type "Postsynaptic"
+    label "20933010"
+    type "connector"
   ]
   node [
     id 1371
-    label "-20933013"
-    type "Postsynaptic"
+    label "20933013"
+    type "connector"
   ]
   node [
     id 1372
-    label "-20934415"
-    type "Postsynaptic"
+    label "20934415"
+    type "connector"
   ]
   node [
     id 1373
-    label "-20935442"
-    type "Postsynaptic"
+    label "20935442"
+    type "connector"
   ]
   node [
     id 1374
-    label "-20955865"
-    type "Postsynaptic"
+    label "20955865"
+    type "connector"
   ]
   node [
     id 1375
-    label "-20955887"
-    type "Postsynaptic"
+    label "20955887"
+    type "connector"
   ]
   node [
     id 1376
-    label "-20965796"
-    type "Postsynaptic"
+    label "20965796"
+    type "connector"
   ]
   node [
     id 1377
-    label "-20965814"
-    type "Postsynaptic"
+    label "20965814"
+    type "connector"
   ]
   node [
     id 1378
-    label "-20976373"
-    type "Postsynaptic"
+    label "20976373"
+    type "connector"
   ]
   node [
     id 1379
-    label "-20994541"
-    type "Postsynaptic"
+    label "20994541"
+    type "connector"
   ]
   node [
     id 1380
-    label "-20994943"
-    type "Postsynaptic"
+    label "20994943"
+    type "connector"
   ]
   node [
     id 1381
-    label "-21007979"
-    type "Postsynaptic"
+    label "21007979"
+    type "connector"
   ]
   node [
     id 1382
-    label "-21014345"
-    type "Postsynaptic"
+    label "21014345"
+    type "connector"
   ]
   node [
     id 1383
-    label "-21023779"
-    type "Postsynaptic"
+    label "21023779"
+    type "connector"
   ]
   node [
     id 1384
-    label "-21024286"
-    type "Postsynaptic"
+    label "21024286"
+    type "connector"
   ]
   node [
     id 1385
-    label "-21029033"
-    type "Postsynaptic"
+    label "21029033"
+    type "connector"
   ]
   node [
     id 1386
-    label "-21046176"
-    type "Postsynaptic"
+    label "21046176"
+    type "connector"
   ]
   node [
     id 1387
-    label "-21049892"
-    type "Postsynaptic"
+    label "21049892"
+    type "connector"
   ]
   node [
     id 1388
-    label "-21053722"
-    type "Postsynaptic"
+    label "21053722"
+    type "connector"
   ]
   node [
     id 1389
-    label "-21074787"
-    type "Postsynaptic"
+    label "21074787"
+    type "connector"
   ]
   node [
     id 1390
-    label "-21084798"
-    type "Postsynaptic"
+    label "21084798"
+    type "connector"
   ]
   node [
     id 1391
-    label "-21103359"
-    type "Postsynaptic"
+    label "21103359"
+    type "connector"
   ]
   node [
     id 1392
-    label "-21103361"
-    type "Postsynaptic"
+    label "21103361"
+    type "connector"
   ]
   node [
     id 1393
-    label "-21103363"
-    type "Postsynaptic"
+    label "21103363"
+    type "connector"
   ]
   node [
     id 1394
-    label "-21106416"
-    type "Postsynaptic"
+    label "21106416"
+    type "connector"
   ]
   node [
     id 1395
-    label "-21112447"
-    type "Postsynaptic"
+    label "21112447"
+    type "connector"
   ]
   node [
     id 1396
-    label "-21115479"
-    type "Postsynaptic"
+    label "21115479"
+    type "connector"
   ]
   node [
     id 1397
-    label "-21124220"
-    type "Postsynaptic"
+    label "21124220"
+    type "connector"
   ]
   node [
     id 1398
-    label "-21124867"
-    type "Postsynaptic"
+    label "21124867"
+    type "connector"
   ]
   node [
     id 1399
-    label "-21135823"
-    type "Postsynaptic"
+    label "21135823"
+    type "connector"
   ]
   node [
     id 1400
-    label "-21135898"
-    type "Postsynaptic"
+    label "21135898"
+    type "connector"
   ]
   node [
     id 1401
-    label "-21136058"
-    type "Postsynaptic"
+    label "21136058"
+    type "connector"
   ]
   node [
     id 1402
-    label "-21136445"
-    type "Postsynaptic"
+    label "21136445"
+    type "connector"
   ]
   node [
     id 1403
-    label "-21136450"
-    type "Postsynaptic"
+    label "21136450"
+    type "connector"
   ]
   node [
     id 1404
-    label "-21136588"
-    type "Postsynaptic"
+    label "21136588"
+    type "connector"
   ]
   node [
     id 1405
-    label "-21142203"
-    type "Postsynaptic"
+    label "21142203"
+    type "connector"
   ]
   node [
     id 1406
-    label "-21142209"
-    type "Postsynaptic"
+    label "21142209"
+    type "connector"
   ]
   node [
     id 1407
-    label "-21142791"
-    type "Postsynaptic"
+    label "21142791"
+    type "connector"
   ]
   node [
     id 1408
-    label "-21159443"
-    type "Postsynaptic"
+    label "21159443"
+    type "connector"
   ]
   node [
     id 1409
-    label "-21172392"
-    type "Postsynaptic"
+    label "21172392"
+    type "connector"
   ]
   node [
     id 1410
-    label "-21173238"
-    type "Postsynaptic"
+    label "21173238"
+    type "connector"
   ]
   node [
     id 1411
-    label "-21203636"
-    type "Postsynaptic"
+    label "21203636"
+    type "connector"
   ]
   node [
     id 1412
-    label "-21207970"
-    type "Postsynaptic"
+    label "21207970"
+    type "connector"
   ]
   node [
     id 1413
-    label "-21227158"
-    type "Postsynaptic"
+    label "21227158"
+    type "connector"
   ]
   node [
     id 1414
-    label "-21227163"
-    type "Postsynaptic"
+    label "21227163"
+    type "connector"
   ]
   node [
     id 1415
-    label "-21548924"
-    type "Postsynaptic"
+    label "21548924"
+    type "connector"
   ]
   node [
     id 1416
-    label "-21922174"
-    type "Postsynaptic"
+    label "21922174"
+    type "connector"
   ]
   node [
     id 1417
-    label "-21948777"
-    type "Postsynaptic"
+    label "21948777"
+    type "connector"
   ]
   node [
     id 1418
-    label "-22061449"
-    type "Postsynaptic"
+    label "22061449"
+    type "connector"
   ]
   node [
     id 1419
-    label "-22064373"
-    type "Postsynaptic"
+    label "22064373"
+    type "connector"
   ]
   node [
     id 1420
-    label "-24154452"
-    type "Postsynaptic"
+    label "24154452"
+    type "connector"
   ]
   node [
     id 1421
-    label "-24202298"
-    type "Postsynaptic"
+    label "24202298"
+    type "connector"
   ]
   node [
     id 1422
-    label "-24749444"
-    type "Postsynaptic"
+    label "24749444"
+    type "connector"
   ]
   node [
     id 1423
-    label "-3995444"
-    type "Presynaptic"
+    label "3995444"
+    type "connector"
   ]
   node [
     id 1424
-    label "-3995483"
-    type "Presynaptic"
+    label "3995483"
+    type "connector"
   ]
   node [
     id 1425
-    label "-4701347"
-    type "Presynaptic"
+    label "4701347"
+    type "connector"
   ]
   node [
     id 1426
-    label "-5810512"
-    type "Presynaptic"
+    label "5810512"
+    type "connector"
   ]
   node [
     id 1427
-    label "-5811043"
-    type "Presynaptic"
+    label "5811043"
+    type "connector"
   ]
   node [
     id 1428
-    label "-7172592"
-    type "Presynaptic"
+    label "7172592"
+    type "connector"
   ]
   node [
     id 1429
-    label "-7655748"
-    type "Presynaptic"
+    label "7655748"
+    type "connector"
   ]
   node [
     id 1430
-    label "-7900023"
-    type "Presynaptic"
+    label "7900023"
+    type "connector"
   ]
   node [
     id 1431
-    label "-8136868"
-    type "Presynaptic"
+    label "8136868"
+    type "connector"
   ]
   node [
     id 1432
-    label "-8423181"
-    type "Presynaptic"
+    label "8423181"
+    type "connector"
   ]
   node [
     id 1433
-    label "-8423531"
-    type "Presynaptic"
+    label "8423531"
+    type "connector"
   ]
   node [
     id 1434
-    label "-8423563"
-    type "Presynaptic"
+    label "8423563"
+    type "connector"
   ]
   node [
     id 1435
-    label "-8423636"
-    type "Presynaptic"
+    label "8423636"
+    type "connector"
   ]
   node [
     id 1436
-    label "-8423660"
-    type "Presynaptic"
+    label "8423660"
+    type "connector"
   ]
   node [
     id 1437
-    label "-8423700"
-    type "Presynaptic"
+    label "8423700"
+    type "connector"
   ]
   node [
     id 1438
-    label "-8423723"
-    type "Presynaptic"
+    label "8423723"
+    type "connector"
   ]
   node [
     id 1439
-    label "-8423777"
-    type "Presynaptic"
+    label "8423777"
+    type "connector"
   ]
   node [
     id 1440
-    label "-8423796"
-    type "Presynaptic"
+    label "8423796"
+    type "connector"
   ]
   node [
     id 1441
-    label "-8423831"
-    type "Presynaptic"
+    label "8423831"
+    type "connector"
   ]
   node [
     id 1442
-    label "-8423862"
-    type "Presynaptic"
+    label "8423862"
+    type "connector"
   ]
   node [
     id 1443
-    label "-8423972"
-    type "Presynaptic"
+    label "8423972"
+    type "connector"
   ]
   node [
     id 1444
-    label "-8424529"
-    type "Presynaptic"
+    label "8424529"
+    type "connector"
   ]
   node [
     id 1445
-    label "-8424556"
-    type "Presynaptic"
+    label "8424556"
+    type "connector"
   ]
   node [
     id 1446
-    label "-8748728"
-    type "Presynaptic"
+    label "8748728"
+    type "connector"
   ]
   node [
     id 1447
-    label "-8748745"
-    type "Presynaptic"
+    label "8748745"
+    type "connector"
   ]
   node [
     id 1448
-    label "-8748778"
-    type "Presynaptic"
+    label "8748778"
+    type "connector"
   ]
   node [
     id 1449
-    label "-8749718"
-    type "Presynaptic"
+    label "8749718"
+    type "connector"
   ]
   node [
     id 1450
-    label "-8749777"
-    type "Presynaptic"
+    label "8749777"
+    type "connector"
   ]
   node [
     id 1451
-    label "-9035006"
-    type "Presynaptic"
+    label "9035006"
+    type "connector"
   ]
   node [
     id 1452
-    label "-9035036"
-    type "Presynaptic"
+    label "9035036"
+    type "connector"
   ]
   node [
     id 1453
-    label "-9035073"
-    type "Presynaptic"
+    label "9035073"
+    type "connector"
   ]
   node [
     id 1454
-    label "-9035097"
-    type "Presynaptic"
+    label "9035097"
+    type "connector"
   ]
   node [
     id 1455
-    label "-9035751"
-    type "Presynaptic"
+    label "9035751"
+    type "connector"
   ]
   node [
     id 1456
-    label "-9035789"
-    type "Presynaptic"
+    label "9035789"
+    type "connector"
   ]
   node [
     id 1457
-    label "-9037453"
-    type "Presynaptic"
+    label "9037453"
+    type "connector"
   ]
   node [
     id 1458
-    label "-9038571"
-    type "Presynaptic"
+    label "9038571"
+    type "connector"
   ]
   node [
     id 1459
-    label "-9039148"
-    type "Presynaptic"
+    label "9039148"
+    type "connector"
   ]
   node [
     id 1460
-    label "-9039388"
-    type "Presynaptic"
+    label "9039388"
+    type "connector"
   ]
   node [
     id 1461
-    label "-9039424"
-    type "Presynaptic"
+    label "9039424"
+    type "connector"
   ]
   node [
     id 1462
-    label "-9055640"
-    type "Presynaptic"
+    label "9055640"
+    type "connector"
   ]
   node [
     id 1463
-    label "-9055704"
-    type "Presynaptic"
+    label "9055704"
+    type "connector"
   ]
   node [
     id 1464
-    label "-9055810"
-    type "Presynaptic"
+    label "9055810"
+    type "connector"
   ]
   node [
     id 1465
-    label "-13531513"
-    type "Presynaptic"
+    label "13531513"
+    type "connector"
   ]
   node [
     id 1466
-    label "-13531870"
-    type "Presynaptic"
+    label "13531870"
+    type "connector"
   ]
   node [
     id 1467
-    label "-13532624"
-    type "Presynaptic"
+    label "13532624"
+    type "connector"
   ]
   node [
     id 1468
-    label "-17855885"
-    type "Presynaptic"
+    label "17855885"
+    type "connector"
   ]
   node [
     id 1469
-    label "-19829167"
-    type "Presynaptic"
+    label "19829167"
+    type "connector"
   ]
   node [
     id 1470
-    label "-19950275"
-    type "Presynaptic"
+    label "19950275"
+    type "connector"
   ]
   node [
     id 1471
-    label "-19950352"
-    type "Presynaptic"
+    label "19950352"
+    type "connector"
   ]
   node [
     id 1472
-    label "-20498229"
-    type "Presynaptic"
+    label "20498229"
+    type "connector"
   ]
   node [
     id 1473
-    label "-20502918"
-    type "Presynaptic"
+    label "20502918"
+    type "connector"
   ]
   node [
     id 1474
-    label "-20551722"
-    type "Presynaptic"
+    label "20551722"
+    type "connector"
   ]
   node [
     id 1475
-    label "-20850037"
-    type "Presynaptic"
+    label "20850037"
+    type "connector"
   ]
   node [
     id 1476
-    label "-21044707"
-    type "Presynaptic"
+    label "21044707"
+    type "connector"
   ]
   node [
     id 1477
-    label "-21531641"
-    type "Presynaptic"
+    label "21531641"
+    type "connector"
   ]
   node [
     id 1478
-    label "-21531667"
-    type "Presynaptic"
+    label "21531667"
+    type "connector"
   ]
   node [
     id 1479
-    label "-21531669"
-    type "Presynaptic"
+    label "21531669"
+    type "connector"
   ]
   node [
     id 1480
-    label "-21531672"
-    type "Presynaptic"
+    label "21531672"
+    type "connector"
   ]
   node [
     id 1481
-    label "-21809607"
-    type "Presynaptic"
+    label "21809607"
+    type "connector"
   ]
   node [
     id 1482
-    label "-21946476"
-    type "Presynaptic"
+    label "21946476"
+    type "connector"
   ]
   node [
     id 1483
-    label "-21946482"
-    type "Presynaptic"
+    label "21946482"
+    type "connector"
   ]
   node [
     id 1484
-    label "-24399224"
-    type "Presynaptic"
+    label "24399224"
+    type "connector"
   ]
   edge [
     source 0

@@ -3081,1640 +3081,1640 @@ graph [
   ]
   node [
     id 513
-    label "-679983"
-    type "Postsynaptic"
+    label "679983"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 514
-    label "-3147529"
-    type "Postsynaptic"
+    label "3147529"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 515
-    label "-3148791"
-    type "Postsynaptic"
+    label "3148791"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 516
-    label "-3148950"
-    type "Postsynaptic"
+    label "3148950"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 517
-    label "-3277287"
-    type "Postsynaptic"
+    label "3277287"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 518
-    label "-3277454"
-    type "Postsynaptic"
+    label "3277454"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 519
-    label "-3298647"
-    type "Postsynaptic"
+    label "3298647"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 520
-    label "-3298776"
-    type "Postsynaptic"
+    label "3298776"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 521
-    label "-3299158"
-    type "Postsynaptic"
+    label "3299158"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 522
-    label "-3604225"
-    type "Postsynaptic"
+    label "3604225"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 523
-    label "-3604230"
-    type "Postsynaptic"
+    label "3604230"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 524
-    label "-4413997"
-    type "Postsynaptic"
+    label "4413997"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 525
-    label "-4414336"
-    type "Postsynaptic"
+    label "4414336"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 526
-    label "-4414417"
-    type "Postsynaptic"
+    label "4414417"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 527
-    label "-4414701"
-    type "Postsynaptic"
+    label "4414701"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 528
-    label "-4415288"
-    type "Postsynaptic"
+    label "4415288"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 529
-    label "-4415665"
-    type "Postsynaptic"
+    label "4415665"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 530
-    label "-4415742"
-    type "Postsynaptic"
+    label "4415742"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 531
-    label "-4416027"
-    type "Postsynaptic"
+    label "4416027"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 532
-    label "-4416248"
-    type "Postsynaptic"
+    label "4416248"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 533
-    label "-4416322"
-    type "Postsynaptic"
+    label "4416322"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 534
-    label "-4416373"
-    type "Postsynaptic"
+    label "4416373"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 535
-    label "-4517695"
-    type "Postsynaptic"
+    label "4517695"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 536
-    label "-4661348"
-    type "Postsynaptic"
+    label "4661348"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 537
-    label "-4661616"
-    type "Postsynaptic"
+    label "4661616"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 538
-    label "-4661667"
-    type "Postsynaptic"
+    label "4661667"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 539
-    label "-4661740"
-    type "Postsynaptic"
+    label "4661740"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 540
-    label "-4662088"
-    type "Postsynaptic"
+    label "4662088"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 541
-    label "-5016452"
-    type "Postsynaptic"
+    label "5016452"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 542
-    label "-5022316"
-    type "Postsynaptic"
+    label "5022316"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 543
-    label "-5022366"
-    type "Postsynaptic"
+    label "5022366"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 544
-    label "-5022468"
-    type "Postsynaptic"
+    label "5022468"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 545
-    label "-5063938"
-    type "Postsynaptic"
+    label "5063938"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 546
-    label "-5064184"
-    type "Postsynaptic"
+    label "5064184"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 547
-    label "-5836649"
-    type "Postsynaptic"
+    label "5836649"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 548
-    label "-5836763"
-    type "Postsynaptic"
+    label "5836763"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 549
-    label "-5837171"
-    type "Postsynaptic"
+    label "5837171"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 550
-    label "-5837317"
-    type "Postsynaptic"
+    label "5837317"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 551
-    label "-5837771"
-    type "Postsynaptic"
+    label "5837771"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 552
-    label "-6006837"
-    type "Postsynaptic"
+    label "6006837"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 553
-    label "-6535006"
-    type "Postsynaptic"
+    label "6535006"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 554
-    label "-6535100"
-    type "Postsynaptic"
+    label "6535100"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 555
-    label "-6535855"
-    type "Postsynaptic"
+    label "6535855"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 556
-    label "-6918050"
-    type "Postsynaptic"
+    label "6918050"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 557
-    label "-7178034"
-    type "Postsynaptic"
+    label "7178034"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 558
-    label "-7612339"
-    type "Postsynaptic"
+    label "7612339"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 559
-    label "-7777084"
-    type "Postsynaptic"
+    label "7777084"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 560
-    label "-7777167"
-    type "Postsynaptic"
+    label "7777167"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 561
-    label "-7777287"
-    type "Postsynaptic"
+    label "7777287"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 562
-    label "-7777331"
-    type "Postsynaptic"
+    label "7777331"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 563
-    label "-7855298"
-    type "Postsynaptic"
+    label "7855298"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 564
-    label "-8104238"
-    type "Postsynaptic"
+    label "8104238"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 565
-    label "-8429146"
-    type "Postsynaptic"
+    label "8429146"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 566
-    label "-8437785"
-    type "Postsynaptic"
+    label "8437785"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 567
-    label "-8442555"
-    type "Postsynaptic"
+    label "8442555"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 568
-    label "-8448980"
-    type "Postsynaptic"
+    label "8448980"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 569
-    label "-8449131"
-    type "Postsynaptic"
+    label "8449131"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 570
-    label "-8449166"
-    type "Postsynaptic"
+    label "8449166"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 571
-    label "-8449596"
-    type "Postsynaptic"
+    label "8449596"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 572
-    label "-8450209"
-    type "Postsynaptic"
+    label "8450209"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 573
-    label "-8451498"
-    type "Postsynaptic"
+    label "8451498"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 574
-    label "-8472048"
-    type "Postsynaptic"
+    label "8472048"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 575
-    label "-8474461"
-    type "Postsynaptic"
+    label "8474461"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 576
-    label "-8559498"
-    type "Postsynaptic"
+    label "8559498"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 577
-    label "-8568129"
-    type "Postsynaptic"
+    label "8568129"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 578
-    label "-8580234"
-    type "Postsynaptic"
+    label "8580234"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 579
-    label "-8584329"
-    type "Postsynaptic"
+    label "8584329"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 580
-    label "-8584378"
-    type "Postsynaptic"
+    label "8584378"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 581
-    label "-8584627"
-    type "Postsynaptic"
+    label "8584627"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 582
-    label "-8688215"
-    type "Postsynaptic"
+    label "8688215"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 583
-    label "-8706695"
-    type "Postsynaptic"
+    label "8706695"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 584
-    label "-8833155"
-    type "Postsynaptic"
+    label "8833155"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 585
-    label "-8833977"
-    type "Postsynaptic"
+    label "8833977"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 586
-    label "-8856271"
-    type "Postsynaptic"
+    label "8856271"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 587
-    label "-8856644"
-    type "Postsynaptic"
+    label "8856644"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 588
-    label "-8858999"
-    type "Postsynaptic"
+    label "8858999"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 589
-    label "-8892912"
-    type "Postsynaptic"
+    label "8892912"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 590
-    label "-8892944"
-    type "Postsynaptic"
+    label "8892944"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 591
-    label "-8893155"
-    type "Postsynaptic"
+    label "8893155"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 592
-    label "-8893307"
-    type "Postsynaptic"
+    label "8893307"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 593
-    label "-9496586"
-    type "Postsynaptic"
+    label "9496586"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 594
-    label "-9502622"
-    type "Postsynaptic"
+    label "9502622"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 595
-    label "-9502645"
-    type "Postsynaptic"
+    label "9502645"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 596
-    label "-9525818"
-    type "Postsynaptic"
+    label "9525818"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 597
-    label "-9532975"
-    type "Postsynaptic"
+    label "9532975"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 598
-    label "-9536389"
-    type "Postsynaptic"
+    label "9536389"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 599
-    label "-9550095"
-    type "Postsynaptic"
+    label "9550095"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 600
-    label "-9560127"
-    type "Postsynaptic"
+    label "9560127"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 601
-    label "-9560494"
-    type "Postsynaptic"
+    label "9560494"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 602
-    label "-9561393"
-    type "Postsynaptic"
+    label "9561393"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 603
-    label "-9628420"
-    type "Postsynaptic"
+    label "9628420"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 604
-    label "-9731321"
-    type "Postsynaptic"
+    label "9731321"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 605
-    label "-9859027"
-    type "Postsynaptic"
+    label "9859027"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 606
-    label "-9946360"
-    type "Postsynaptic"
+    label "9946360"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 607
-    label "-10037788"
-    type "Postsynaptic"
+    label "10037788"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 608
-    label "-10038999"
-    type "Postsynaptic"
+    label "10038999"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 609
-    label "-10069504"
-    type "Postsynaptic"
+    label "10069504"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 610
-    label "-10224405"
-    type "Postsynaptic"
+    label "10224405"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 611
-    label "-10224558"
-    type "Postsynaptic"
+    label "10224558"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 612
-    label "-10245406"
-    type "Postsynaptic"
+    label "10245406"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 613
-    label "-10245497"
-    type "Postsynaptic"
+    label "10245497"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 614
-    label "-10459295"
-    type "Postsynaptic"
+    label "10459295"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 615
-    label "-10497706"
-    type "Postsynaptic"
+    label "10497706"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 616
-    label "-10520220"
-    type "Postsynaptic"
+    label "10520220"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 617
-    label "-10652909"
-    type "Postsynaptic"
+    label "10652909"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 618
-    label "-10691370"
-    type "Postsynaptic"
+    label "10691370"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 619
-    label "-10744893"
-    type "Postsynaptic"
+    label "10744893"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 620
-    label "-11510909"
-    type "Postsynaptic"
+    label "11510909"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 621
-    label "-11772840"
-    type "Postsynaptic"
+    label "11772840"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 622
-    label "-11772888"
-    type "Postsynaptic"
+    label "11772888"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 623
-    label "-11773414"
-    type "Postsynaptic"
+    label "11773414"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 624
-    label "-11814016"
-    type "Postsynaptic"
+    label "11814016"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 625
-    label "-11814030"
-    type "Postsynaptic"
+    label "11814030"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 626
-    label "-11814048"
-    type "Postsynaptic"
+    label "11814048"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 627
-    label "-11814757"
-    type "Postsynaptic"
+    label "11814757"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 628
-    label "-11814928"
-    type "Postsynaptic"
+    label "11814928"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 629
-    label "-11816714"
-    type "Postsynaptic"
+    label "11816714"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 630
-    label "-11816880"
-    type "Postsynaptic"
+    label "11816880"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 631
-    label "-11839094"
-    type "Postsynaptic"
+    label "11839094"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 632
-    label "-11839114"
-    type "Postsynaptic"
+    label "11839114"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 633
-    label "-11839240"
-    type "Postsynaptic"
+    label "11839240"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 634
-    label "-11848715"
-    type "Postsynaptic"
+    label "11848715"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 635
-    label "-11848871"
-    type "Postsynaptic"
+    label "11848871"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 636
-    label "-11848942"
-    type "Postsynaptic"
+    label "11848942"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 637
-    label "-11849049"
-    type "Postsynaptic"
+    label "11849049"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 638
-    label "-11849078"
-    type "Postsynaptic"
+    label "11849078"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 639
-    label "-11849095"
-    type "Postsynaptic"
+    label "11849095"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 640
-    label "-11849463"
-    type "Postsynaptic"
+    label "11849463"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 641
-    label "-11850398"
-    type "Postsynaptic"
+    label "11850398"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 642
-    label "-11850445"
-    type "Postsynaptic"
+    label "11850445"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 643
-    label "-11850478"
-    type "Postsynaptic"
+    label "11850478"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 644
-    label "-11850504"
-    type "Postsynaptic"
+    label "11850504"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 645
-    label "-11850554"
-    type "Postsynaptic"
+    label "11850554"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 646
-    label "-11850616"
-    type "Postsynaptic"
+    label "11850616"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 647
-    label "-11850923"
-    type "Postsynaptic"
+    label "11850923"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 648
-    label "-11851655"
-    type "Postsynaptic"
+    label "11851655"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 649
-    label "-11852146"
-    type "Postsynaptic"
+    label "11852146"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 650
-    label "-11864031"
-    type "Postsynaptic"
+    label "11864031"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 651
-    label "-11864059"
-    type "Postsynaptic"
+    label "11864059"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 652
-    label "-11873911"
-    type "Postsynaptic"
+    label "11873911"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 653
-    label "-11874169"
-    type "Postsynaptic"
+    label "11874169"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 654
-    label "-11874219"
-    type "Postsynaptic"
+    label "11874219"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 655
-    label "-11874279"
-    type "Postsynaptic"
+    label "11874279"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 656
-    label "-11874958"
-    type "Postsynaptic"
+    label "11874958"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 657
-    label "-11875229"
-    type "Postsynaptic"
+    label "11875229"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 658
-    label "-11875410"
-    type "Postsynaptic"
+    label "11875410"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 659
-    label "-11875814"
-    type "Postsynaptic"
+    label "11875814"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 660
-    label "-11875955"
-    type "Postsynaptic"
+    label "11875955"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 661
-    label "-11956882"
-    type "Postsynaptic"
+    label "11956882"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 662
-    label "-12088585"
-    type "Postsynaptic"
+    label "12088585"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 663
-    label "-12149677"
-    type "Postsynaptic"
+    label "12149677"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 664
-    label "-12152203"
-    type "Postsynaptic"
+    label "12152203"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 665
-    label "-12382840"
-    type "Postsynaptic"
+    label "12382840"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 666
-    label "-12615648"
-    type "Postsynaptic"
+    label "12615648"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 667
-    label "-13457349"
-    type "Postsynaptic"
+    label "13457349"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 668
-    label "-13943721"
-    type "Postsynaptic"
+    label "13943721"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 669
-    label "-14074778"
-    type "Postsynaptic"
+    label "14074778"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 670
-    label "-14102361"
-    type "Postsynaptic"
+    label "14102361"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 671
-    label "-14300537"
-    type "Postsynaptic"
+    label "14300537"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 672
-    label "-14323352"
-    type "Postsynaptic"
+    label "14323352"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 673
-    label "-14804080"
-    type "Postsynaptic"
+    label "14804080"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 674
-    label "-14999665"
-    type "Postsynaptic"
+    label "14999665"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 675
-    label "-15061701"
-    type "Postsynaptic"
+    label "15061701"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 676
-    label "-15197003"
-    type "Postsynaptic"
+    label "15197003"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 677
-    label "-15298059"
-    type "Postsynaptic"
+    label "15298059"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 678
-    label "-15318987"
-    type "Postsynaptic"
+    label "15318987"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 679
-    label "-15402930"
-    type "Postsynaptic"
+    label "15402930"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 680
-    label "-16302064"
-    type "Postsynaptic"
+    label "16302064"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 681
-    label "-16839763"
-    type "Postsynaptic"
+    label "16839763"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 682
-    label "-17060958"
-    type "Postsynaptic"
+    label "17060958"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 683
-    label "-17092331"
-    type "Postsynaptic"
+    label "17092331"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 684
-    label "-17107213"
-    type "Postsynaptic"
+    label "17107213"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 685
-    label "-17109506"
-    type "Postsynaptic"
+    label "17109506"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 686
-    label "-17959367"
-    type "Postsynaptic"
+    label "17959367"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 687
-    label "-18001850"
-    type "Postsynaptic"
+    label "18001850"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 688
-    label "-18079920"
-    type "Postsynaptic"
+    label "18079920"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 689
-    label "-18079953"
-    type "Postsynaptic"
+    label "18079953"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 690
-    label "-18178855"
-    type "Postsynaptic"
+    label "18178855"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 691
-    label "-18331757"
-    type "Postsynaptic"
+    label "18331757"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 692
-    label "-18331805"
-    type "Postsynaptic"
+    label "18331805"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 693
-    label "-18332087"
-    type "Postsynaptic"
+    label "18332087"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 694
-    label "-18332171"
-    type "Postsynaptic"
+    label "18332171"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 695
-    label "-19798334"
-    type "Postsynaptic"
+    label "19798334"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 696
-    label "-396"
-    type "Postsynaptic"
+    label "396"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 697
-    label "-41874"
-    type "Presynaptic"
+    label "41874"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 698
-    label "-4411624"
-    type "Presynaptic"
+    label "4411624"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 699
-    label "-4414161"
-    type "Presynaptic"
+    label "4414161"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 700
-    label "-4415232"
-    type "Presynaptic"
+    label "4415232"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 701
-    label "-4514919"
-    type "Presynaptic"
+    label "4514919"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 702
-    label "-4519983"
-    type "Presynaptic"
+    label "4519983"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 703
-    label "-7175491"
-    type "Presynaptic"
+    label "7175491"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 704
-    label "-7776667"
-    type "Presynaptic"
+    label "7776667"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 705
-    label "-7786440"
-    type "Presynaptic"
+    label "7786440"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 706
-    label "-8442925"
-    type "Presynaptic"
+    label "8442925"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 707
-    label "-8448554"
-    type "Presynaptic"
+    label "8448554"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 708
-    label "-8448714"
-    type "Presynaptic"
+    label "8448714"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 709
-    label "-8448844"
-    type "Presynaptic"
+    label "8448844"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 710
-    label "-8448929"
-    type "Presynaptic"
+    label "8448929"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 711
-    label "-8449074"
-    type "Presynaptic"
+    label "8449074"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 712
-    label "-8449336"
-    type "Presynaptic"
+    label "8449336"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 713
-    label "-8449664"
-    type "Presynaptic"
+    label "8449664"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 714
-    label "-8449936"
-    type "Presynaptic"
+    label "8449936"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 715
-    label "-8451037"
-    type "Presynaptic"
+    label "8451037"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 716
-    label "-8451125"
-    type "Presynaptic"
+    label "8451125"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 717
-    label "-8451163"
-    type "Presynaptic"
+    label "8451163"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 718
-    label "-8451519"
-    type "Presynaptic"
+    label "8451519"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 719
-    label "-8556862"
-    type "Presynaptic"
+    label "8556862"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 720
-    label "-9744449"
-    type "Presynaptic"
+    label "9744449"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 721
-    label "-10497996"
-    type "Presynaptic"
+    label "10497996"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 722
-    label "-10650280"
-    type "Presynaptic"
+    label "10650280"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 723
-    label "-11486261"
-    type "Presynaptic"
+    label "11486261"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 724
-    label "-11486272"
-    type "Presynaptic"
+    label "11486272"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 725
-    label "-11489937"
-    type "Presynaptic"
+    label "11489937"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 726
-    label "-11532803"
-    type "Presynaptic"
+    label "11532803"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 727
-    label "-11772751"
-    type "Presynaptic"
+    label "11772751"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 728
-    label "-11772945"
-    type "Presynaptic"
+    label "11772945"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 729
-    label "-11773091"
-    type "Presynaptic"
+    label "11773091"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 730
-    label "-11773271"
-    type "Presynaptic"
+    label "11773271"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 731
-    label "-11773380"
-    type "Presynaptic"
+    label "11773380"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 732
-    label "-11773407"
-    type "Presynaptic"
+    label "11773407"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 733
-    label "-11813782"
-    type "Presynaptic"
+    label "11813782"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 734
-    label "-11813786"
-    type "Presynaptic"
+    label "11813786"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 735
-    label "-11813916"
-    type "Presynaptic"
+    label "11813916"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 736
-    label "-11813982"
-    type "Presynaptic"
+    label "11813982"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 737
-    label "-11813999"
-    type "Presynaptic"
+    label "11813999"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 738
-    label "-11815197"
-    type "Presynaptic"
+    label "11815197"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 739
-    label "-11815231"
-    type "Presynaptic"
+    label "11815231"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 740
-    label "-11815627"
-    type "Presynaptic"
+    label "11815627"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 741
-    label "-11815860"
-    type "Presynaptic"
+    label "11815860"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 742
-    label "-11816822"
-    type "Presynaptic"
+    label "11816822"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 743
-    label "-11816857"
-    type "Presynaptic"
+    label "11816857"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 744
-    label "-11839081"
-    type "Presynaptic"
+    label "11839081"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 745
-    label "-11848696"
-    type "Presynaptic"
+    label "11848696"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 746
-    label "-11848731"
-    type "Presynaptic"
+    label "11848731"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 747
-    label "-11848740"
-    type "Presynaptic"
+    label "11848740"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 748
-    label "-11848785"
-    type "Presynaptic"
+    label "11848785"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 749
-    label "-11848794"
-    type "Presynaptic"
+    label "11848794"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 750
-    label "-11848798"
-    type "Presynaptic"
+    label "11848798"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 751
-    label "-11850391"
-    type "Presynaptic"
+    label "11850391"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 752
-    label "-11851060"
-    type "Presynaptic"
+    label "11851060"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 753
-    label "-11851617"
-    type "Presynaptic"
+    label "11851617"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 754
-    label "-11851919"
-    type "Presynaptic"
+    label "11851919"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 755
-    label "-12167648"
-    type "Presynaptic"
+    label "12167648"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 756
-    label "-12679316"
-    type "Presynaptic"
+    label "12679316"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 757
-    label "-15278957"
-    type "Presynaptic"
+    label "15278957"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 758
-    label "-15301193"
-    type "Presynaptic"
+    label "15301193"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 759
-    label "-16680860"
-    type "Presynaptic"
+    label "16680860"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 760
-    label "-16954578"
-    type "Presynaptic"
+    label "16954578"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 761
-    label "-16954668"
-    type "Presynaptic"
+    label "16954668"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 762
-    label "-17106915"
-    type "Presynaptic"
+    label "17106915"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 763
-    label "-17107168"
-    type "Presynaptic"
+    label "17107168"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 764
-    label "-17109493"
-    type "Presynaptic"
+    label "17109493"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 765
-    label "-17559499"
-    type "Presynaptic"
+    label "17559499"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 766
-    label "-17850098"
-    type "Presynaptic"
+    label "17850098"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 767
-    label "-17970258"
-    type "Presynaptic"
+    label "17970258"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 768
-    label "-18001950"
-    type "Presynaptic"
+    label "18001950"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 769
-    label "-18113605"
-    type "Presynaptic"
+    label "18113605"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 770
-    label "-18177814"
-    type "Presynaptic"
+    label "18177814"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 771
-    label "-18198664"
-    type "Presynaptic"
+    label "18198664"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 772
-    label "-18330339"
-    type "Presynaptic"
+    label "18330339"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 773
-    label "-18330341"
-    type "Presynaptic"
+    label "18330341"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 774
-    label "-18330342"
-    type "Presynaptic"
+    label "18330342"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 775
-    label "-18330343"
-    type "Presynaptic"
+    label "18330343"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 776
-    label "-18330380"
-    type "Presynaptic"
+    label "18330380"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 777
-    label "-18330382"
-    type "Presynaptic"
+    label "18330382"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 778
-    label "-18330384"
-    type "Presynaptic"
+    label "18330384"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 779
-    label "-18330385"
-    type "Presynaptic"
+    label "18330385"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 780
-    label "-18330386"
-    type "Presynaptic"
+    label "18330386"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 781
-    label "-18330493"
-    type "Presynaptic"
+    label "18330493"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 782
-    label "-18331755"
-    type "Presynaptic"
+    label "18331755"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 783
-    label "-18331809"
-    type "Presynaptic"
+    label "18331809"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 784
-    label "-18331855"
-    type "Presynaptic"
+    label "18331855"
+    type "connector"
     owner "29.gml"
   ]
   node [
     id 785
-    label "-21136742"
-    type "Presynaptic"
+    label "21136742"
+    type "connector"
     owner "29.gml"
   ]
   node [
@@ -8709,2768 +8709,2768 @@ graph [
   ]
   node [
     id 1451
-    label "-3373582"
-    type "Postsynaptic"
+    label "3373582"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1452
-    label "-3588812"
-    type "Postsynaptic"
+    label "3588812"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1453
-    label "-3588859"
-    type "Postsynaptic"
+    label "3588859"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1454
-    label "-3606872"
-    type "Postsynaptic"
+    label "3606872"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1455
-    label "-3606917"
-    type "Postsynaptic"
+    label "3606917"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1456
-    label "-3626077"
-    type "Postsynaptic"
+    label "3626077"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1457
-    label "-3667823"
-    type "Postsynaptic"
+    label "3667823"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1458
-    label "-4601834"
-    type "Postsynaptic"
+    label "4601834"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1459
-    label "-4674294"
-    type "Postsynaptic"
+    label "4674294"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1460
-    label "-4691480"
-    type "Postsynaptic"
+    label "4691480"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1461
-    label "-5017729"
-    type "Postsynaptic"
+    label "5017729"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1462
-    label "-5017762"
-    type "Postsynaptic"
+    label "5017762"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1463
-    label "-5017797"
-    type "Postsynaptic"
+    label "5017797"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1464
-    label "-5022950"
-    type "Postsynaptic"
+    label "5022950"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1465
-    label "-5023087"
-    type "Postsynaptic"
+    label "5023087"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1466
-    label "-5023131"
-    type "Postsynaptic"
+    label "5023131"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1467
-    label "-5023186"
-    type "Postsynaptic"
+    label "5023186"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1468
-    label "-5653193"
-    type "Postsynaptic"
+    label "5653193"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1469
-    label "-7551907"
-    type "Postsynaptic"
+    label "7551907"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1470
-    label "-7588834"
-    type "Postsynaptic"
+    label "7588834"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1471
-    label "-7765656"
-    type "Postsynaptic"
+    label "7765656"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1472
-    label "-7765733"
-    type "Postsynaptic"
+    label "7765733"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1473
-    label "-7785955"
-    type "Postsynaptic"
+    label "7785955"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1474
-    label "-7785971"
-    type "Postsynaptic"
+    label "7785971"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1475
-    label "-7786032"
-    type "Postsynaptic"
+    label "7786032"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1476
-    label "-7786051"
-    type "Postsynaptic"
+    label "7786051"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1477
-    label "-7786139"
-    type "Postsynaptic"
+    label "7786139"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1478
-    label "-7786225"
-    type "Postsynaptic"
+    label "7786225"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1479
-    label "-7786241"
-    type "Postsynaptic"
+    label "7786241"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1480
-    label "-7801455"
-    type "Postsynaptic"
+    label "7801455"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1481
-    label "-7801503"
-    type "Postsynaptic"
+    label "7801503"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1482
-    label "-7801606"
-    type "Postsynaptic"
+    label "7801606"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1483
-    label "-7801709"
-    type "Postsynaptic"
+    label "7801709"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1484
-    label "-7801750"
-    type "Postsynaptic"
+    label "7801750"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1485
-    label "-7801812"
-    type "Postsynaptic"
+    label "7801812"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1486
-    label "-7809951"
-    type "Postsynaptic"
+    label "7809951"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1487
-    label "-7809968"
-    type "Postsynaptic"
+    label "7809968"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1488
-    label "-7810073"
-    type "Postsynaptic"
+    label "7810073"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1489
-    label "-7810117"
-    type "Postsynaptic"
+    label "7810117"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1490
-    label "-7810178"
-    type "Postsynaptic"
+    label "7810178"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1491
-    label "-7812413"
-    type "Postsynaptic"
+    label "7812413"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1492
-    label "-7812515"
-    type "Postsynaptic"
+    label "7812515"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1493
-    label "-7812693"
-    type "Postsynaptic"
+    label "7812693"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1494
-    label "-7812758"
-    type "Postsynaptic"
+    label "7812758"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1495
-    label "-7812799"
-    type "Postsynaptic"
+    label "7812799"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1496
-    label "-7821316"
-    type "Postsynaptic"
+    label "7821316"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1497
-    label "-7821824"
-    type "Postsynaptic"
+    label "7821824"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1498
-    label "-7843759"
-    type "Postsynaptic"
+    label "7843759"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1499
-    label "-7843780"
-    type "Postsynaptic"
+    label "7843780"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1500
-    label "-7843802"
-    type "Postsynaptic"
+    label "7843802"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1501
-    label "-7843832"
-    type "Postsynaptic"
+    label "7843832"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1502
-    label "-7866378"
-    type "Postsynaptic"
+    label "7866378"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1503
-    label "-7878014"
-    type "Postsynaptic"
+    label "7878014"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1504
-    label "-7878068"
-    type "Postsynaptic"
+    label "7878068"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1505
-    label "-7887361"
-    type "Postsynaptic"
+    label "7887361"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1506
-    label "-7888220"
-    type "Postsynaptic"
+    label "7888220"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1507
-    label "-7915938"
-    type "Postsynaptic"
+    label "7915938"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1508
-    label "-7943402"
-    type "Postsynaptic"
+    label "7943402"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1509
-    label "-7960563"
-    type "Postsynaptic"
+    label "7960563"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1510
-    label "-8069304"
-    type "Postsynaptic"
+    label "8069304"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1511
-    label "-8291844"
-    type "Postsynaptic"
+    label "8291844"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1512
-    label "-8370080"
-    type "Postsynaptic"
+    label "8370080"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1513
-    label "-8370213"
-    type "Postsynaptic"
+    label "8370213"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1514
-    label "-8420545"
-    type "Postsynaptic"
+    label "8420545"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1515
-    label "-8471072"
-    type "Postsynaptic"
+    label "8471072"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1516
-    label "-8555755"
-    type "Postsynaptic"
+    label "8555755"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1517
-    label "-8572169"
-    type "Postsynaptic"
+    label "8572169"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1518
-    label "-8572379"
-    type "Postsynaptic"
+    label "8572379"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1519
-    label "-8572536"
-    type "Postsynaptic"
+    label "8572536"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1520
-    label "-8643230"
-    type "Postsynaptic"
+    label "8643230"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1521
-    label "-8643562"
-    type "Postsynaptic"
+    label "8643562"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1522
-    label "-8644090"
-    type "Postsynaptic"
+    label "8644090"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1523
-    label "-8682407"
-    type "Postsynaptic"
+    label "8682407"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1524
-    label "-8683770"
-    type "Postsynaptic"
+    label "8683770"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1525
-    label "-8687556"
-    type "Postsynaptic"
+    label "8687556"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1526
-    label "-8688151"
-    type "Postsynaptic"
+    label "8688151"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1527
-    label "-8688823"
-    type "Postsynaptic"
+    label "8688823"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1528
-    label "-8688857"
-    type "Postsynaptic"
+    label "8688857"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1529
-    label "-8689097"
-    type "Postsynaptic"
+    label "8689097"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1530
-    label "-8691860"
-    type "Postsynaptic"
+    label "8691860"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1531
-    label "-8691934"
-    type "Postsynaptic"
+    label "8691934"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1532
-    label "-8692260"
-    type "Postsynaptic"
+    label "8692260"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1533
-    label "-8701407"
-    type "Postsynaptic"
+    label "8701407"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1534
-    label "-8823123"
-    type "Postsynaptic"
+    label "8823123"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1535
-    label "-8851453"
-    type "Postsynaptic"
+    label "8851453"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1536
-    label "-8862771"
-    type "Postsynaptic"
+    label "8862771"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1537
-    label "-8863283"
-    type "Postsynaptic"
+    label "8863283"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1538
-    label "-8894363"
-    type "Postsynaptic"
+    label "8894363"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1539
-    label "-8894387"
-    type "Postsynaptic"
+    label "8894387"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1540
-    label "-8894455"
-    type "Postsynaptic"
+    label "8894455"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1541
-    label "-8894497"
-    type "Postsynaptic"
+    label "8894497"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1542
-    label "-9021496"
-    type "Postsynaptic"
+    label "9021496"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1543
-    label "-9190388"
-    type "Postsynaptic"
+    label "9190388"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1544
-    label "-9225434"
-    type "Postsynaptic"
+    label "9225434"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1545
-    label "-9469816"
-    type "Postsynaptic"
+    label "9469816"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1546
-    label "-9469873"
-    type "Postsynaptic"
+    label "9469873"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1547
-    label "-9469899"
-    type "Postsynaptic"
+    label "9469899"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1548
-    label "-9469929"
-    type "Postsynaptic"
+    label "9469929"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1549
-    label "-9469977"
-    type "Postsynaptic"
+    label "9469977"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1550
-    label "-9470010"
-    type "Postsynaptic"
+    label "9470010"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1551
-    label "-9470017"
-    type "Postsynaptic"
+    label "9470017"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1552
-    label "-9470049"
-    type "Postsynaptic"
+    label "9470049"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1553
-    label "-9470062"
-    type "Postsynaptic"
+    label "9470062"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1554
-    label "-9470074"
-    type "Postsynaptic"
+    label "9470074"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1555
-    label "-9470102"
-    type "Postsynaptic"
+    label "9470102"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1556
-    label "-9470114"
-    type "Postsynaptic"
+    label "9470114"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1557
-    label "-9470124"
-    type "Postsynaptic"
+    label "9470124"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1558
-    label "-9470156"
-    type "Postsynaptic"
+    label "9470156"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1559
-    label "-9470179"
-    type "Postsynaptic"
+    label "9470179"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1560
-    label "-9470211"
-    type "Postsynaptic"
+    label "9470211"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1561
-    label "-9470215"
-    type "Postsynaptic"
+    label "9470215"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1562
-    label "-9470251"
-    type "Postsynaptic"
+    label "9470251"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1563
-    label "-9470289"
-    type "Postsynaptic"
+    label "9470289"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1564
-    label "-9470386"
-    type "Postsynaptic"
+    label "9470386"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1565
-    label "-9470419"
-    type "Postsynaptic"
+    label "9470419"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1566
-    label "-9470474"
-    type "Postsynaptic"
+    label "9470474"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1567
-    label "-9470572"
-    type "Postsynaptic"
+    label "9470572"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1568
-    label "-9470592"
-    type "Postsynaptic"
+    label "9470592"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1569
-    label "-9470625"
-    type "Postsynaptic"
+    label "9470625"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1570
-    label "-9470697"
-    type "Postsynaptic"
+    label "9470697"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1571
-    label "-9470731"
-    type "Postsynaptic"
+    label "9470731"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1572
-    label "-9471666"
-    type "Postsynaptic"
+    label "9471666"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1573
-    label "-9494999"
-    type "Postsynaptic"
+    label "9494999"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1574
-    label "-9495343"
-    type "Postsynaptic"
+    label "9495343"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1575
-    label "-9495410"
-    type "Postsynaptic"
+    label "9495410"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1576
-    label "-9495471"
-    type "Postsynaptic"
+    label "9495471"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1577
-    label "-9495511"
-    type "Postsynaptic"
+    label "9495511"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1578
-    label "-9533109"
-    type "Postsynaptic"
+    label "9533109"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1579
-    label "-9560612"
-    type "Postsynaptic"
+    label "9560612"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1580
-    label "-9560648"
-    type "Postsynaptic"
+    label "9560648"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1581
-    label "-9560734"
-    type "Postsynaptic"
+    label "9560734"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1582
-    label "-9560766"
-    type "Postsynaptic"
+    label "9560766"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1583
-    label "-9560823"
-    type "Postsynaptic"
+    label "9560823"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1584
-    label "-9560857"
-    type "Postsynaptic"
+    label "9560857"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1585
-    label "-9560891"
-    type "Postsynaptic"
+    label "9560891"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1586
-    label "-9560898"
-    type "Postsynaptic"
+    label "9560898"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1587
-    label "-9560983"
-    type "Postsynaptic"
+    label "9560983"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1588
-    label "-9561025"
-    type "Postsynaptic"
+    label "9561025"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1589
-    label "-9561543"
-    type "Postsynaptic"
+    label "9561543"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1590
-    label "-9561564"
-    type "Postsynaptic"
+    label "9561564"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1591
-    label "-9561612"
-    type "Postsynaptic"
+    label "9561612"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1592
-    label "-9561700"
-    type "Postsynaptic"
+    label "9561700"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1593
-    label "-9561721"
-    type "Postsynaptic"
+    label "9561721"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1594
-    label "-9561772"
-    type "Postsynaptic"
+    label "9561772"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1595
-    label "-9561820"
-    type "Postsynaptic"
+    label "9561820"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1596
-    label "-9561951"
-    type "Postsynaptic"
+    label "9561951"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1597
-    label "-9561996"
-    type "Postsynaptic"
+    label "9561996"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1598
-    label "-9562045"
-    type "Postsynaptic"
+    label "9562045"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1599
-    label "-9562085"
-    type "Postsynaptic"
+    label "9562085"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1600
-    label "-9562178"
-    type "Postsynaptic"
+    label "9562178"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1601
-    label "-9562230"
-    type "Postsynaptic"
+    label "9562230"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1602
-    label "-9562242"
-    type "Postsynaptic"
+    label "9562242"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1603
-    label "-9562254"
-    type "Postsynaptic"
+    label "9562254"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1604
-    label "-9562280"
-    type "Postsynaptic"
+    label "9562280"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1605
-    label "-9562301"
-    type "Postsynaptic"
+    label "9562301"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1606
-    label "-9562395"
-    type "Postsynaptic"
+    label "9562395"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1607
-    label "-9562404"
-    type "Postsynaptic"
+    label "9562404"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1608
-    label "-9562541"
-    type "Postsynaptic"
+    label "9562541"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1609
-    label "-9562641"
-    type "Postsynaptic"
+    label "9562641"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1610
-    label "-9562665"
-    type "Postsynaptic"
+    label "9562665"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1611
-    label "-9562745"
-    type "Postsynaptic"
+    label "9562745"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1612
-    label "-9562759"
-    type "Postsynaptic"
+    label "9562759"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1613
-    label "-9562849"
-    type "Postsynaptic"
+    label "9562849"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1614
-    label "-9562960"
-    type "Postsynaptic"
+    label "9562960"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1615
-    label "-9563029"
-    type "Postsynaptic"
+    label "9563029"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1616
-    label "-9563094"
-    type "Postsynaptic"
+    label "9563094"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1617
-    label "-9563221"
-    type "Postsynaptic"
+    label "9563221"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1618
-    label "-9563315"
-    type "Postsynaptic"
+    label "9563315"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1619
-    label "-9563403"
-    type "Postsynaptic"
+    label "9563403"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1620
-    label "-9563414"
-    type "Postsynaptic"
+    label "9563414"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1621
-    label "-9563446"
-    type "Postsynaptic"
+    label "9563446"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1622
-    label "-9563465"
-    type "Postsynaptic"
+    label "9563465"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1623
-    label "-9563482"
-    type "Postsynaptic"
+    label "9563482"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1624
-    label "-9563615"
-    type "Postsynaptic"
+    label "9563615"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1625
-    label "-9563709"
-    type "Postsynaptic"
+    label "9563709"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1626
-    label "-9563883"
-    type "Postsynaptic"
+    label "9563883"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1627
-    label "-9563978"
-    type "Postsynaptic"
+    label "9563978"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1628
-    label "-9564023"
-    type "Postsynaptic"
+    label "9564023"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1629
-    label "-9567074"
-    type "Postsynaptic"
+    label "9567074"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1630
-    label "-9567084"
-    type "Postsynaptic"
+    label "9567084"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1631
-    label "-9567131"
-    type "Postsynaptic"
+    label "9567131"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1632
-    label "-9567162"
-    type "Postsynaptic"
+    label "9567162"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1633
-    label "-9567174"
-    type "Postsynaptic"
+    label "9567174"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1634
-    label "-9567216"
-    type "Postsynaptic"
+    label "9567216"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1635
-    label "-9567231"
-    type "Postsynaptic"
+    label "9567231"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1636
-    label "-9567268"
-    type "Postsynaptic"
+    label "9567268"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1637
-    label "-9567305"
-    type "Postsynaptic"
+    label "9567305"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1638
-    label "-9567337"
-    type "Postsynaptic"
+    label "9567337"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1639
-    label "-9567354"
-    type "Postsynaptic"
+    label "9567354"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1640
-    label "-9567369"
-    type "Postsynaptic"
+    label "9567369"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1641
-    label "-9567384"
-    type "Postsynaptic"
+    label "9567384"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1642
-    label "-9567404"
-    type "Postsynaptic"
+    label "9567404"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1643
-    label "-9567451"
-    type "Postsynaptic"
+    label "9567451"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1644
-    label "-9567520"
-    type "Postsynaptic"
+    label "9567520"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1645
-    label "-9567558"
-    type "Postsynaptic"
+    label "9567558"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1646
-    label "-9567574"
-    type "Postsynaptic"
+    label "9567574"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1647
-    label "-9567592"
-    type "Postsynaptic"
+    label "9567592"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1648
-    label "-9567627"
-    type "Postsynaptic"
+    label "9567627"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1649
-    label "-9567641"
-    type "Postsynaptic"
+    label "9567641"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1650
-    label "-9567672"
-    type "Postsynaptic"
+    label "9567672"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1651
-    label "-9567713"
-    type "Postsynaptic"
+    label "9567713"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1652
-    label "-9567753"
-    type "Postsynaptic"
+    label "9567753"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1653
-    label "-9567764"
-    type "Postsynaptic"
+    label "9567764"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1654
-    label "-9567783"
-    type "Postsynaptic"
+    label "9567783"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1655
-    label "-9567823"
-    type "Postsynaptic"
+    label "9567823"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1656
-    label "-9605899"
-    type "Postsynaptic"
+    label "9605899"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1657
-    label "-9609964"
-    type "Postsynaptic"
+    label "9609964"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1658
-    label "-9610037"
-    type "Postsynaptic"
+    label "9610037"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1659
-    label "-9627483"
-    type "Postsynaptic"
+    label "9627483"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1660
-    label "-9627726"
-    type "Postsynaptic"
+    label "9627726"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1661
-    label "-9627817"
-    type "Postsynaptic"
+    label "9627817"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1662
-    label "-9628117"
-    type "Postsynaptic"
+    label "9628117"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1663
-    label "-9628378"
-    type "Postsynaptic"
+    label "9628378"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1664
-    label "-9628807"
-    type "Postsynaptic"
+    label "9628807"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1665
-    label "-9629334"
-    type "Postsynaptic"
+    label "9629334"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1666
-    label "-9629397"
-    type "Postsynaptic"
+    label "9629397"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1667
-    label "-9632484"
-    type "Postsynaptic"
+    label "9632484"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1668
-    label "-9632516"
-    type "Postsynaptic"
+    label "9632516"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1669
-    label "-9634723"
-    type "Postsynaptic"
+    label "9634723"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1670
-    label "-9634976"
-    type "Postsynaptic"
+    label "9634976"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1671
-    label "-9638436"
-    type "Postsynaptic"
+    label "9638436"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1672
-    label "-9639900"
-    type "Postsynaptic"
+    label "9639900"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1673
-    label "-9708867"
-    type "Postsynaptic"
+    label "9708867"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1674
-    label "-9732046"
-    type "Postsynaptic"
+    label "9732046"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1675
-    label "-9811055"
-    type "Postsynaptic"
+    label "9811055"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1676
-    label "-9811156"
-    type "Postsynaptic"
+    label "9811156"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1677
-    label "-9811231"
-    type "Postsynaptic"
+    label "9811231"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1678
-    label "-9811488"
-    type "Postsynaptic"
+    label "9811488"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1679
-    label "-9894418"
-    type "Postsynaptic"
+    label "9894418"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1680
-    label "-9894501"
-    type "Postsynaptic"
+    label "9894501"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1681
-    label "-9894561"
-    type "Postsynaptic"
+    label "9894561"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1682
-    label "-9895882"
-    type "Postsynaptic"
+    label "9895882"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1683
-    label "-9895984"
-    type "Postsynaptic"
+    label "9895984"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1684
-    label "-9896257"
-    type "Postsynaptic"
+    label "9896257"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1685
-    label "-9940966"
-    type "Postsynaptic"
+    label "9940966"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1686
-    label "-9941092"
-    type "Postsynaptic"
+    label "9941092"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1687
-    label "-9941130"
-    type "Postsynaptic"
+    label "9941130"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1688
-    label "-10018868"
-    type "Postsynaptic"
+    label "10018868"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1689
-    label "-10020808"
-    type "Postsynaptic"
+    label "10020808"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1690
-    label "-10063726"
-    type "Postsynaptic"
+    label "10063726"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1691
-    label "-10065078"
-    type "Postsynaptic"
+    label "10065078"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1692
-    label "-10072176"
-    type "Postsynaptic"
+    label "10072176"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1693
-    label "-10072581"
-    type "Postsynaptic"
+    label "10072581"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1694
-    label "-10072757"
-    type "Postsynaptic"
+    label "10072757"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1695
-    label "-10161978"
-    type "Postsynaptic"
+    label "10161978"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1696
-    label "-10218488"
-    type "Postsynaptic"
+    label "10218488"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1697
-    label "-10418667"
-    type "Postsynaptic"
+    label "10418667"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1698
-    label "-10423976"
-    type "Postsynaptic"
+    label "10423976"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1699
-    label "-10476988"
-    type "Postsynaptic"
+    label "10476988"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1700
-    label "-10477240"
-    type "Postsynaptic"
+    label "10477240"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1701
-    label "-10527339"
-    type "Postsynaptic"
+    label "10527339"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1702
-    label "-11422720"
-    type "Postsynaptic"
+    label "11422720"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1703
-    label "-11422739"
-    type "Postsynaptic"
+    label "11422739"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1704
-    label "-11427274"
-    type "Postsynaptic"
+    label "11427274"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1705
-    label "-11466910"
-    type "Postsynaptic"
+    label "11466910"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1706
-    label "-11508217"
-    type "Postsynaptic"
+    label "11508217"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1707
-    label "-11508222"
-    type "Postsynaptic"
+    label "11508222"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1708
-    label "-11525076"
-    type "Postsynaptic"
+    label "11525076"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1709
-    label "-11525135"
-    type "Postsynaptic"
+    label "11525135"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1710
-    label "-11525160"
-    type "Postsynaptic"
+    label "11525160"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1711
-    label "-11525172"
-    type "Postsynaptic"
+    label "11525172"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1712
-    label "-11525266"
-    type "Postsynaptic"
+    label "11525266"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1713
-    label "-11525359"
-    type "Postsynaptic"
+    label "11525359"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1714
-    label "-11532748"
-    type "Postsynaptic"
+    label "11532748"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1715
-    label "-11606821"
-    type "Postsynaptic"
+    label "11606821"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1716
-    label "-11862588"
-    type "Postsynaptic"
+    label "11862588"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1717
-    label "-12002131"
-    type "Postsynaptic"
+    label "12002131"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1718
-    label "-12002210"
-    type "Postsynaptic"
+    label "12002210"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1719
-    label "-12164624"
-    type "Postsynaptic"
+    label "12164624"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1720
-    label "-12164823"
-    type "Postsynaptic"
+    label "12164823"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1721
-    label "-12175259"
-    type "Postsynaptic"
+    label "12175259"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1722
-    label "-12386937"
-    type "Postsynaptic"
+    label "12386937"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1723
-    label "-12424338"
-    type "Postsynaptic"
+    label "12424338"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1724
-    label "-13411639"
-    type "Postsynaptic"
+    label "13411639"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1725
-    label "-13531152"
-    type "Postsynaptic"
+    label "13531152"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1726
-    label "-13531156"
-    type "Postsynaptic"
+    label "13531156"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1727
-    label "-13531160"
-    type "Postsynaptic"
+    label "13531160"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1728
-    label "-13531211"
-    type "Postsynaptic"
+    label "13531211"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1729
-    label "-13685036"
-    type "Postsynaptic"
+    label "13685036"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1730
-    label "-13721816"
-    type "Postsynaptic"
+    label "13721816"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1731
-    label "-13757441"
-    type "Postsynaptic"
+    label "13757441"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1732
-    label "-13757486"
-    type "Postsynaptic"
+    label "13757486"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1733
-    label "-13759597"
-    type "Postsynaptic"
+    label "13759597"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1734
-    label "-13816146"
-    type "Postsynaptic"
+    label "13816146"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1735
-    label "-13952273"
-    type "Postsynaptic"
+    label "13952273"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1736
-    label "-13959764"
-    type "Postsynaptic"
+    label "13959764"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1737
-    label "-13959923"
-    type "Postsynaptic"
+    label "13959923"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1738
-    label "-13963686"
-    type "Postsynaptic"
+    label "13963686"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1739
-    label "-14077590"
-    type "Postsynaptic"
+    label "14077590"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1740
-    label "-14084880"
-    type "Postsynaptic"
+    label "14084880"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1741
-    label "-14096780"
-    type "Postsynaptic"
+    label "14096780"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1742
-    label "-14117751"
-    type "Postsynaptic"
+    label "14117751"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1743
-    label "-14262487"
-    type "Postsynaptic"
+    label "14262487"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1744
-    label "-14532527"
-    type "Postsynaptic"
+    label "14532527"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1745
-    label "-14635379"
-    type "Postsynaptic"
+    label "14635379"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1746
-    label "-14762860"
-    type "Postsynaptic"
+    label "14762860"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1747
-    label "-14763492"
-    type "Postsynaptic"
+    label "14763492"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1748
-    label "-14801839"
-    type "Postsynaptic"
+    label "14801839"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1749
-    label "-14819590"
-    type "Postsynaptic"
+    label "14819590"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1750
-    label "-14819621"
-    type "Postsynaptic"
+    label "14819621"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1751
-    label "-14847937"
-    type "Postsynaptic"
+    label "14847937"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1752
-    label "-14847970"
-    type "Postsynaptic"
+    label "14847970"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1753
-    label "-14909567"
-    type "Postsynaptic"
+    label "14909567"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1754
-    label "-14949785"
-    type "Postsynaptic"
+    label "14949785"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1755
-    label "-14949789"
-    type "Postsynaptic"
+    label "14949789"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1756
-    label "-14949802"
-    type "Postsynaptic"
+    label "14949802"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1757
-    label "-14949806"
-    type "Postsynaptic"
+    label "14949806"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1758
-    label "-14949923"
-    type "Postsynaptic"
+    label "14949923"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1759
-    label "-14950003"
-    type "Postsynaptic"
+    label "14950003"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1760
-    label "-15024714"
-    type "Postsynaptic"
+    label "15024714"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1761
-    label "-15037439"
-    type "Postsynaptic"
+    label "15037439"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1762
-    label "-15052029"
-    type "Postsynaptic"
+    label "15052029"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1763
-    label "-15098820"
-    type "Postsynaptic"
+    label "15098820"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1764
-    label "-15099274"
-    type "Postsynaptic"
+    label "15099274"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1765
-    label "-15100879"
-    type "Postsynaptic"
+    label "15100879"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1766
-    label "-15323648"
-    type "Postsynaptic"
+    label "15323648"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1767
-    label "-15366076"
-    type "Postsynaptic"
+    label "15366076"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1768
-    label "-15367505"
-    type "Postsynaptic"
+    label "15367505"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1769
-    label "-15368033"
-    type "Postsynaptic"
+    label "15368033"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1770
-    label "-15390714"
-    type "Postsynaptic"
+    label "15390714"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1771
-    label "-15390964"
-    type "Postsynaptic"
+    label "15390964"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1772
-    label "-15391263"
-    type "Postsynaptic"
+    label "15391263"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1773
-    label "-15391274"
-    type "Postsynaptic"
+    label "15391274"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1774
-    label "-15391288"
-    type "Postsynaptic"
+    label "15391288"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1775
-    label "-16260752"
-    type "Postsynaptic"
+    label "16260752"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1776
-    label "-16314343"
-    type "Postsynaptic"
+    label "16314343"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1777
-    label "-16314393"
-    type "Postsynaptic"
+    label "16314393"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1778
-    label "-16318453"
-    type "Postsynaptic"
+    label "16318453"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1779
-    label "-16319708"
-    type "Postsynaptic"
+    label "16319708"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1780
-    label "-16351052"
-    type "Postsynaptic"
+    label "16351052"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1781
-    label "-16351186"
-    type "Postsynaptic"
+    label "16351186"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1782
-    label "-16355217"
-    type "Postsynaptic"
+    label "16355217"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1783
-    label "-16357084"
-    type "Postsynaptic"
+    label "16357084"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1784
-    label "-16680595"
-    type "Postsynaptic"
+    label "16680595"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1785
-    label "-16680614"
-    type "Postsynaptic"
+    label "16680614"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1786
-    label "-16680618"
-    type "Postsynaptic"
+    label "16680618"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1787
-    label "-16680697"
-    type "Postsynaptic"
+    label "16680697"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1788
-    label "-16680773"
-    type "Postsynaptic"
+    label "16680773"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1789
-    label "-16745662"
-    type "Postsynaptic"
+    label "16745662"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1790
-    label "-16745681"
-    type "Postsynaptic"
+    label "16745681"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1791
-    label "-16745979"
-    type "Postsynaptic"
+    label "16745979"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1792
-    label "-16821071"
-    type "Postsynaptic"
+    label "16821071"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1793
-    label "-16824131"
-    type "Postsynaptic"
+    label "16824131"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1794
-    label "-16839807"
-    type "Postsynaptic"
+    label "16839807"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1795
-    label "-16840617"
-    type "Postsynaptic"
+    label "16840617"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1796
-    label "-16840634"
-    type "Postsynaptic"
+    label "16840634"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1797
-    label "-16878929"
-    type "Postsynaptic"
+    label "16878929"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1798
-    label "-17106836"
-    type "Postsynaptic"
+    label "17106836"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1799
-    label "-17183017"
-    type "Postsynaptic"
+    label "17183017"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1800
-    label "-17183457"
-    type "Postsynaptic"
+    label "17183457"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1801
-    label "-17258589"
-    type "Postsynaptic"
+    label "17258589"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1802
-    label "-17262685"
-    type "Postsynaptic"
+    label "17262685"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1803
-    label "-17355549"
-    type "Postsynaptic"
+    label "17355549"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1804
-    label "-17381459"
-    type "Postsynaptic"
+    label "17381459"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1805
-    label "-17381461"
-    type "Postsynaptic"
+    label "17381461"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1806
-    label "-17403452"
-    type "Postsynaptic"
+    label "17403452"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1807
-    label "-17403460"
-    type "Postsynaptic"
+    label "17403460"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1808
-    label "-17434738"
-    type "Postsynaptic"
+    label "17434738"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1809
-    label "-17441853"
-    type "Postsynaptic"
+    label "17441853"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1810
-    label "-17474821"
-    type "Postsynaptic"
+    label "17474821"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1811
-    label "-17708265"
-    type "Postsynaptic"
+    label "17708265"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1812
-    label "-17708306"
-    type "Postsynaptic"
+    label "17708306"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1813
-    label "-17752540"
-    type "Postsynaptic"
+    label "17752540"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1814
-    label "-17810890"
-    type "Postsynaptic"
+    label "17810890"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1815
-    label "-17811083"
-    type "Postsynaptic"
+    label "17811083"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1816
-    label "-17814808"
-    type "Postsynaptic"
+    label "17814808"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1817
-    label "-17878724"
-    type "Postsynaptic"
+    label "17878724"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1818
-    label "-17951412"
-    type "Postsynaptic"
+    label "17951412"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1819
-    label "-18079168"
-    type "Postsynaptic"
+    label "18079168"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1820
-    label "-18079170"
-    type "Postsynaptic"
+    label "18079170"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1821
-    label "-18079171"
-    type "Postsynaptic"
+    label "18079171"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1822
-    label "-18079178"
-    type "Postsynaptic"
+    label "18079178"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1823
-    label "-18080446"
-    type "Postsynaptic"
+    label "18080446"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1824
-    label "-18080456"
-    type "Postsynaptic"
+    label "18080456"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1825
-    label "-18080798"
-    type "Postsynaptic"
+    label "18080798"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1826
-    label "-18097789"
-    type "Postsynaptic"
+    label "18097789"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1827
-    label "-18099144"
-    type "Postsynaptic"
+    label "18099144"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1828
-    label "-18113670"
-    type "Postsynaptic"
+    label "18113670"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1829
-    label "-18208559"
-    type "Postsynaptic"
+    label "18208559"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1830
-    label "-18221116"
-    type "Postsynaptic"
+    label "18221116"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1831
-    label "-18221119"
-    type "Postsynaptic"
+    label "18221119"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1832
-    label "-18305056"
-    type "Postsynaptic"
+    label "18305056"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1833
-    label "-18305125"
-    type "Postsynaptic"
+    label "18305125"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1834
-    label "-18315458"
-    type "Postsynaptic"
+    label "18315458"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1835
-    label "-18315585"
-    type "Postsynaptic"
+    label "18315585"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1836
-    label "-18315590"
-    type "Postsynaptic"
+    label "18315590"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1837
-    label "-18417618"
-    type "Postsynaptic"
+    label "18417618"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1838
-    label "-18425943"
-    type "Postsynaptic"
+    label "18425943"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1839
-    label "-18425944"
-    type "Postsynaptic"
+    label "18425944"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1840
-    label "-20483665"
-    type "Postsynaptic"
+    label "20483665"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1841
-    label "-20484484"
-    type "Postsynaptic"
+    label "20484484"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1842
-    label "-20486509"
-    type "Postsynaptic"
+    label "20486509"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1843
-    label "-20558069"
-    type "Postsynaptic"
+    label "20558069"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1844
-    label "-20876534"
-    type "Postsynaptic"
+    label "20876534"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1845
-    label "-21911180"
-    type "Postsynaptic"
+    label "21911180"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1846
-    label "-22300664"
-    type "Postsynaptic"
+    label "22300664"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1847
-    label "-9189637"
-    type "Presynaptic"
+    label "9189637"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1848
-    label "-9189725"
-    type "Presynaptic"
+    label "9189725"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1849
-    label "-9189813"
-    type "Presynaptic"
+    label "9189813"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1850
-    label "-9471303"
-    type "Presynaptic"
+    label "9471303"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1851
-    label "-9471319"
-    type "Presynaptic"
+    label "9471319"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1852
-    label "-9471348"
-    type "Presynaptic"
+    label "9471348"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1853
-    label "-9471371"
-    type "Presynaptic"
+    label "9471371"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1854
-    label "-9471407"
-    type "Presynaptic"
+    label "9471407"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1855
-    label "-9471445"
-    type "Presynaptic"
+    label "9471445"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1856
-    label "-9471468"
-    type "Presynaptic"
+    label "9471468"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1857
-    label "-9471504"
-    type "Presynaptic"
+    label "9471504"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1858
-    label "-9471530"
-    type "Presynaptic"
+    label "9471530"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1859
-    label "-9471546"
-    type "Presynaptic"
+    label "9471546"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1860
-    label "-9471577"
-    type "Presynaptic"
+    label "9471577"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1861
-    label "-9471600"
-    type "Presynaptic"
+    label "9471600"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1862
-    label "-9471635"
-    type "Presynaptic"
+    label "9471635"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1863
-    label "-9471680"
-    type "Presynaptic"
+    label "9471680"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1864
-    label "-9471698"
-    type "Presynaptic"
+    label "9471698"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1865
-    label "-9471734"
-    type "Presynaptic"
+    label "9471734"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1866
-    label "-9471751"
-    type "Presynaptic"
+    label "9471751"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1867
-    label "-9471771"
-    type "Presynaptic"
+    label "9471771"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1868
-    label "-9471827"
-    type "Presynaptic"
+    label "9471827"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1869
-    label "-9471849"
-    type "Presynaptic"
+    label "9471849"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1870
-    label "-9471931"
-    type "Presynaptic"
+    label "9471931"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1871
-    label "-9471954"
-    type "Presynaptic"
+    label "9471954"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1872
-    label "-9471990"
-    type "Presynaptic"
+    label "9471990"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1873
-    label "-9472074"
-    type "Presynaptic"
+    label "9472074"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1874
-    label "-9472097"
-    type "Presynaptic"
+    label "9472097"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1875
-    label "-9472136"
-    type "Presynaptic"
+    label "9472136"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1876
-    label "-9472190"
-    type "Presynaptic"
+    label "9472190"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1877
-    label "-9472211"
-    type "Presynaptic"
+    label "9472211"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1878
-    label "-9472239"
-    type "Presynaptic"
+    label "9472239"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1879
-    label "-9472255"
-    type "Presynaptic"
+    label "9472255"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1880
-    label "-9472311"
-    type "Presynaptic"
+    label "9472311"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1881
-    label "-9472351"
-    type "Presynaptic"
+    label "9472351"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1882
-    label "-9472385"
-    type "Presynaptic"
+    label "9472385"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1883
-    label "-9472407"
-    type "Presynaptic"
+    label "9472407"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1884
-    label "-9472434"
-    type "Presynaptic"
+    label "9472434"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1885
-    label "-11201092"
-    type "Presynaptic"
+    label "11201092"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1886
-    label "-11837503"
-    type "Presynaptic"
+    label "11837503"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1887
-    label "-12601565"
-    type "Presynaptic"
+    label "12601565"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1888
-    label "-12601580"
-    type "Presynaptic"
+    label "12601580"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1889
-    label "-13802892"
-    type "Presynaptic"
+    label "13802892"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1890
-    label "-16234708"
-    type "Presynaptic"
+    label "16234708"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1891
-    label "-17837812"
-    type "Presynaptic"
+    label "17837812"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1892
-    label "-17930592"
-    type "Presynaptic"
+    label "17930592"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1893
-    label "-17949565"
-    type "Presynaptic"
+    label "17949565"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1894
-    label "-18187977"
-    type "Presynaptic"
+    label "18187977"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1895
-    label "-18572817"
-    type "Presynaptic"
+    label "18572817"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1896
-    label "-20483482"
-    type "Presynaptic"
+    label "20483482"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1897
-    label "-20483490"
-    type "Presynaptic"
+    label "20483490"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1898
-    label "-20483512"
-    type "Presynaptic"
+    label "20483512"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1899
-    label "-21829162"
-    type "Presynaptic"
+    label "21829162"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1900
-    label "-21894644"
-    type "Presynaptic"
+    label "21894644"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1901
-    label "-21919173"
-    type "Presynaptic"
+    label "21919173"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1902
-    label "-21949201"
-    type "Presynaptic"
+    label "21949201"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1903
-    label "-21949385"
-    type "Presynaptic"
+    label "21949385"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1904
-    label "-21949387"
-    type "Presynaptic"
+    label "21949387"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1905
-    label "-21949691"
-    type "Presynaptic"
+    label "21949691"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1906
-    label "-22069438"
-    type "Presynaptic"
+    label "22069438"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1907
-    label "-22070352"
-    type "Presynaptic"
+    label "22070352"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1908
-    label "-22508283"
-    type "Presynaptic"
+    label "22508283"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1909
-    label "-24105013"
-    type "Presynaptic"
+    label "24105013"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1910
-    label "-24701386"
-    type "Presynaptic"
+    label "24701386"
+    type "connector"
     owner "9469519.gml"
   ]
   node [
     id 1911
-    label "-24706356"
-    type "Presynaptic"
+    label "24706356"
+    type "connector"
     owner "9469519.gml"
   ]
   edge [
