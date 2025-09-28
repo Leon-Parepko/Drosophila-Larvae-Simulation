@@ -1,4 +1,14 @@
 venv
 .venv
 .idea
+**/.ipynb_checkpoints/
 Ilya/trash
+Leon/catmaid/neurons
+Leon/catmaid/complete_graph(3k).gml
+Leon/catmaid/complete_graph(5k).gml
+Leon/catmaid/Metadata(auto).pkl
+Leon/catmaid/Metadata_Neurons(manual).csv
+Leon/catmaid/Metadata_Nodes(manual).csv
+Leon/nest-simulator
+Leon/nest-gpu
+Leon/skids.csv
