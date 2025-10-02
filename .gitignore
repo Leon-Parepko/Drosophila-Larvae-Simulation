@@ -12,3 +12,5 @@ Leon/catmaid/Metadata_Nodes(manual).csv
 Leon/nest-simulator
 Leon/nest-gpu
 Leon/skids.csv
+scripts/data_preparation/data
+scripts/data_preparation/__pycache__
