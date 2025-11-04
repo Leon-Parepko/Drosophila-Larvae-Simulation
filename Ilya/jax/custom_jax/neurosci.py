@@ -1,0 +1,122 @@
+import jax
+import jax.numpy as jnp
+import numpy as np
+from jax.lax import scan, fori_loop
+
+from utils import *
+
+@jax.jit
+def alpha_n(V):
+    epsilon = 1e-8
+    return 0.01 * (V - 10) / (1 - jnp.exp((10 - V) / 10) + epsilon)
+
+
+@jax.jit
+def beta_n(V):
+    return 0.125 * jnp.exp(-V / 80)
+
+
+@jax.jit
+def alpha_m(V):
+    epsilon = 1e-8
+    return 0.1 * (V - 25) / (1 - jnp.exp((25 - V) / 10) + epsilon)
+
+
+@jax.jit
+def beta_m(V):
+    return 4 * jnp.exp(-V / 18)
+
+
+@jax.jit
+def alpha_h(V):
+    return 0.07 * jnp.exp(-V / 20)
+
+
+@jax.jit
+def beta_h(V):
+    return 1 / (1 + jnp.exp((30 - V) / 10))
+
+def generate_hh_channels_functions(C, ENa, EK, EL, gNa, gK, gL):
+    @jax.jit
+    def INa(V, m, h):
+        return gNa * h * m**3 * (V - ENa)
+
+    @jax.jit
+    def IK(V, n):
+        return gK * n**4 * (V - EK)
+
+    @jax.jit
+    def Ileak(V):
+        return gL * (V - EL)
+
+    @jax.jit
+    def m_dynamic(V, m):
+        return alpha_m(V) * (1 - m) - beta_m(V) * m
+
+    @jax.jit
+    def n_dynamic(V, n):
+        return alpha_n(V) * (1 - n) - beta_n(V) * n
+
+    @jax.jit
+    def h_dynamic(V, h):
+        return alpha_h(V) * (1 - h) - beta_h(V) * h
+
+    @jax.jit
+    def V_dynamic(V, m, n, h):
+        return -(INa(V, m, h) + IK(V, n) + Ileak(V))/C
+
+    return {
+        "INa": INa,
+        "IK": IK,
+        "Ileak": Ileak,
+        "V_dynamic":V_dynamic,
+        "m_dynamic": m_dynamic,
+        "n_dynamic": n_dynamic,
+        "h_dynamic": h_dynamic,
+    }
+
+def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V_m, C, alpha_syn_detector_treshold, synaptic_weights, treshold_interval = 0.01, *args, **kwargs):
+    @jax.jit
+    def u(alpha):
+        da_dt = jnp.empty_like(alpha)
+        da_dt.at[:, 0].set(-alpha[:, 0]/tau)
+        da_dt.at[:, 1].set((alpha[:, 0] - alpha[:, 1])/tau)
+        return da_dt
+    
+    @jax.jit
+    def I(alpha, V_m):
+        return G_max*alpha[:, 1]*(V_m - E_rev)
+    
+
+    @jax.jit
+    def pipeline(state, ds_dt):
+        ds_dt['alpha'] += u(state['alpha'])
+        cin = C.at[post_synaptic[:, 1]].get()
+        vim = V_m.at[post_synaptic[:, 1]].get()
+        ain = state['alpha'].at[post_synaptic[:, 0]].get()
+        ds_dt['V'] = ds_dt['V'].at[post_synaptic[:, 1]].add(-I(ain, vim)/cin)
+
+        # instant changes
+        v_ = state['V'].at[pre_synaptic[:, 0]].get()
+        dv_dt_ = ds_dt['V'].at[pre_synaptic[:, 0]].get()
+
+        delta_x = (jnp.abs(v_ - alpha_syn_detector_treshold) < treshold_interval) * (dv_dt_ > 0.0) * synaptic_weights
+        state['alpha'] = state['alpha'].at[pre_synaptic[:, 1], 1].add(delta_x)
+        return state, ds_dt
+    return pipeline
+
+def get_HH_pipeline(C, ENa, EK, EL, gNa, gK, gL, *args, **kwargs):
+    q = generate_hh_channels_functions(C, ENa, EK, EL, gNa, gK, gL)
+    dv = q['V_dynamic']
+    dm = q['m_dynamic']
+    dn = q['n_dynamic']
+    dh = q['h_dynamic']
+    @jax.jit
+    def pipeline(state, ds_dt):
+        ds_dt['V'] += dv(state['V'], state['m'], state['n'], state['h'])
+        ds_dt['m'] += dm(state['m'], state['m'])
+        ds_dt['n'] += dn(state['n'], state['n'])
+        ds_dt['h'] += dh(state['h'], state['h'])
+        return state, ds_dt
+
+    return pipeline
