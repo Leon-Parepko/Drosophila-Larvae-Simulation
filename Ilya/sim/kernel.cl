@@ -3,13 +3,13 @@
 #define dt 0.01f
 
 #define C_coof 1.f
-#define ENa 120.f
-#define EK -12.f
-#define EL 10.6f
+#define ENa 50.f
+#define EK -77.f
+#define EL -54.6f
 #define gNa 120.f
 #define gK 36.f
 #define gL 0.3f
-#define conductivity 1.0f
+#define conductivity 20.0f
 
 #define max_image_V 70.0f
 #define min_image_V -70.0f
@@ -52,7 +52,7 @@ __kernel void update_params(__global float* V, __global float* M, __global float
     float IK = gK*n*n*n*n*(v - EK);
     float Ileak = gL*(v - EL);
 
-    float I = (change_rate[left ]*(V[left ] - V[center]) +
+    float I = (change_rate[left ]*(V[left ] - V[center])/100.0 +
                change_rate[right]*(V[right] - V[center]) +
                change_rate[up   ]*(V[up   ] - V[center]) +
                change_rate[down ]*(V[down ] - V[center]))*conductivity;

@@ -5,6 +5,7 @@ from itertools import product
 import pandas as pd
 import csv
 
+
 class simplified_structure:
     def __init__(self, neuron:pymaid.CatmaidNeuronList, name = None, drop_nodes_inside = False):
         self.neuron:pymaid.CatmaidNeuronList = neuron
@@ -150,13 +151,22 @@ class simulation_context:
         self.path_to_full_graph = os.path.join(self.path_to_neurons, 'full', 'full.gml')
         self.path_to_synaptic_table = os.path.join(self.input_path, 'synaptic_table.csv')
         if path_to_metada is None:
-            self.path_to_neurons_metadata = os.path.join(self.input_path, 'neurons_metadata.csv')
+            self.path_to_nodes_metadata = os.path.join(self.input_path, 'neurons_metadata.csv')
         else:
-            self.path_to_neurons_metadata = path_to_metada
+            self.path_to_nodes_metadata = path_to_metada
         self.output_path = os.path.join(self.wd, 'output')
         self.__catmaid_instance = None
+        self.__node_metadata = None
 
         self.setup()
+    
+    @property
+    def node_metadata(self):
+        if self.__node_metadata is None:
+            if not Pexist(self.path_to_full_graph):
+                self.get_metadata()
+            self.__node_metadata = pd.read_csv(self.path_to_nodes_metadata)
+        return self.__node_metadata
 
     def setup(self):
         create_directory(self.wd)
@@ -165,9 +175,9 @@ class simulation_context:
         create_directory(os.path.join(self.path_to_neurons, 'full'))
     
     def get_node_neuron(self, node_id):
-        return self.__node_metadata[self.__node_metadata['node_id'] == node_id]
+        return self.node_metada[self.node_metada['node_id'] == node_id]
 
-    def     process_graph_to_csv(self):
+    def process_graph_to_csv(self):
         # Load the combined graph
         full_g = nx.read_gml(self.path_to_full_graph)
 
@@ -255,7 +265,8 @@ class simulation_context:
         cn = composed_network([self.gml_path(n) for n in self.neurons])
         cn.save_as_gml(self.path_to_full_graph)
 
-    def get_synaptic_table(self):
+    @property
+    def synaptic_table(self):
         if not Pexist(self.path_to_synaptic_table):
             self.build_synaptic_table()
         return pd.read_csv(self.path_to_synaptic_table)
@@ -268,6 +279,59 @@ class simulation_context:
     def get_arbor_recipe(self):
         self.build_full_graph()
         
+
     def get_metadata(self):
-        print('getting neuron metadata table is not implemented')
-        return pd.read_csv(self.path_to_neurons_metadata)
+        rm = self.rm()
+
+        # neurons = pymaid.find_neurons(remote_instance = rm)
+        all_skids = self.neurons
+
+        # Containers for metadata
+        #neurons_metadata = []
+        nodes_metadata = []
+
+        for skid in all_skids:
+            try:
+                neuron = pymaid.get_neuron(skid, remote_instance = rm)
+                
+                # --- Neuron-level metadata ---
+                # neuron_metadata = {
+                #     "neuron_id": neuron.id,
+                #     "name": neuron.name,
+                #     "type": neuron.type,
+                #     "n_nodes": neuron.n_nodes,
+                #     "n_connectors": neuron.n_connectors,
+                #     "n_branches": neuron.n_branches,
+                #     "n_leafs": neuron.n_leafs,
+                #     "cable_length": neuron.cable_length,
+                #     "annotation": neuron.annotations
+                # }
+                # neurons_metadata.append(neuron_metadata)
+
+                # --- Node-level metadata ---
+                nodes = neuron.nodes[["node_id", "x", "y", "z", "radius", "type"]].copy()
+                nodes["neuron_id"] = neuron.id  # link to parent neuron
+
+                # Fix radius: None if NaN or negative
+                nodes["radius"] = nodes["radius"].apply(
+                    lambda r: None if pd.isna(r) or r <= 0 else r
+                )
+
+                # --- Connector metadata ---
+                connectors = pymaid.get_connectors(neuron, remote_instance = rm)[["connector_id", "x", "y", "z", "type"]].copy()
+                connectors = connectors.rename(columns={"connector_id": "node_id"})
+                connectors["radius"] = None  # no radius for connectors
+                connectors["neuron_id"] = neuron.id  # link to parent neuron
+
+                # Merge nodes + connectors into one table
+                node_info = pd.concat([nodes, connectors], ignore_index=True)
+
+                nodes_metadata.append(node_info)
+
+            except Exception as e:
+                print(f"FAIL {skid}: {e}")
+
+            # Convert lists to DataFrames
+            #neurons_metadata = pd.DataFrame(neurons_metadata)
+            nodes_metadata = pd.concat(nodes_metadata, ignore_index=True)
+            nodes_metadata.to_csv(self.path_to_nodes_metadata)

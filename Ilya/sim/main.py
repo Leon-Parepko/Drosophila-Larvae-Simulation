@@ -120,9 +120,9 @@ while work:
     
     mkey = pg.mouse.get_pressed()
     if mkey[2]:
-        p.set_change_coof(p.sizes * np.array(pg.mouse.get_pos())/screensize, 1.0, 1.0)
+        p.set_change_coof(p.sizes * np.array(pg.mouse.get_pos())/screensize, 4.0, 1.0)
     if mkey[0]:
-        p.add_I(p.sizes * np.array(pg.mouse.get_pos())/screensize, 2, 9.99)
+        p.add_I(p.sizes * np.array(pg.mouse.get_pos())/screensize, 2, 200)
     
     if (pause > 0):
         for _ in range(20):
