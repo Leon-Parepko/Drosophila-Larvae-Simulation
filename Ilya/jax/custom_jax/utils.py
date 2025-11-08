@@ -4,21 +4,63 @@ import numpy as np
 from jax.lax import scan, fori_loop
 
 # heat evolution defenition
-def laplace_at_graph(
+def laplace_at_graph_symetric(
     edges, key, scaling = None
 ):  # edges должны быть не ореинтированны и не повторятся
     #TODO добавить scalilng
     q = jnp.array(edges, jnp.int32)
     static_sources = q[:, 0]
     static_targets = q[:, 1]
+    if scaling is None:
+        def graph_evolution_fn_without_scaling(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
+            potential_diff = (
+                X[key].at[static_targets].get() - X[key].at[static_sources].get()
+            )  # возможно нужно нормировать с учетом количества соседей
+            dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff)
+            dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff)
+            return X, dx_dt
+        graph_evolution_fn = graph_evolution_fn_without_scaling
+    else:
+        def graph_evolution_fn_with_scaling(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
+            potential_diff = (
+                X[key].at[static_targets].get() - X[key].at[static_sources].get()
+            )  # возможно нужно нормировать с учетом количества соседей
+            dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff)*scaling.at[static_sources, 0]
+            dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff)*scaling.at[static_targets, 1]
+            return X, dx_dt
+        graph_evolution_fn = graph_evolution_fn_with_scaling
+        
+    
 
-    def graph_evolution_fn(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
-        potential_diff = (
-            X[key].at[static_targets].get() - X[key].at[static_sources].get()
-        )  # возможно нужно нормировать с учетом количества соседей
-        dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff)
-        dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff)
-        return X, dx_dt
+    return jax.jit(graph_evolution_fn)
+
+def laplace_at_graph_oriented(
+    edges, key, scaling = None
+):
+    q = jnp.array(edges, jnp.int32)
+    static_sources = q[:, 0]
+    static_targets = q[:, 1]
+
+
+    if scaling is None:
+        def graph_evolution_fn_without_scaling(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
+            potential_diff = (
+                X[key].at[static_targets].get() - X[key].at[static_sources].get()
+            )  # возможно нужно нормировать с учетом количества соседей
+            dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff)
+            dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff)
+            return X, dx_dt
+        graph_evolution_fn = graph_evolution_fn_without_scaling
+        
+    else:
+        def graph_evolution_fn_with_scaling(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
+            potential_diff = (
+                X[key].at[static_targets].get() - X[key].at[static_sources].get()
+            )  # возможно нужно нормировать с учетом количества соседей
+            dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff*scaling[0])
+            dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff*scaling[1])
+            return X, dx_dt
+        graph_evolution_fn = graph_evolution_fn_with_scaling
 
     return jax.jit(graph_evolution_fn)
 

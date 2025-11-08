@@ -34,7 +34,7 @@ def get_my_pipeline(csim, constants, dt = 0.1):
     integrate = get_euler_step(dt)
     HH = get_HH_pipeline(**constants)
     alpha = get_alpha_synapce_pipeline(csim['V_to_syn'], csim['syn_to_V'], **constants)
-    cable = laplace_at_graph(csim['H_to_H'], 'V')
+    cable = laplace_at_graph_symetric(csim['H_to_H'], 'V')
     @jax.jit
     def my_pipeline(state):
         s, ds = to_diff(state)
