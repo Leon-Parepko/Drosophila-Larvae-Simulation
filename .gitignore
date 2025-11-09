@@ -15,3 +15,5 @@ Leon/skids.csv
 scripts/data_preparation/data
 scripts/data_preparation/__pycache__
 */__pycache__
+.vscode
+scripts/nj/__pycache__
