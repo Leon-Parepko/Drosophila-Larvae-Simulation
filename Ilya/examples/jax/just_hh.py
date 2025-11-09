@@ -1,5 +1,5 @@
-from custom_jax.neurosci import *
-import data_preparation as dp
+from scripts.nj.neurosci import *
+import scripts.data_preparation as dp
 
 neurons_ids = [
     "7055857",
