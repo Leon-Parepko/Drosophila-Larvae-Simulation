@@ -3,7 +3,7 @@ import jax.numpy as jnp
 import numpy as np
 from jax.lax import scan, fori_loop
 
-from utils import *
+from scripts.nj.utils import *
 
 @jax.jit
 def alpha_n(V):
