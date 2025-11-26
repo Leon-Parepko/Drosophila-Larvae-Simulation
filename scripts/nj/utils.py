@@ -62,11 +62,51 @@ def laplace_at_graph_oriented(
 
     return jax.jit(graph_evolution_fn)
 
-def get_euler_step(dt):
+def get_euler_step(v_func, dt):
     @jax.jit
-    def euler_step(state, v):
+    def euler_step(state):
+        v = v_func(state)
         return jax.tree_util.tree_map(lambda x, y: x+ y*dt, state, v)
     return euler_step
+
+def get_runge_kutta_step(v_func, dt):
+    @jax.jit
+    def runge_kutta_step(state):
+        # 1. Вычисляем k1 (скорость в начале интервала)
+        S_a, k1 = v_func(state)
+
+        # 2. Вычисляем k2 (скорость в середине интервала, используя k1)
+        # state + k1 * (dt/2)
+        state_k2 = jax.tree_util.tree_map(lambda x, y: x + y * (dt / 2.0), state, k1)
+        _, k2 = v_func(state_k2)
+
+        # 3. Вычисляем k3 (скорость в середине интервала, используя k2)
+        # state + k2 * (dt/2)
+        state_k3 = jax.tree_util.tree_map(lambda x, y: x + y * (dt / 2.0), state, k2)
+        _, k3 = v_func(state_k3)
+
+        # 4. Вычисляем k4 (скорость в конце интервала, используя k3)
+        # state + k3 * dt
+        state_k4 = jax.tree_util.tree_map(lambda x, y: x + y * dt, state, k3)
+        _, k4 = v_func(state_k4)
+        
+        # 5. Вычисляем взвешенное среднее приращение: (k1 + 2*k2 + 2*k3 + k4) * (dt/6)
+        
+        # Вычисляем (k1 + 2*k2 + 2*k3 + k4)
+        k_sum = jax.tree_util.tree_map(
+            lambda k1_val, k2_val, k3_val, k4_val: k1_val + 2.0 * k2_val + 2.0 * k3_val + k4_val,
+            k1, k2, k3, k4
+        )
+
+        # Вычисляем новое состояние: state + k_sum * (dt/6)
+        new_state = jax.tree_util.tree_map(
+            lambda x, y: x + y * (dt / 6.0),
+            S_a, k_sum
+        )
+        
+        return new_state
+
+    return runge_kutta_step
 
 def get_scan_integration_function(step_foo, inside_iterations):
     @jax.jit
