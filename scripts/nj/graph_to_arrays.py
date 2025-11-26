@@ -233,14 +233,14 @@ class SimulationContextJax:
         print("Контекст симуляции JAX готов.")
 
     # --------------------------------------------------------------------------
-    # НОВЫЙ СТАТИЧЕСКИЙ МЕТОД: Загрузка контекста из кэша
+    # СТАТИЧЕСКИЙ МЕТОД: Загрузка контекста из кэша
     # --------------------------------------------------------------------------
     @staticmethod
     def load_context_from_cache(cache_dir: str, 
                                 initial_node_values: InitialValueMap) -> Dict[str, Any]:
         """
         Загружает данные графа и генерирует начальные состояния узлов 
-        на основе кэшированных массивов.
+        на основе кэшированных массивов. Включает маппинг в возвращаемый контекст.
 
         Args:
             cache_dir (str): Директория, где находятся подпапки кэша (./jax_context_cache).
@@ -248,20 +248,18 @@ class SimulationContextJax:
                                                    начальных состояний.
 
         Returns:
-            Dict[str, Any]: Словарь контекста, готовый для GNN модели.
+            Dict[str, Any]: Словарь контекста, готовый для GNN модели, включая 'mapping'.
         """
         if not os.path.exists(cache_dir):
             raise FileNotFoundError(f"Директория кэша не найдена: {cache_dir}")
 
         # 1. Найти последнюю поддиректорию кэша (по имени хэша)
-        # Находим все поддиректории, отсортированные по времени создания, чтобы взять самую новую
         all_subdirs = [d for d in glob.glob(os.path.join(cache_dir, '*')) 
                        if os.path.isdir(d)]
         
         if not all_subdirs:
             raise FileNotFoundError(f"Не найдены поддиректории кэша в: {cache_dir}")
 
-        # Сортируем по времени изменения, чтобы взять самый свежий кэш
         latest_subdir = max(all_subdirs, key=os.path.getmtime)
         
         npz_path = os.path.join(latest_subdir, SimulationContextJax.CACHE_FILENAME)
@@ -272,14 +270,16 @@ class SimulationContextJax:
         print(f"Загрузка контекста из: {npz_path}")
         
         # 2. Загрузка данных графа из NPZ
-        # Используем статический метод JaxGraphConverter для загрузки основных структур
         graph_data = JaxGraphConverter.load_from_npz(npz_path)
 
         num_nodes = graph_data['num_nodes']
+        local_maps_global_to_local = graph_data.get('local_maps', {})
+        global_map_old_to_new = graph_data.get('mapping', {}).get('old_to_new_global', {})
+
         edge_arrays = {k: v for k, v in graph_data.items() if k.startswith('edges_')}
         initial_states: Dict[str, np.ndarray] = {}
         
-        # 3. Инициализация начальных состояний (повторение логики _initialize_node_states)
+        # 3. Инициализация начальных состояний 
         for group_name, num_n in num_nodes.items():
             
             if group_name not in initial_node_values:
@@ -297,10 +297,27 @@ class SimulationContextJax:
                     shape = (num_n, dimension)
                     initial_states[group_name] = np.zeros(shape, dtype=np.float32)
         
-        # 4. Сборка конечного контекста
+        # 4. Расчет конечного маппинга (логика скопирована из get_node_id_mapping)
+        final_mapping: Dict[str, Dict[Any, int]] = {k: {} for k in num_nodes.keys()}
+        global_to_group: Dict[int, str] = {}
+        
+        for group_name, map_dict in local_maps_global_to_local.items():
+            for global_id, local_id in map_dict.items():
+                global_to_group[global_id] = group_name
+
+        for original_id, global_id in global_map_old_to_new.items():
+            group_name = global_to_group.get(global_id)
+            
+            if group_name and group_name in final_mapping:
+                local_index = local_maps_global_to_local[group_name].get(global_id)
+                if local_index is not None:
+                    final_mapping[group_name][original_id] = local_index
+        
+        # 5. Сборка конечного контекста
         context = {
             'num_nodes': num_nodes,
             'initial_states': initial_states,
+            'mapping': final_mapping, # <<< ДОБАВЛЕНО: Конечный маппинг
             **edge_arrays
         }
         
@@ -387,7 +404,7 @@ class SimulationContextJax:
                     shape = (num_n, dimension)
                     self.initial_states[group_name] = np.zeros(shape, dtype=np.float32)
     
-    # (Метод get_node_id_mapping остается без изменений)
+    
     def get_node_id_mapping(self) -> Dict[str, Dict[Any, int]]:
         """
         Возвращает маппинг старых (оригинальных) ID узлов в новые (локальные) индексы
@@ -417,13 +434,14 @@ class SimulationContextJax:
         return final_mapping
 
     def get_context(self) -> Dict[str, Any]:
-        """Возвращает полный контекст для симуляции GNN."""
+        """Возвращает полный контекст для симуляции GNN, включая маппинг."""
         # Собираем массивы ребер из graph_results
         edge_arrays = {k: v for k, v in self.graph_results.items() if k.startswith('edges_')}
 
         return {
             'num_nodes': self.num_nodes,
             'initial_states': self.initial_states,
+            'mapping': self.get_node_id_mapping(), # <<< ДОБАВЛЕНО: Конечный маппинг
             **edge_arrays
         }
 
@@ -480,6 +498,8 @@ if __name__ == '__main__':
     print(f"  > H-узлов: {first_context['num_nodes']['H']}")
     print(f"  > H_to_H ребер: {first_context['edges_H_to_H'].shape}")
     print(f"  > S начальное состояние (размерность): {first_context['initial_states']['S'].shape}")
+    print(f"  > Маппинг для H-узлов (первый ID): {list(first_context['mapping']['H'].keys())[0]} -> {list(first_context['mapping']['H'].values())[0]}")
+
 
     # 3. ВТОРОЙ ЗАПУСК: Загрузка контекста без пересчета графа
     print("\n================== ТЕСТ 2: ЗАГРУЗКА ИЗ КЭША ==================")
@@ -495,10 +515,12 @@ if __name__ == '__main__':
         print(f"  > H-узлов: {loaded_context['num_nodes']['H']}")
         print(f"  > H_to_H ребер: {loaded_context['edges_H_to_H'].shape}")
         print(f"  > S начальное состояние (размерность): {loaded_context['initial_states']['S'].shape}")
+        print(f"  > Маппинг для H-узлов (первый ID): {list(loaded_context['mapping']['H'].keys())[0]} -> {list(loaded_context['mapping']['H'].values())[0]}")
 
         # Проверка соответствия (для демонстрации)
         assert np.array_equal(first_context['edges_H_to_H'], loaded_context['edges_H_to_H'])
         assert loaded_context['num_nodes']['H'] == 5
+        assert loaded_context['mapping'] == first_context['mapping']
         print("\nПроверка: Контекст успешно загружен и совпадает с оригинальным.")
 
     except Exception as e:
