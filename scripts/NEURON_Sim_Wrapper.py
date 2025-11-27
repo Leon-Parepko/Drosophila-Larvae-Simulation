@@ -4,19 +4,30 @@ import pandas as pd
 import networkx as nx
 from collections import deque
 from neuron import h, coreneuron
-import matplotlib
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 from mpl_toolkits.mplot3d import Axes3D
-import plotly.graph_objects as go
-import plotly.express as px
+from tqdm.notebook import tqdm
 
 
 h.load_file('stdrun.hoc')
 
 
 class Network:
-    def __init__(self, neuron_ids, neurons_dir='./Datasets/Original/neurons', meta_pkl='./Datasets/Original/Metadata(auto).pkl'):
+    def __init__(self, 
+                 neuron_ids, 
+                 neurons_dir='./Datasets/Original/neurons',
+                 meta_pkl='./Datasets/Original/Metadata(auto).pkl', 
+                 verbose=False):
+        """
+        Initialize the Network object, load neuron IDs and prepare containers for graphs,
+        morphology sections, somas, synapses, recordings, and stimuli.
+        
+        Parameters
+        ----------
+        neuron_ids :  list - List of neuron identifiers to load and simulate.
+        neurons_dir : str  - Path to directory containing GML morphology files.
+        meta_pkl :    str  - Path to metadata .pkl file with connector information.
+        verbose :     bool - If True — prints debug information during initialization.
+        """
         self.NEURONS = neuron_ids
         self.NEURONS_DIR = neurons_dir
         self.META_PKL = meta_pkl
@@ -31,10 +42,25 @@ class Network:
         
         self.stimulas = []
 
-        print('number of neurons:', len(self.NEURONS), '\n')
+        if verbose:
+            print('number of neurons:', len(self.NEURONS), '\n')
+
 
     
-    def __set_segments(self, section):
+    def __set_segments(self, 
+                       section):
+        """
+        Automatically compute and assign the number of spatial segments (nseg) 
+        for a NEURON section based on the λ-rule for stable numerical simulation.
+
+        Parameters
+        ----------
+        section : h.Section - NEURON section object for which nseg is computed.
+
+        Returns
+        -------
+        None
+        """
         try:
             # lambda_f - длина волны на 100 Hz
             lam = section.lambda_f(100)
@@ -53,12 +79,29 @@ class Network:
         section.nseg = max(1, nseg)
         return
     
-    
-    def load_graphs(self, verbose=False):
-        if verbose:
-            print('loading graphs \n')
 
-        for neuron_id in self.NEURONS:
+    
+    def load_graphs(self, 
+                    verbose=False, 
+                    allow_tqdm=False):
+        """
+        Load neuron morphology graphs (.gml) into memory and store them inside the Network.
+        Each graph contains morphology nodes with annotated types (root, slab, branch, end).
+
+        Parameters
+        ----------
+        verbose :    bool - If True — prints information about each loaded neuron.
+        allow_tqdm : bool - If True — uses tqdm progress bar for loading.
+
+        Returns
+        -------
+        None
+        """
+        neurons_iter = self.NEURONS
+        if verbose or allow_tqdm:
+            neurons_iter = tqdm(self.NEURONS, desc="loading graphs")
+    
+        for neuron_id in neurons_iter:
             path = os.path.join(self.NEURONS_DIR, f'{neuron_id}.gml')
 
             if not os.path.exists(path):
@@ -74,81 +117,205 @@ class Network:
 
             if verbose:
                 print(f"Neuron {neuron_id}   \t {graph.number_of_nodes()} nodes \t root={root_nodes[0] if root_nodes else 'NONE'}")
+        return
 
-            
-    def build_sections(self, verbose=False, soma_params=None, dendrite_params=None):
+
+    
+    def __normalize_params(self, 
+                           default_params, 
+                           user_params):
+        """
+        Convert user-provided mechanism parameters into a unified internal format.
+
+        Accepts:
+        - dict → global parameters for all neurons
+        - pandas.DataFrame → per-neuron parameters (must contain 'neuron_id')
+        - None → return default global parameters
+
+        Parameters
+        ----------
+        default_params : dict                             - Default mechanism parameters.
+        user_params :    dict or pandas.DataFrame or None - User-specified parameter override.
+
+        Returns
+        -------
+        dict - Structure describing whether parameters are global or per-neuron.
+        """
+        
+        # 1) Если None → использовать дефолт
+        if user_params is None:
+            return {"type": "global", "data": default_params}
+    
+        # 2) Если это dict → тоже глобальные параметры
+        if isinstance(user_params, dict):
+            merged = {**default_params, **user_params}
+            return {"type": "global", "data": merged}
+    
+        # 3) Если это DataFrame → параметры по neuron_id
+        if isinstance(user_params, pd.DataFrame):
+            if "neuron_id" not in user_params.columns:
+                raise ValueError("DataFrame with parameters must contain column 'neuron_id'")
+    
+            per_neuron = (
+                user_params
+                .set_index("neuron_id")
+                .to_dict(orient="index")
+            )
+            return {"type": "per_neuron", "data": per_neuron}
+    
+        raise TypeError("soma_params/dendrite_params must be dict, DataFrame, or None")
+
+
+
+    def build_sections(self, 
+                       verbose=False, 
+                       allow_tqdm=False, 
+                       soma_mechanism='hh', 
+                       soma_params=None, 
+                       dendrite_mechanism='pas', 
+                       dendrite_params=None):
+
+        """
+        Create NEURON Sections (soma and dendrites) for every neuron based on the 
+        morphology graphs and insert the selected membrane mechanisms.
+
+        Parameters
+        ----------
+        verbose :            bool - If True — prints number of created dendrites per neuron.
+        allow_tqdm :         bool - If True — uses tqdm for progress visualization.
+        soma_mechanism :     str  - Name of the mechanism inserted into soma sections (e.g., 'hh', 'pas').
+        soma_params :        dict or pandas.DataFrame or None - Parameters for soma sections; can be global or per-neuron.
+        dendrite_mechanism : str  - Mechanism name for dendritic sections.
+        dendrite_params :    dict or pandas.DataFrame or None - Dendritic mechanism parameters; global or per-neuron.
+
+        Returns
+        -------
+        None
+        """
         
         # значения по умолчанию для сомы и дендритов
-        default_soma_params = {
-            'L': 20,             # длина
-            'diam': 20,          # диаметр
-            'Ra': 100,           # аксиальное сопротивление
-            'cm': 1,             # емкость мембраны
-            
-            'gnabar_hh': 0.12,   # проводимость натриевых каналов
-            'gkbar_hh': 0.036,   # проводимость калиевых каналов
-            'gl_hh': 0.0003,     # leak проводимость
-            'el_hh': -65.0
-        }
-        default_dendrite_params = {
-            'L': 50.0,           # длина
-            'diam': 1.0,         # диаметр
-            'Ra': 100.0,         # аксиальное сопротивление
-            'cm': 1.0,           # емкость мембраны
-            
-            'g_pas': 0.0001,     # пассивная проводимость
-            'e_pas': -65.0       # reversal potential
-        }
+        if soma_mechanism == 'pas':
+            pass # TODO
         
+        elif soma_mechanism == 'hh':
+            default_soma_params = {
+                'L': 20,             # длина
+                'diam': 20,          # диаметр
+                'Ra': 100,           # аксиальное сопротивление
+                'cm': 1,             # емкость мембраны
+
+                'gnabar_hh': 0.12,   # проводимость натриевых каналов
+                'gkbar_hh': 0.036,   # проводимость калиевых каналов
+                'gl_hh': 0.0003,     # leak проводимость
+                'el_hh': -65.0
+            }
+            
+        if dendrite_mechanism == 'pas':
+            default_dendrite_params = {
+                'L': 50.0,           # длина
+                'diam': 1.0,         # диаметр
+                'Ra': 100.0,         # аксиальное сопротивление
+                'cm': 1.0,           # емкость мембраны
+
+                'g_pas': 0.0001,     # пассивная проводимость
+                'e_pas': -65.0       # reversal potential
+            }
+            
+        elif dendrite_mechanism == 'hh':
+            default_dendrite_params = {
+                'L': 50.0,           # длина
+                'diam': 1.0,         # диаметр
+                'Ra': 100.0,         # аксиальное сопротивление
+                'cm': 1.0,           # емкость мембраны
+
+                'gnabar_hh': 0.12,   # проводимость натриевых каналов
+                'gkbar_hh': 0.036,   # проводимость калиевых каналов
+                'gl_hh': 0.0001,     # leak проводимость
+                'el_hh': -65.0
+            }
+
         # объединяем дефолтные параметры с переданными
-        soma_params = {**default_soma_params, **(soma_params or {})}
-        dendrite_params = {**default_dendrite_params, **(dendrite_params or {})}
+        soma_cfg = self.__normalize_params(default_soma_params, soma_params)
+        dend_cfg = self.__normalize_params(default_dendrite_params, dendrite_params)
+
+        neurons_iter = self.graphs.items()
+        if verbose or allow_tqdm:
+            neurons_iter = tqdm(self.graphs.items(), desc="building sections")
         
-        if verbose:
-            print('building sections \n')
-        
-        for neuron_id, graph in self.graphs.items():
-            # create soma (take root as soma)        
+        for neuron_id, graph in neurons_iter:
+            # ========= SOMA =========
+            # (take root as soma) 
             for node_id, data in graph.nodes(data=True):
                 if data.get('type') == 'root':
-                    
-                    # Use HH mechanism
+    
                     soma = h.Section(name=f"soma_{neuron_id}")
-                    soma.insert('hh')
-                    
-                    for key, value in soma_params.items():
-                        setattr(soma, key, value)
+                    soma.insert(soma_mechanism)
+    
+                    # Configure soma params
+                    if soma_cfg["type"] == "global":
+                        params = soma_cfg["data"]
+                    else:
+                        params = soma_cfg["data"].get(neuron_id, default_soma_params)
+    
+                    for k, v in params.items():
+                        setattr(soma, k, v)
+    
                     self.__set_segments(soma)
                     self.sections[(neuron_id, node_id)] = soma
                     self.somas[neuron_id] = soma
                     break
 
-            # create dendrites
-            dendrite_count = 0
+            # ========= DENDRITES =========
+            dend_count = 0
+    
             for node_id, data in graph.nodes(data=True):
-                node_type = data.get('type')
-                if node_type in ('slab', 'branch', 'end'):
-                    
-                    # Use passive mechanism
-                    dend = h.Section(name=f"dend_{neuron_id}_{node_id}")              
-                    dend.insert('pas')
-                    
-                    for key, value in dendrite_params.items():
-                        setattr(dend, key, value)
+                if data.get('type') in ('slab', 'branch', 'end'):
+    
+                    dend = h.Section(name=f"dend_{neuron_id}_{node_id}")
+                    dend.insert(dendrite_mechanism)
+    
+                    # Configure dendrite params
+                    if dend_cfg["type"] == "global":
+                        params = dend_cfg["data"]
+                    else:
+                        params = dend_cfg["data"].get(neuron_id, default_dendrite_params)
+    
+                    for k, v in params.items():
+                        setattr(dend, k, v)
+    
                     self.__set_segments(dend)
                     self.sections[(neuron_id, node_id)] = dend
-                    dendrite_count += 1
+    
+                    dend_count += 1
                     
             if verbose:
-                print(f'{neuron_id}: {dendrite_count} dendrites') 
+                print(f'{neuron_id}: {dend_count} dendrites') 
         return
 
-                
-    def connect_morphology(self, verbose=False):
-        if verbose:
-            print('connecting morphology \n')
 
-        for neuron_id, graph in self.graphs.items():
+
+    def connect_morphology(self, 
+                           verbose=False, 
+                           allow_tqdm=False):
+        """
+        Connect NEURON Sections according to the topology of morphology graphs using BFS.
+        Ensures correct parent–child connectivity for soma and dendritic tree.
+
+        Parameters
+        ----------
+        verbose :    bool - If True — prints number of created connections.
+        allow_tqdm : bool - If True — uses tqdm progress bar.
+        
+        Returns
+        -------
+        None
+        """
+        
+        neurons_iter = self.graphs.items()
+        if verbose or allow_tqdm:
+            neurons_iter = tqdm(self.graphs.items(), desc="connecting morphology")
+        
+        for neuron_id, graph in neurons_iter:
 
             morph_nodes = [n for n, d in graph.nodes(data=True) if d.get('type') in ('root', 'slab', 'branch', 'end')]
 
@@ -199,8 +366,29 @@ class Network:
                 print(f'{neuron_id}: {connections} connections')
         return
     
-                
-    def build_synapses(self, verbose=False, synapse_params=None, netcon_params=None):
+
+        
+    def build_synapses(self, 
+                       verbose=False, 
+                       allow_tqdm=False, 
+                       synapse_params=None, 
+                       netcon_params=None):
+        """
+        Build synaptic connections between neurons using metadata from a .pkl file.
+        Synapses are created whenever two neurons share a connector ID but with opposite
+        pre/post roles.
+
+        Parameters
+        ----------
+        verbose :        bool         - If True — prints debug information for each neuron pair.
+        allow_tqdm :     bool         - If True — uses tqdm for progress visualization.
+        synapse_params : dict or None - Parameters for Exp2Syn synapse objects (tau1, tau2, e).
+        netcon_params :  dict or None - Parameters for NetCon objects (threshold, weight, delay).
+
+        Returns
+        -------
+        None
+        """
         
         default_synapse_params = {
             'tau1': 0.5,  # время нарастания
@@ -217,9 +405,6 @@ class Network:
         # объединяем дефолтные параметры с переданными
         synapse_params = {**default_synapse_params, **(synapse_params or {})}
         netcon_params = {**default_netcon_params, **(netcon_params or {})}
-
-        if verbose:
-            print('building synapses \n')
 
         meta = pd.read_pickle(self.META_PKL)
         meta = meta.set_index('skeleton_id')
@@ -251,7 +436,13 @@ class Network:
 
         synapse_count = 0
 
-        for i, neuron_a in enumerate(self.NEURONS):
+
+
+        neurons_iter = enumerate(self.NEURONS)
+        if verbose or allow_tqdm:
+            neurons_iter = tqdm(enumerate(self.NEURONS), desc="building synapses", total=len(self.NEURONS))
+        
+        for i, neuron_a in neurons_iter:
             for neuron_b in self.NEURONS[i + 1:]:
 
                 if neuron_a not in connector_tables or neuron_b not in connector_tables:
@@ -335,7 +526,24 @@ class Network:
 
         
             
-    def setup_recording(self, neurons=[], sections=[], verbose=False):
+    def setup_recording(self, 
+                        neurons=[], 
+                        sections=[], 
+                        verbose=False):
+        """
+        Configure NEURON recording vectors for time and membrane voltages.
+        Allows recording either from selected neurons or specific morphology sections.
+
+        Parameters
+        ----------
+        neurons :  list - Neuron IDs whose soma voltages must be recorded.
+        sections : list - Section node-IDs to record membrane potential from.
+        verbose :  bool - If True — prints debug information.
+
+        Returns
+        -------
+        None
+        """
         if verbose:
             print('setting recordings \n')
         # вектор для записи времени
@@ -360,8 +568,34 @@ class Network:
                 vec = h.Vector().record(soma(0.5)._ref_v)
                 self.v_records[neuron_id] = vec
 
+        return
+
+
                 
-    def setup_stimulus(self, neurons=None, sections=None, start_time=0, duration=100, amplitude=0.1, verbose=False):
+    def setup_stimulus(self, 
+                       neurons=None, 
+                       sections=None, 
+                       start_time=0, 
+                       duration=100, 
+                       amplitude=0.1, 
+                       verbose=False):
+
+        """
+        Insert IClamp stimuli into selected neuron somas or specific sections.
+
+        Parameters
+        ----------
+        neurons :    list or None - IDs of neurons to stimulate.
+        sections :   list or None - IDs of sections to apply stimulus to.
+        start_time : float - Time in ms when stimulus begins.
+        duration :   float - Duration of the injected current (ms).
+        amplitude :  float - Amplitude of the IClamp current (nA).
+        verbose :    bool  - If True — prints information about created stimuli.
+
+        Returns
+        -------
+        None
+        """
         if verbose:
             print('adding stimulus \n')
         if sections:
@@ -390,8 +624,27 @@ class Network:
             return
     
 
-    def run(self, duration=100, dt=0.025, steps_per_ms=40, verbose=False):
 
+    def run(self, 
+            duration=100, 
+            dt=0.025, 
+            steps_per_ms=40, 
+            verbose=False):
+        """
+        Run a NEURON simulation for a specified duration and temporal resolution.
+
+        Parameters
+        ----------
+        duration :     float - Total simulation duration (ms).
+        dt :           float - Integration time step (ms).
+        steps_per_ms : int   - Number of internal NEURON steps per millisecond.
+        verbose :      bool  - If True — prints simulation status messages.
+
+        Returns
+        -------
+        t : list - Simulation time points.
+        voltages : dict - Recorded voltage traces per neuron or section.
+        """
         if verbose:
             print(f'running simulation for {duration}\n')
 
@@ -412,31 +665,81 @@ class Network:
 
         return t, voltages
 
-    def analyze(self, t, voltages):
-        print('ANALYZATION \n')
 
-        print("Spikes crossing 0 mV:")
+
+    def analyze(self, 
+                t, 
+                voltages, 
+                spike_threshold=0, 
+                verbose=False):
+        """
+        Detect spikes in simulated membrane voltages by finding local maxima 
+        above a given threshold. Returns spike times and amplitudes.
+
+        Parameters
+        ----------
+        t :               list  - Time points of the simulation.
+        voltages :        dict  - Dict mapping IDs → voltage time series.
+        spike_threshold : float - Minimum voltage for detecting a spike peak.
+        verbose :         bool  - If True — prints spike statistics per neuron.
+
+        Returns
+        -------
+        spike_times :      dict - Detected spike times for each neuron/section.
+        spike_amplitudes : dict - Amplitudes of detected spikes.
+        """
+    
+        spike_times = {}
+        spike_amplitudes = {}
+    
+        # проверка — lengths must match per neuron
+        T = len(t)
+    
         for neuron_id, v in voltages.items():
-            v_array = np.array(v)
-            crossings = np.where(v_array > 0)[0]
+    
+            if len(v) != T:
+                raise ValueError(
+                    f"Length mismatch for neuron {neuron_id}: "
+                    f"len(t)={T}, len(v)={len(v)}"
+                )
+    
+            times = []
+            amps = []
+            n = len(v)
+    
+            # локальные пики
+            for i in range(1, n - 1):
+                if v[i] > v[i - 1] and v[i] > v[i + 1] and v[i] > spike_threshold:
+                    times.append(t[i])
+                    amps.append(v[i])
+    
+            spike_times[neuron_id] = times
+            spike_amplitudes[neuron_id] = amps
+    
+            if verbose:
+                if len(amps) == 0:
+                    print(f"Neuron {neuron_id}: spikes=0")
+                else:
+                    print(
+                        f"Neuron {neuron_id}: spikes={len(amps)}, "
+                        f"mean={sum(amps)/len(amps):.3f}, "
+                        f"min={min(amps):.3f}, "
+                        f"max={max(amps):.3f}"
+                    )
+    
+        return spike_times, spike_amplitudes
 
-            if len(crossings) > 0:
-                spike_time = t[crossings[0]]
-                print(f'{neuron_id}: {len(crossings)} SPIKES at (TODO) {spike_time}')
-            else:
-                print('{neuron_id}: no spike')
-
-        # максимальная деполяризацию
-        print('Maximum depolirazation')
-        for neuron_id, v in voltages.items():
-            v_array = np.array(v)
-            baseline = v_array[0]  # начальное значение
-            max_v = np.max(v_array)  # максимум
-            depol = max_v - baseline  # разница
-            print(f'{neuron_id}: {depol} mV')
             
             
     def reset(self):
+        """
+        Reset the NEURON simulation state and internal recording buffers.
+        Clears stored voltage traces, stimuli, and resets the simulation clock.
+
+        Returns
+        -------
+        None
+        """
         h.finitialize(-70)
         h.t = 0
         self.t_vec = None
@@ -444,122 +747,4 @@ class Network:
         self.stimulas = []
         return
 
-
-    def plot_results_3d(self, t, voltages, interactive=False):
-        # Use plotly if interactive     
-        if interactive:
-            neuron_ids = list(voltages.keys())
-            cmap = px.colors.sequential.Viridis
-            n_colors = len(cmap)
-
-            fig = go.Figure()
-
-            for i, neuron_id in enumerate(neuron_ids):
-                v = voltages[neuron_id]
-                color = cmap[int(i / max(1, len(neuron_ids)-1) * (n_colors-1))]
-                fig.add_trace(go.Scatter3d(
-                    x=t, 
-                    y=[i]*len(t),
-                    z=v,
-                    mode='lines',
-                    name=str(neuron_id),
-                    line=dict(color=color, width=4)
-                ))
-
-            fig.update_layout(
-                title='Network Activity (3D View)',
-                scene=dict(
-                    xaxis_title='Time (ms)',
-                    yaxis_title='Neuron ID',
-                    zaxis_title='Voltage (mV)',
-                ),
-                template='plotly_dark',
-                width=1000,
-                height=700,
-                showlegend=True
-            )
-
-            fig.show()
-            return
-
-        # Use matplotlib if non-interactive
-        else:
-            fig = plt.figure(figsize=(12, 7))
-            ax = fig.add_subplot(111, projection='3d')
-
-            cmap = cm.get_cmap('viridis', len(voltages))
-
-            for i, (neuron_id, v) in enumerate(voltages.items()):
-                color = cmap(i)
-                # создаём массив нейронных индексов той же длины, что и t
-                y = [i] * len(t)
-                ax.plot(t, y, v, color=color, linewidth=2, label=str(neuron_id))
-
-            ax.set_xlabel('Time (ms)')
-            ax.set_ylabel('Neuron ID')
-            ax.set_zlabel('Voltage (mV)')
-            ax.set_title('Network Activity (3D view)')
-
-            # перемещаем легенду за пределы графика
-            ax.legend(loc='center left', bbox_to_anchor=(1.05, 0.5))
-            plt.tight_layout()
-            plt.show()
-            return
-
-
-
-    def plot_results(self, t, voltages, interactive=False):
-        # Use plotly if interactive  
-        if interactive:
-            # используем градиент Viridis из sequential палитры
-            colors = px.colors.sequential.Viridis
-            fig = go.Figure()
-
-            neuron_ids = list(voltages.keys())
-            n_colors = len(colors)
-
-            for i, (neuron_id, v) in enumerate(voltages.items()):
-                color = colors[i % n_colors]
-                fig.add_trace(go.Scatter(
-                    x=t,
-                    y=v,
-                    mode='lines',
-                    name=str(neuron_id),
-                    line=dict(color=color, width=2)
-                ))
-
-            fig.update_layout(
-                title='Network Activity',
-                xaxis_title='Time (ms)',
-                yaxis_title='Voltage (mV)',
-                template='plotly_dark',
-                hovermode='x unified',
-                width=1000,
-                height=600
-            )
-
-            # вертикальная линия при 10 мс
-            fig.add_vline(x=10, line_dash='dash', line_color='white', opacity=0.5)
-
-            fig.show()
-            return
-
-        # Use matplotlib if non-interactive
-        else:
-            plt.figure(figsize=(12, 6))
-
-            cmap = cm.get_cmap('viridis', len(voltages))
-
-            for i, (neuron_id, v) in enumerate(voltages.items()):
-                color = cmap(i)
-                plt.plot(t, v, label=str(neuron_id), color=color, linewidth=2)
-
-            plt.xlabel('Time (ms)')
-            plt.ylabel('Voltage (mV)')
-            plt.title('Network Activity')
-            plt.legend()
-            plt.grid(True, alpha=0.3)
-            plt.axvline(x=10, color='black', linestyle='--', alpha=0.5)
-            plt.tight_layout()
-            plt.show() 
-            return
+        
