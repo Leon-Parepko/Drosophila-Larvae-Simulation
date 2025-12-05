@@ -108,7 +108,7 @@ def get_runge_kutta_step(v_func, dt):
 
     return runge_kutta_step
 
-def get_scan_integration_function(step_foo, inside_iterations):
+def get_scan_integration_function(step_foo, inside_iterations, output_transform_function = None):
     @jax.jit
     def step_fn(i, carry):
         state = step_foo(carry)
@@ -119,16 +119,26 @@ def get_scan_integration_function(step_foo, inside_iterations):
         state = fori_loop(0, num_steps, step_fn, start_state)
         return state
 
-    @jax.jit
-    def scan_step(carry, unused_input):
-        """(final_x1, final_x2, ...), (evolution_x1_jnp, evolution_x2_jnp, ...)"""
+    if output_transform_function is None:
+        @jax.jit
+        def scan_step(carry, unused_input):
+            """(final_x1, final_x2, ...), (evolution_x1_jnp, evolution_x2_jnp, ...)"""
 
-        state = inner_loop_step(
-            start_state=carry, num_steps=inside_iterations
-        )
-        return state, state
-    
-    return scan_step
+            state = inner_loop_step(
+                start_state=carry, num_steps=inside_iterations
+            )
+            return state, state
+        return scan_step
+    else:
+        @jax.jit
+        def scan_step_transformed(carry, unused_input):
+            """(final_x1, final_x2, ...), (evolution_x1_jnp, evolution_x2_jnp, ...)"""
+
+            state = inner_loop_step(
+                start_state=carry, num_steps=inside_iterations
+            )
+            return state, output_transform_function(state)
+        return scan_step_transformed
 
 @jax.jit
 def to_diff(state):
@@ -137,16 +147,17 @@ def to_diff(state):
     return state, d
 
 class simulation:
-    def __init__(self, initials:dict, pipeline_fun, inside_iterations):
+    def __init__(self, initials:dict, pipeline_fun, inside_iterations, output_transform_function = None):
         self.state = initials
         self.pipeline = pipeline_fun
         self.inside_iterations =inside_iterations
-        self.get_integraton_process()
+        self.output_transform_function = output_transform_function
+        self.get_integraton_process(output_transform_function)
 
-    def get_integraton_process(self):
+    def get_integraton_process(self, output_transform_function):
         pipline = self.pipeline
         inside_iterations = self.inside_iterations
-        self.scan_step = get_scan_integration_function(pipline, inside_iterations)
+        self.scan_step = get_scan_integration_function(pipline, inside_iterations, output_transform_function)
         return self.scan_step
     
     def run(self, iterations):

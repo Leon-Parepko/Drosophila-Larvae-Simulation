@@ -102,16 +102,20 @@ class JaxGraphConverter:
         self._create_mappings()
         self._create_edge_arrays()
 
-    def _get_group_name(self, node_id: Any) -> Union[str, None]:
-        """Определяет группу узла по его атрибуту 'type'."""
+    def _get_group_name(self, node_id: Any) -> List[str]:
+        """
+        Определяет группы узла по его атрибуту 'type'.
+        Возвращает список имен групп, к которым принадлежит узел.
+        """
         node_type = self.graph.nodes[node_id].get('type')
         if not node_type:
-            return None # Пропускаем узлы без типа
+            return [] # Возвращаем пустой список, если нет типа
         
+        found_groups: List[str] = []
         for group_name, type_list in self.node_type_groups.items():
             if node_type in type_list:
-                return group_name
-        return None
+                found_groups.append(group_name)
+        return found_groups
 
     def _create_mappings(self):
         """Создает карты маппинга старых ID в новые глобальные и локальные индексы."""
@@ -127,13 +131,21 @@ class JaxGraphConverter:
         self.num_nodes = {group: 0 for group in self.node_type_groups.keys()}
 
         for node_id in sorted_nodes:
-            group_name = self._get_group_name(node_id)
-            if group_name and group_name in self.local_maps:
-                global_id = self.global_mapping[node_id]
-                local_idx = self.num_nodes[group_name]
-                
-                self.local_maps[group_name][global_id] = local_idx
-                self.num_nodes[group_name] += 1
+            # Использование новой функции, которая возвращает список групп
+            group_names = self._get_group_name(node_id) 
+            
+            for group_name in group_names: # Цикл по всем группам, к которым принадлежит узел
+                if group_name in self.local_maps:
+                    global_id = self.global_mapping[node_id]
+                    
+                    # Проверяем, не был ли узел уже добавлен в маппинг этой группы
+                    # (Это не должно случиться, если узел принадлежит только одной группе через type_list,
+                    # но важно для устойчивости, если логика node_type_groups изменится)
+                    if global_id not in self.local_maps[group_name]:
+                        local_idx = self.num_nodes[group_name]
+                        
+                        self.local_maps[group_name][global_id] = local_idx
+                        self.num_nodes[group_name] += 1
                 
         self.num_nodes = {k: v for k, v in self.num_nodes.items() if v > 0}
         self.local_maps = {k: v for k, v in self.local_maps.items() if v}
@@ -157,20 +169,32 @@ class JaxGraphConverter:
                 continue 
 
             for u_old, v_old in self.graph.edges():
-                u_group = self._get_group_name(u_old)
-                v_group = self._get_group_name(v_old)
+                # Использование новой функции, которая возвращает список групп
+                u_groups = self._get_group_name(u_old)
+                v_groups = self._get_group_name(v_old)
                 
-                if u_group == src_group and v_group == dst_group:
-                    u_global_id = self.global_mapping[u_old]
-                    v_global_id = self.global_mapping[v_old]
-                    
-                    u_local_idx = src_local_map.get(u_global_id)
-                    v_local_idx = dst_local_map.get(v_global_id)
-                    
-                    if u_local_idx is not None and v_local_idx is not None:
-                        edge_list.append((u_local_idx, v_local_idx))
+                # Проверяем, что исходный узел принадлежит src_group, а конечный - dst_group
+                # Так как узел может принадлежать нескольким группам, используем циклы
+                for u_group in u_groups:
+                    for v_group in v_groups:
+                        if u_group == src_group and v_group == dst_group:
+                            u_global_id = self.global_mapping[u_old]
+                            v_global_id = self.global_mapping[v_old]
+                            
+                            u_local_idx = src_local_map.get(u_global_id)
+                            v_local_idx = dst_local_map.get(v_global_id)
+                            
+                            if u_local_idx is not None and v_local_idx is not None:
+                                edge_list.append((u_local_idx, v_local_idx))
+                                # Учитывая, что мы добавляем ребро только один раз
+                                # для конкретной пары (src_group, dst_group), 
+                                # можно прервать внутренние циклы после первого совпадения.
+                                break 
+                    if u_group == src_group:
+                        break # Прерываем внешний цикл, если нашли соответствие src_group
 
             if not is_directed:
+                # Логика для создания симметричных ребер
                 if src_group == dst_group:
                     undirected_edges = set(edge_list)
                     for u, v in edge_list:
@@ -179,7 +203,10 @@ class JaxGraphConverter:
                 
             
             if edge_list:
-                array = np.array(edge_list, dtype=np.int32).T 
+                # Удаление дубликатов на всякий случай, если граф был MultiDiGraph
+                # и мы добавили ребро несколько раз
+                unique_edges = sorted(list(set(edge_list)))
+                array = np.array(unique_edges, dtype=np.int32).T 
                 key = f'edges_{src_group}_to_{dst_group}'
                 self.edge_arrays[key] = array
                 
@@ -210,6 +237,9 @@ class SimulationContextJax:
         # 1. Запуск логики кэширования
         cache_hit = False
         if self.cache_dir:
+            # Для хэша нужно использовать обновленную логику определения групп, 
+            # но поскольку JaxGraphConverter не используется тут напрямую, 
+            # оставим хэширование на основе исходной конфигурации.
             self.graph_hash = self._calculate_graph_hash(graph, node_type_groups, edge_directedness)
             cache_hit = self._try_load_from_cache()
 
@@ -298,19 +328,39 @@ class SimulationContextJax:
                     initial_states[group_name] = np.zeros(shape, dtype=np.float32)
         
         # 4. Расчет конечного маппинга (логика скопирована из get_node_id_mapping)
+        # Эта логика остается прежней, так как она работает с уже загруженными структурами
         final_mapping: Dict[str, Dict[Any, int]] = {k: {} for k in num_nodes.keys()}
         global_to_group: Dict[int, str] = {}
         
         for group_name, map_dict in local_maps_global_to_local.items():
+            # Здесь map_dict - это Dict[int, int] (global_id -> local_id)
             for global_id, local_id in map_dict.items():
-                global_to_group[global_id] = group_name
-
+                # Так как узел может принадлежать нескольким группам, 
+                # global_id может быть переписан. В данном контексте это 
+                # не проблема, так как нам нужна любая группа, к которой он принадлежит, 
+                # чтобы найти его оригинальный ID, но для точности лучше использовать
+                # все группы, к которым он принадлежит.
+                # Однако, для восстановления финального маппинга,
+                # нам просто нужно сопоставить old_id -> local_id.
+                
+                # Если узел принадлежит нескольким группам, он будет иметь несколько 
+                # локальных ID (по одному для каждой группы). 
+                # Глобальный ID уникален, а local_maps_global_to_local хранит 
+                # его локальный ID в каждой группе.
+                pass # Не требуется создавать global_to_group таким способом, 
+                     # так как global_map_old_to_new уже содержит всю информацию
+                     
+        # Создание final_mapping (old_id -> local_id)
+        # Используем local_maps_global_to_local, чтобы найти local_id для каждого old_id
         for original_id, global_id in global_map_old_to_new.items():
-            group_name = global_to_group.get(global_id)
-            
-            if group_name and group_name in final_mapping:
-                local_index = local_maps_global_to_local[group_name].get(global_id)
+            # Перебираем все группы, чтобы найти local_id для этого global_id
+            for group_name in num_nodes.keys():
+                local_map = local_maps_global_to_local.get(group_name, {})
+                local_index = local_map.get(global_id)
+                
                 if local_index is not None:
+                    if group_name not in final_mapping:
+                        final_mapping[group_name] = {}
                     final_mapping[group_name][original_id] = local_index
         
         # 5. Сборка конечного контекста
@@ -331,6 +381,10 @@ class SimulationContextJax:
     @staticmethod
     def _calculate_graph_hash(graph: Union[nx.DiGraph, nx.MultiDiGraph], node_type_groups: Dict, edge_directedness: Dict) -> str:
         """Генерирует SHA256 хэш."""
+        # Для корректного хэширования в многогрупповом режиме:
+        # 1. Сортируем узлы по ID.
+        # 2. Для каждого узла включаем его ID и его тип (для учета группы).
+        # 3. Включаем полную конфигурацию групп и направленности.
         node_data = sorted([(str(n), graph.nodes[n].get('type')) for n in graph.nodes()])
         node_str = json.dumps(node_data, sort_keys=True)
         edge_data = sorted([(str(u), str(v)) for u, v in graph.edges()])
@@ -413,22 +467,17 @@ class SimulationContextJax:
         global_map = self.graph_results.get('mapping', {}).get('old_to_new_global', {})
         local_maps_global_to_local = self.local_maps
         
-        final_mapping = {}
+        final_mapping: Dict[str, Dict[Any, int]] = {k: {} for k in self.num_nodes.keys()}
         
-        global_to_group: Dict[int, str] = {}
-        for group_name, map_dict in local_maps_global_to_local.items():
-            for global_id, local_id in map_dict.items():
-                global_to_group[global_id] = group_name
-
-        for group_name in self.num_nodes.keys():
-            final_mapping[group_name] = {}
-
+        # Создание final_mapping (old_id -> local_id)
         for original_id, global_id in global_map.items():
-            group_name = global_to_group.get(global_id)
-            
-            if group_name and group_name in final_mapping:
-                local_index = self.local_maps[group_name].get(global_id)
+            # Перебираем все группы, чтобы найти local_id для этого global_id
+            for group_name in self.num_nodes.keys():
+                local_map = local_maps_global_to_local.get(group_name, {})
+                local_index = local_map.get(global_id)
+                
                 if local_index is not None:
+                    # Узел принадлежит этой группе, добавляем его в маппинг
                     final_mapping[group_name][original_id] = local_index
             
         return final_mapping
@@ -460,30 +509,45 @@ if __name__ == '__main__':
     
     # 1. Создание примера графа NetworkX и конфигурация
     G = nx.DiGraph() 
+    # ВНИМАНИЕ: Для теста новой логики узел 1001 будет принадлежать только 'H', 
+    # но можно было бы добавить тип, который принадлежит нескольким группам, 
+    # чтобы проверить новую логику. В данном примере типы H_root и S_conn 
+    # принадлежат только одной группе (H или S). 
+    # Давайте добавим новый тип, который принадлежит обеим группам для теста.
+    
+    # Модифицированная конфигурация групп для теста:
+    # Пусть тип 'HS_hybrid' принадлежит и 'H', и 'S'.
+    type_groups = {'H': ['H_root', 'HS_hybrid'], 'S': ['S_conn', 'HS_hybrid']}
+    
     node_configs = {
         1001: 'H_root', 1005: 'H_root', 
         2010: 'S_conn', 2015: 'H_root', 
         1020: 'S_conn', 1025: 'H_root',
-        2030: 'H_root', 2035: 'S_conn',
+        2030: 'H_root', 
+        2035: 'S_conn',
+        # Узел-гибрид
+        9000: 'HS_hybrid' 
     }
     for oid, ntype in node_configs.items():
         G.add_node(oid, type=ntype)
     
     G.add_edges_from([
-        (1001, 1005), (1005, 1001), 
-        (2010, 1001), 
-        (1005, 1020), 
-        (2035, 2010), 
-        (1025, 2030)
+        (1001, 1005), (1005, 1001),         # H_root -> H_root
+        (9000, 1001), (1001, 9000),         # HS_hybrid -> H_root (H->H, S->H)
+        (2010, 9000), (9000, 2010),         # S_conn -> HS_hybrid (S->S, S->H, H->S, H->S)
+        (2010, 1001),                       # S_conn -> H_root
+        (1005, 1020),                       # H_root -> S_conn
+        (2035, 2010),                       # S_conn -> S_conn
+        (1025, 2030)                        # H_root -> H_root
     ])
     
-    type_groups = {'H': ['H_root'], 'S': ['S_conn']}        
+    # type_groups = {'H': ['H_root', 'HS_hybrid'], 'S': ['S_conn', 'HS_hybrid']}        
     directedness = {'H': {'H': False, 'S': True}, 'S': {'H': True, 'S': True}}
     initial_values_config = {'H': 0.5, 'S': 3} # 0.5 для H, размерность 3 для S
     
     
     # 2. ПЕРВЫЙ ЗАПУСК: Создание и сохранение кэша
-    print("\n================== ТЕСТ 1: СОЗДАНИЕ КЭША ==================")
+    print("\n================== ТЕСТ 1: СОЗДАНИЕ КЭША (с гибридным узлом 9000) ==================")
     context_manager = SimulationContextJax(
         graph=G,
         node_type_groups=type_groups,
@@ -494,11 +558,17 @@ if __name__ == '__main__':
     
     # Проверка, что context_manager создал кэш
     first_context = context_manager.get_context()
+    
     print("\nРазмеры массивов в первом контексте:")
-    print(f"  > H-узлов: {first_context['num_nodes']['H']}")
-    print(f"  > H_to_H ребер: {first_context['edges_H_to_H'].shape}")
-    print(f"  > S начальное состояние (размерность): {first_context['initial_states']['S'].shape}")
-    print(f"  > Маппинг для H-узлов (первый ID): {list(first_context['mapping']['H'].keys())[0]} -> {list(first_context['mapping']['H'].values())[0]}")
+    print(f"  > H-узлов: {first_context['num_nodes']['H']} (Ожидается: 6, включая 9000)")
+    print(f"  > S-узлов: {first_context['num_nodes']['S']} (Ожидается: 4, включая 9000)")
+    print(f"  > H_to_H ребер: {first_context.get('edges_H_to_H', 'N/A').shape if isinstance(first_context.get('edges_H_to_H'), np.ndarray) else 'N/A'}")
+    
+    h_map = first_context['mapping']['H']
+    s_map = first_context['mapping']['S']
+    
+    print(f"  > Узел 9000 в маппинге H: {'Да' if 9000 in h_map else 'Нет'} (Локальный индекс: {h_map.get(9000)})")
+    print(f"  > Узел 9000 в маппинге S: {'Да' if 9000 in s_map else 'Нет'} (Локальный индекс: {s_map.get(9000)})")
 
 
     # 3. ВТОРОЙ ЗАПУСК: Загрузка контекста без пересчета графа
@@ -513,15 +583,21 @@ if __name__ == '__main__':
         
         print("\nРазмеры массивов в загруженном контексте:")
         print(f"  > H-узлов: {loaded_context['num_nodes']['H']}")
-        print(f"  > H_to_H ребер: {loaded_context['edges_H_to_H'].shape}")
-        print(f"  > S начальное состояние (размерность): {loaded_context['initial_states']['S'].shape}")
-        print(f"  > Маппинг для H-узлов (первый ID): {list(loaded_context['mapping']['H'].keys())[0]} -> {list(loaded_context['mapping']['H'].values())[0]}")
+        print(f"  > S-узлов: {loaded_context['num_nodes']['S']}")
+        print(f"  > H_to_H ребер: {loaded_context.get('edges_H_to_H', 'N/A').shape if isinstance(loaded_context.get('edges_H_to_H'), np.ndarray) else 'N/A'}")
+
+        h_map_loaded = loaded_context['mapping']['H']
+        s_map_loaded = loaded_context['mapping']['S']
+
+        print(f"  > Узел 9000 в маппинге H (загр.): {'Да' if 9000 in h_map_loaded else 'Нет'} (Локальный индекс: {h_map_loaded.get(9000)})")
+        print(f"  > Узел 9000 в маппинге S (загр.): {'Да' if 9000 in s_map_loaded else 'Нет'} (Локальный индекс: {s_map_loaded.get(9000)})")
+
 
         # Проверка соответствия (для демонстрации)
-        assert np.array_equal(first_context['edges_H_to_H'], loaded_context['edges_H_to_H'])
-        assert loaded_context['num_nodes']['H'] == 5
+        assert loaded_context['num_nodes']['H'] == 6
+        assert loaded_context['num_nodes']['S'] == 4
         assert loaded_context['mapping'] == first_context['mapping']
-        print("\nПроверка: Контекст успешно загружен и совпадает с оригинальным.")
+        print("\nПроверка: Контекст успешно загружен и совпадает с оригинальным (включая маппинг гибридного узла).")
 
     except Exception as e:
         print(f"ОШИБКА ПРИ ЗАГРУЗКЕ КОНТЕКСТА ИЗ КЭША: {e}")

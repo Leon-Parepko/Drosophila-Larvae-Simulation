@@ -18,3 +18,4 @@ scripts/data_preparation/__pycache__
 .vscode
 scripts/nj/__pycache__
 .venv_jax
+Datasets/Generated/trash

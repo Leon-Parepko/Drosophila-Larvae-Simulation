@@ -8,3 +8,7 @@
 
 *data preparation*
 1) конвертация из одноо в другое
+
+
+*всякие заметки*
+https://fr.slideserve.com/waylon/4441458
