@@ -5,7 +5,7 @@ import pandas as pd
 path_to_full = "Ilya/trash/del_this_syn/input/neurons/full/full.gml"
 path_to_save = "Datasets/Generated/jax/2025d5/20n.npz"
 
-def process_basic(path_to_full, path_to_save):
+def process_basic(path_to_full, path_to_save, path_to_metadata):
     '''
     node_type_groups = {
     'cable':['branch', 'root', 'slab', 'end'],
@@ -26,7 +26,7 @@ def process_basic(path_to_full, path_to_save):
     }, edge_directedness={'cable': {'cable': False},})
 
 
-    metadata = pd.read_csv("Datasets/Generated/trash/input/nodes_metadata.csv")
+    metadata = pd.read_csv(path_to_metadata)
     global_mapping = res['mapping']
     metadata = metadata.fillna(10.0) # 10.0 as basic radius
     metadata['new_index'] = metadata.apply(lambda row:global_mapping['cable'].get(str(row['node_id'])), axis = 1)

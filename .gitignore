@@ -20,3 +20,4 @@ scripts/nj/__pycache__
 .venv_jax
 Datasets/Generated/trash
 Datasets/Generated/gml
+Datasets/Generated/metadata
