@@ -105,7 +105,7 @@ def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V
     
     @jax.jit
     def I(alpha, V_m):
-        return G_max*alpha[:, 1]*alpha[:, 0]*(V_m - E_rev)
+        return G_max*alpha[:, 1]*(V_m - E_rev)
     
 
     @jax.jit
@@ -121,7 +121,7 @@ def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V
         dv_dt_ = ds_dt['V'].at[pre_synaptic[:, 0]].get()
 
         delta_x = (jnp.abs(v_ - alpha_syn_detector_treshold) < treshold_interval) * (dv_dt_ > 0.0) * synaptic_weights
-        state['alpha'] = state['alpha'].at[pre_synaptic[:, 1], 1].add(delta_x)
+        state['alpha'] = state['alpha'].at[pre_synaptic[:, 1], 0].add(delta_x)
         return state, ds_dt
     return pipeline
 
@@ -135,7 +135,7 @@ def get_alpha_synapce_only_ds_dt_pipeline(pre_synaptic, post_synaptic, tau, E_re
     
     @jax.jit
     def I(alpha, V_m):
-        return G_max*alpha[:, 1]*alpha[:, 0]*(V_m - E_rev)
+        return G_max*alpha[:, 1]*(V_m - E_rev)
     
     @jax.jit
     def pipeline(state, ds_dt):
@@ -151,7 +151,7 @@ def get_alpha_synapce_only_ds_dt_pipeline(pre_synaptic, post_synaptic, tau, E_re
 
         delta_x = (jnp.abs(v_ - alpha_syn_detector_treshold) < treshold_interval) * (dv_dt_ > 0.0) * synaptic_weights
         #state['alpha'] = state['alpha'].at[pre_synaptic[:, 1], 1].add(delta_x)
-        ds_dt['alpha'] = ds_dt['alpha'].at[pre_synaptic[:, 1], 1].add(delta_x/dt)
+        ds_dt['alpha'] = ds_dt['alpha'].at[pre_synaptic[:, 1], 0].add(delta_x/dt)
         return state, ds_dt
     return pipeline
 
