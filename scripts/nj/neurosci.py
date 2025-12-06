@@ -5,36 +5,56 @@ from jax.lax import scan, fori_loop
 
 from scripts.nj.utils import *
 
-@jax.jit
+import jax.numpy as jnp
+from jax import jit
+
+# V = V_abs - E_rest, где E_rest обычно около -65 мВ. V=0 - это потенциал покоя.
+
+@jit
 def alpha_n(V):
-    epsilon = 1e-8
-    return 0.01 * (V - 10) / (1 - jnp.exp((10 - V) / 10) + epsilon)
+    # Сингулярность при V = -10. Используем правило Лопиталя.
+    V_plus_10 = V + 10.0
+    
+    # Замена для избежания деления на ноль:
+    # Если V_plus_10 ~ 0, то alpha_n ~ 0.01 * 10 = 0.1
+    # Это численный прием: при очень малых V_plus_10, exp(-V_plus_10 / 10) ~ 1 - V_plus_10 / 10.
+    # Знаменатель: 1 - (1 - V_plus_10 / 10) = V_plus_10 / 10.
+    # Функция: 0.01 * V_plus_10 / (V_plus_10 / 10) = 0.01 * 10 = 0.1
+    
+    return jnp.where(jnp.abs(V_plus_10) < 1e-4, 
+                     0.1, 
+                     0.01 * V_plus_10 / (1.0 - jnp.exp(-V_plus_10 / 10.0)))
 
-
-@jax.jit
+@jit
 def beta_n(V):
-    return 0.125 * jnp.exp(-V / 80)
+    return 0.125 * jnp.exp(-V / 80.0)
 
 
-@jax.jit
+@jit
 def alpha_m(V):
-    epsilon = 1e-8
-    return 0.1 * (V - 25) / (1 - jnp.exp((25 - V) / 10) + epsilon)
+    # Сингулярность при V = -25. Используем правило Лопиталя.
+    V_plus_25 = V + 25.0
+    
+    # При очень малых V_plus_25, alpha_m ~ 0.1 * 10 = 1.0
+    
+    return jnp.where(jnp.abs(V_plus_25) < 1e-4, 
+                     1.0, 
+                     0.1 * V_plus_25 / (1.0 - jnp.exp(-V_plus_25 / 10.0)))
 
 
-@jax.jit
+@jit
 def beta_m(V):
-    return 4 * jnp.exp(-V / 18)
+    return 4.0 * jnp.exp(-V / 18.0)
 
 
-@jax.jit
+@jit
 def alpha_h(V):
-    return 0.07 * jnp.exp(-V / 20)
+    return 0.07 * jnp.exp(-V / 20.0)
 
 
-@jax.jit
+@jit
 def beta_h(V):
-    return 1 / (1 + jnp.exp((30 - V) / 10))
+    return 1.0 / (1.0 + jnp.exp(-(V + 30.0) / 10.0))
 
 def generate_hh_channels_functions(C, ENa, EK, EL, gNa, gK, gL):
     @jax.jit

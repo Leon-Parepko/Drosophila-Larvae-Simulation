@@ -2,8 +2,6 @@ import scripts.nj.graph_to_arrays as ga
 import networkx as nx
 import numpy as np
 import pandas as pd
-path_to_full = "Ilya/trash/del_this_syn/input/neurons/full/full.gml"
-path_to_save = "Datasets/Generated/jax/2025d5/20n.npz"
 
 def process_basic(path_to_full, path_to_save, path_to_metadata):
     '''
@@ -70,13 +68,15 @@ def process_params2025d05(path_to_full, path_to_save, path_to_metadata):
     global_mapping = res['mapping']
     metadata = metadata.fillna(10.0) # 10.0 as basic radius
     metadata['new_index'] = metadata.apply(lambda row:global_mapping['cable'].get(str(row['node_id'])), axis = 1)
-    metadata = metadata.dropna(subset=['new_index'])
-    metadata = metadata.set_index('new_index').sort_index()
+    metadata = metadata.dropna(subset=['new_index']).sort_values('new_index')
+    #metadata = metadata.set_index('new_index').sort_index()
 
 
     all_somas = metadata[metadata['type'] == 'root']['node_id'].to_numpy()
     stom = [(int(soma), int(global_mapping['cable'][str(soma)])) for soma in all_somas]
     stom = np.array(stom)
+
+    gnabar_hhtom = [(int(soma), int(global_mapping['cable'][str(soma)])) for soma in all_somas]
 
     ga.save_jax_arrays(res, path_to_save, {"stom":stom, # сома_global_id, сома_cabble_id
                                             'gnabar_hh':metadata['gnabar_hh'].to_numpy(),
