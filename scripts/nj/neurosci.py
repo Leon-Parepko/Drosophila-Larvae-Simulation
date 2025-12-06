@@ -105,7 +105,7 @@ def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V
     
     @jax.jit
     def I(alpha, V_m):
-        return G_max*alpha[:, 1]*(V_m - E_rev)
+        return G_max*alpha[:, 1]*alpha[:, 0]*(V_m - E_rev)
     
 
     @jax.jit
@@ -135,7 +135,7 @@ def get_alpha_synapce_only_ds_dt_pipeline(pre_synaptic, post_synaptic, tau, E_re
     
     @jax.jit
     def I(alpha, V_m):
-        return G_max*alpha[:, 1]*(V_m - E_rev)
+        return G_max*alpha[:, 1]*alpha[:, 0]*(V_m - E_rev)
     
     @jax.jit
     def pipeline(state, ds_dt):
