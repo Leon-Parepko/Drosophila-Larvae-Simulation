@@ -1,7 +1,4 @@
 import jax
-import numpy as np
-from jax.lax import scan, fori_loop
-
 from scripts.nj.utils import *
 
 import jax.numpy as jnp

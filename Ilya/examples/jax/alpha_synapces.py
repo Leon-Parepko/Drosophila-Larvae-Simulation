@@ -1,4 +1,5 @@
 from scripts.nj.neurosci import *
+import numpy as np
 import scripts.data_preparation as dp
 
 neurons_ids = [
