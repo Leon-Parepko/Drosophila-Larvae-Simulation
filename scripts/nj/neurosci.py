@@ -1,5 +1,4 @@
 import jax
-import jax.numpy as jnp
 import numpy as np
 from jax.lax import scan, fori_loop
 
@@ -164,9 +163,9 @@ def get_HH_pipeline(C, ENa, EK, EL, gNa, gK, gL, *args, **kwargs):
     @jax.jit
     def pipeline(state, ds_dt):
         ds_dt['V'] += dv(state['V'], state['m'], state['n'], state['h'])
-        ds_dt['m'] += dm(state['m'], state['m'])
-        ds_dt['n'] += dn(state['n'], state['n'])
-        ds_dt['h'] += dh(state['h'], state['h'])
+        ds_dt['m'] += dm(state['V'], state['m'])
+        ds_dt['n'] += dn(state['V'], state['n'])
+        ds_dt['h'] += dh(state['V'], state['h'])
         return state, ds_dt
 
     return pipeline
