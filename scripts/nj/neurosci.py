@@ -4,6 +4,41 @@ from scripts.nj.utils import *
 import jax.numpy as jnp
 from jax import jit
 
+def save_exp(x, max_value: float = 100.0):
+    x = jnp.clip(x, a_max=max_value)
+    return jnp.exp(x)
+
+"""HH Sterratt, Graham, Gillies & Einevoll."""
+SGGE_HH_channel_params = {
+        "gNa": 0.12,
+        "gK": 0.036,
+        "gLeak": 0.0003,
+        "eNa": 50.0,
+        "eK": -77.0,
+        "eLeak": -54.3,
+    }
+
+
+def m_gate(v):
+    alpha = 0.1 * _vtrap(-(v + 40), 10)
+    beta = 4.0 * save_exp(-(v + 65) / 18)
+    return alpha, beta
+
+def h_gate(v):
+    alpha = 0.07 * save_exp(-(v + 65) / 20)
+    beta = 1.0 / (save_exp(-(v + 35) / 10) + 1)
+    return alpha, beta
+
+def n_gate(v):
+    alpha = 0.01 * _vtrap(-(v + 55), 10)
+    beta = 0.125 * save_exp(-(v + 65) / 80)
+    return alpha, beta
+
+
+def _vtrap(x, y):
+    return x / (save_exp(x / y) - 1.0)
+
+
 # V = V_abs - E_rest, где E_rest обычно около -65 мВ. V=0 - это потенциал покоя.
 
 @jit
@@ -51,6 +86,50 @@ def alpha_h(V):
 @jit
 def beta_h(V):
     return 1.0 / (1.0 + jnp.exp(-(V + 30.0) / 10.0))
+
+
+def generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL):
+    """HH from Sterratt, Graham, Gillies & Einevoll."""
+    @jax.jit
+    def INa(V, m, h):
+        return gNa * h * m**3 * (V - ENa)
+
+    @jax.jit
+    def IK(V, n):
+        return gK * n**4 * (V - EK)
+
+    @jax.jit
+    def Ileak(V):
+        return gL * (V - EL)
+
+    @jax.jit
+    def m_dynamic(V, m):
+        alpha, beta = m_gate(V)
+        return alpha * (1 - m) - beta * m
+
+    @jax.jit
+    def n_dynamic(V, n):
+        alpha, beta = n_gate(V)
+        return alpha * (1 - n) - beta * n
+
+    @jax.jit
+    def h_dynamic(V, h):
+        alpha, beta = h_gate(V)
+        return alpha * (1 - h) - beta * h
+
+    @jax.jit
+    def V_dynamic(V, m, n, h):
+        return -(INa(V, m, h) + IK(V, n) + Ileak(V))/C
+
+    return {
+        "INa": INa,
+        "IK": IK,
+        "Ileak": Ileak,
+        "V_dynamic":V_dynamic,
+        "m_dynamic": m_dynamic,
+        "n_dynamic": n_dynamic,
+        "h_dynamic": h_dynamic,
+    }
 
 def generate_hh_channels_functions(C, ENa, EK, EL, gNa, gK, gL):
     @jax.jit
@@ -149,6 +228,22 @@ def get_alpha_synapce_only_ds_dt_pipeline(pre_synaptic, post_synaptic, tau, E_re
         #state['alpha'] = state['alpha'].at[pre_synaptic[:, 1], 1].add(delta_x)
         ds_dt['alpha'] = ds_dt['alpha'].at[pre_synaptic[:, 1], 0].add(delta_x/dt)
         return state, ds_dt
+    return pipeline
+
+def get_HH_pipeline_SGGE(C, ENa, EK, EL, gNa, gK, gL, *args, **kwargs):
+    q = generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL)
+    dv = q['V_dynamic']
+    dm = q['m_dynamic']
+    dn = q['n_dynamic']
+    dh = q['h_dynamic']
+    @jax.jit
+    def pipeline(state, ds_dt):
+        ds_dt['V'] += dv(state['V'], state['m'], state['n'], state['h'])
+        ds_dt['m'] += dm(state['V'], state['m'])
+        ds_dt['n'] += dn(state['V'], state['n'])
+        ds_dt['h'] += dh(state['V'], state['h'])
+        return state, ds_dt
+
     return pipeline
 
 def get_HH_pipeline(C, ENa, EK, EL, gNa, gK, gL, *args, **kwargs):
