@@ -166,4 +166,4 @@ class simulation:
             init=self.state,
             xs=iters
         )
-        return self.history
+        return jax.block_until_ready(self.history)
