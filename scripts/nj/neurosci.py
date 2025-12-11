@@ -5,7 +5,7 @@ import jax.numpy as jnp
 from jax import jit
 
 def save_exp(x, max_value: float = 100.0):
-    x = jnp.clip(x, a_max=max_value)
+    x = jnp.clip(x, a_min=-jnp.inf, a_max=max_value)
     return jnp.exp(x)
 
 """HH Sterratt, Graham, Gillies & Einevoll."""
@@ -195,7 +195,9 @@ def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V
         v_ = state['V'].at[pre_synaptic[:, 0]].get()
         dv_dt_ = ds_dt['V'].at[pre_synaptic[:, 0]].get()
 
-        delta_x = (jnp.abs(v_ - alpha_syn_detector_treshold) < treshold_interval) * (dv_dt_ > 0.0) * synaptic_weights
+        is_near_threshold = jnp.abs(v_ - alpha_syn_detector_treshold) < treshold_interval
+        is_rising = dv_dt_ > 0.0
+        delta_x = is_near_threshold * is_rising * synaptic_weights
         state['alpha'] = state['alpha'].at[pre_synaptic[:, 1], 0].add(delta_x)
         return state, ds_dt
     return pipeline
