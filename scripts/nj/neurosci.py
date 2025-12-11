@@ -39,55 +39,6 @@ def _vtrap(x, y):
     return x / (save_exp(x / y) - 1.0)
 
 
-# V = V_abs - E_rest, где E_rest обычно около -65 мВ. V=0 - это потенциал покоя.
-
-@jit
-def alpha_n(V):
-    # Сингулярность при V = -10. Используем правило Лопиталя.
-    V_plus_10 = V + 10.0
-    
-    # Замена для избежания деления на ноль:
-    # Если V_plus_10 ~ 0, то alpha_n ~ 0.01 * 10 = 0.1
-    # Это численный прием: при очень малых V_plus_10, exp(-V_plus_10 / 10) ~ 1 - V_plus_10 / 10.
-    # Знаменатель: 1 - (1 - V_plus_10 / 10) = V_plus_10 / 10.
-    # Функция: 0.01 * V_plus_10 / (V_plus_10 / 10) = 0.01 * 10 = 0.1
-    
-    return jnp.where(jnp.abs(V_plus_10) < 1e-4, 
-                     0.1, 
-                     0.01 * V_plus_10 / (1.0 - jnp.exp(-V_plus_10 / 10.0)))
-
-@jit
-def beta_n(V):
-    return 0.125 * jnp.exp(-V / 80.0)
-
-
-@jit
-def alpha_m(V):
-    # Сингулярность при V = -25. Используем правило Лопиталя.
-    V_plus_25 = V + 25.0
-    
-    # При очень малых V_plus_25, alpha_m ~ 0.1 * 10 = 1.0
-    
-    return jnp.where(jnp.abs(V_plus_25) < 1e-4, 
-                     1.0, 
-                     0.1 * V_plus_25 / (1.0 - jnp.exp(-V_plus_25 / 10.0)))
-
-
-@jit
-def beta_m(V):
-    return 4.0 * jnp.exp(-V / 18.0)
-
-
-@jit
-def alpha_h(V):
-    return 0.07 * jnp.exp(-V / 20.0)
-
-
-@jit
-def beta_h(V):
-    return 1.0 / (1.0 + jnp.exp(-(V + 30.0) / 10.0))
-
-
 def generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL):
     """HH from Sterratt, Graham, Gillies & Einevoll."""
     @jax.jit
@@ -116,45 +67,6 @@ def generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL):
     def h_dynamic(V, h):
         alpha, beta = h_gate(V)
         return alpha * (1 - h) - beta * h
-
-    @jax.jit
-    def V_dynamic(V, m, n, h):
-        return -(INa(V, m, h) + IK(V, n) + Ileak(V))/C
-
-    return {
-        "INa": INa,
-        "IK": IK,
-        "Ileak": Ileak,
-        "V_dynamic":V_dynamic,
-        "m_dynamic": m_dynamic,
-        "n_dynamic": n_dynamic,
-        "h_dynamic": h_dynamic,
-    }
-
-def generate_hh_channels_functions(C, ENa, EK, EL, gNa, gK, gL):
-    @jax.jit
-    def INa(V, m, h):
-        return gNa * h * m**3 * (V - ENa)
-
-    @jax.jit
-    def IK(V, n):
-        return gK * n**4 * (V - EK)
-
-    @jax.jit
-    def Ileak(V):
-        return gL * (V - EL)
-
-    @jax.jit
-    def m_dynamic(V, m):
-        return alpha_m(V) * (1 - m) - beta_m(V) * m
-
-    @jax.jit
-    def n_dynamic(V, n):
-        return alpha_n(V) * (1 - n) - beta_n(V) * n
-
-    @jax.jit
-    def h_dynamic(V, h):
-        return alpha_h(V) * (1 - h) - beta_h(V) * h
 
     @jax.jit
     def V_dynamic(V, m, n, h):
@@ -234,22 +146,6 @@ def get_alpha_synapce_only_ds_dt_pipeline(pre_synaptic, post_synaptic, tau, E_re
 
 def get_HH_pipeline_SGGE(C, ENa, EK, EL, gNa, gK, gL, *args, **kwargs):
     q = generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL)
-    dv = q['V_dynamic']
-    dm = q['m_dynamic']
-    dn = q['n_dynamic']
-    dh = q['h_dynamic']
-    @jax.jit
-    def pipeline(state, ds_dt):
-        ds_dt['V'] += dv(state['V'], state['m'], state['n'], state['h'])
-        ds_dt['m'] += dm(state['V'], state['m'])
-        ds_dt['n'] += dn(state['V'], state['n'])
-        ds_dt['h'] += dh(state['V'], state['h'])
-        return state, ds_dt
-
-    return pipeline
-
-def get_HH_pipeline(C, ENa, EK, EL, gNa, gK, gL, *args, **kwargs):
-    q = generate_hh_channels_functions(C, ENa, EK, EL, gNa, gK, gL)
     dv = q['V_dynamic']
     dm = q['m_dynamic']
     dn = q['n_dynamic']
