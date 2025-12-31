@@ -30,79 +30,35 @@ def laplace_at_graph_symetric(
 
     return jax.jit(graph_evolution_fn)
 
-#TODO ? нам это вообще нужно ?
-def laplace_at_graph_oriented(
-    edges, key, scaling = None
-):
-    q = jnp.array(edges, jnp.int32)
-    static_sources = q[:, 0]
-    static_targets = q[:, 1]
-
-
-    if scaling is None:
-        def graph_evolution_fn_without_scaling(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
-            potential_diff = (
-                X[key].at[static_targets].get() - X[key].at[static_sources].get()
-            )  # возможно нужно нормировать с учетом количества соседей
-            dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff)
-            dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff)
-            return X, dx_dt
-        graph_evolution_fn = graph_evolution_fn_without_scaling
-        
-    else:
-        def graph_evolution_fn_with_scaling(X: jnp.ndarray, dx_dt) -> jnp.ndarray:
-            potential_diff = (
-                X[key].at[static_targets].get() - X[key].at[static_sources].get()
-            )  # возможно нужно нормировать с учетом количества соседей
-            dx_dt[key] = dx_dt[key].at[static_sources].add(potential_diff*scaling[0])
-            dx_dt[key] = dx_dt[key].at[static_targets].add(-potential_diff*scaling[1])
-            return X, dx_dt
-        graph_evolution_fn = graph_evolution_fn_with_scaling
-
-    return jax.jit(graph_evolution_fn)
+def get_backward_euler_linear(potential_diff):
+    pass
 
 def get_euler_step(v_func, dt):
     @jax.jit
     def euler_step(state):
-        v = v_func(state)
-        return jax.tree_util.tree_map(lambda x, y: x+ y*dt, state, v)
+        v, dv = v_func(state)
+        return jax.tree_util.tree_map(lambda x, y: x+ y*dt, v, dv)
     return euler_step
 
 def get_runge_kutta_step(v_func, dt):
     @jax.jit
     def runge_kutta_step(state):
-        # 1. Вычисляем k1 (скорость в начале интервала)
         S_a, k1 = v_func(state)
-
-        # 2. Вычисляем k2 (скорость в середине интервала, используя k1)
-        # state + k1 * (dt/2)
         state_k2 = jax.tree_util.tree_map(lambda x, y: x + y * (dt / 2.0), state, k1)
         _, k2 = v_func(state_k2)
-
-        # 3. Вычисляем k3 (скорость в середине интервала, используя k2)
-        # state + k2 * (dt/2)
         state_k3 = jax.tree_util.tree_map(lambda x, y: x + y * (dt / 2.0), state, k2)
         _, k3 = v_func(state_k3)
-
-        # 4. Вычисляем k4 (скорость в конце интервала, используя k3)
-        # state + k3 * dt
         state_k4 = jax.tree_util.tree_map(lambda x, y: x + y * dt, state, k3)
         _, k4 = v_func(state_k4)
-        
-        # 5. Вычисляем взвешенное среднее приращение: (k1 + 2*k2 + 2*k3 + k4) * (dt/6)
-        
-        # Вычисляем (k1 + 2*k2 + 2*k3 + k4)
         k_sum = jax.tree_util.tree_map(
             lambda k1_val, k2_val, k3_val, k4_val: k1_val + 2.0 * k2_val + 2.0 * k3_val + k4_val,
             k1, k2, k3, k4
         )
-
-        # Вычисляем новое состояние: state + k_sum * (dt/6)
         new_state = jax.tree_util.tree_map(
             lambda x, y: x + y * (dt / 6.0),
             S_a, k_sum
         )
-        
+
         return new_state
 
     return runge_kutta_step

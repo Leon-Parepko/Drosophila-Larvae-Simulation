@@ -1,23 +1,23 @@
 import jax
 from scripts.nj.utils import *
-
 import jax.numpy as jnp
 from jax import jit
 
-def save_exp(x, max_value: float = 100.0):
+
+def save_exp(x, max_value: float = 50.0):
     x = jnp.clip(x, a_min=-jnp.inf, a_max=max_value)
     return jnp.exp(x)
 
 """HH Sterratt, Graham, Gillies & Einevoll."""
 SGGE_HH_channel_params = {
-        "gNa": 0.12,
-        "gK": 0.036,
-        "gLeak": 0.0003,
-        "eNa": 50.0,
-        "eK": -77.0,
-        "eLeak": -54.3,
+        "gNa": 0.12, # mS/cm^2
+        "gK": 0.036, # mS/cm^2
+        "gLeak": 0.0003, # mS/cm^2
+        "eNa": 50.0, #mV
+        "eK": -77.0, #mV
+        "eLeak": -54.3, #mV
     }
-
+# C в µF/cm^2 (µ - микро)
 
 def m_gate(v):
     alpha = 0.1 * _vtrap(-(v + 40), 10)
@@ -35,8 +35,8 @@ def n_gate(v):
     return alpha, beta
 
 
-def _vtrap(x, y):
-    return x / (save_exp(x / y) - 1.0)
+def _vtrap(x, y, epsilon=1e-12):
+    return x / (save_exp(x / y) - 1.0 + epsilon)
 
 
 def generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL):
