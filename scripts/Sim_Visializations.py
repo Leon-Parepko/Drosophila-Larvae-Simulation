@@ -151,3 +151,16 @@ def plot_results(t, voltages, stim_times=[], save_path=None, interactive=False):
         else:
             plt.show()
         return
+    
+
+def view_4rank_tensor(tensor):
+    fig, axes = plt.subplots(tensor.shape[0], tensor.shape[1], 
+                             figsize=(tensor.shape[1]*2, tensor.shape[0]*2),
+                             gridspec_kw={'wspace':0.05, 'hspace':0.05})
+    for i in range(tensor.shape[0]):
+        for j in range(tensor.shape[1]):
+            ax = axes[i, j]
+            im = ax.imshow(tensor[i, j], cmap='viridis', aspect='auto')
+            ax.axis('off')
+    plt.subplots_adjust(wspace=0.05, hspace=0.05)
+    plt.show()
