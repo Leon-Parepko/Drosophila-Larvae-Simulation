@@ -1,7 +1,7 @@
 import jax
 import jax.numpy as jnp
 from jax.lax import scan, fori_loop
-
+from jax.scipy.sparse.linalg import cg
 
 def laplace_at_graph_symetric(
     edges, key, scaling = None
@@ -30,8 +30,24 @@ def laplace_at_graph_symetric(
 
     return jax.jit(graph_evolution_fn)
 
-def get_backward_euler_linear(potential_diff):
-    pass
+def get_backward_euler_linear_step(linear_function, key, dt):
+    @jax.jit
+    def backward_euler_step(state):
+        b = state[key]
+        def system_operator(x):
+            state = {**state, key: x}
+            dx_dt = {k: jnp.zeros_like(v) for k, v in state.items()}
+            
+            _, updated_dx_dt = linear_function(state, dx_dt)
+            
+            # (I - dt * L) @ x
+            return x - dt * updated_dx_dt[key]
+        new_val, _ = cg(system_operator, b, x0=b, tol=1e-5)
+        state[key] = new_val
+            
+        return state
+
+    return backward_euler_step
 
 def get_euler_step(v_func, dt):
     @jax.jit
