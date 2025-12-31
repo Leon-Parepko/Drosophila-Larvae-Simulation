@@ -30,7 +30,7 @@ def laplace_at_graph_symetric(
 
     return jax.jit(graph_evolution_fn)
 
-def get_backward_euler_linear_step(linear_function, key, dt):
+def get_backward_euler_linear_step(linear_function, key, dt, tol=1e-5):
     """
     laplace_fn: функция, которую возвращает laplace_at_graph_symetric
     key: ключ в словаре state, к которому применяется диффузия
@@ -48,7 +48,7 @@ def get_backward_euler_linear_step(linear_function, key, dt):
             
             # (I - dt * L) * x
             return x_guess - dt * updated_dx_dt[key]
-        new_val, _ = cg(system_operator, b, x0=b, tol=1e-5)
+        new_val, _ = cg(system_operator, b, x0=b, tol=tol)
         state[key] = new_val
             
         return state
