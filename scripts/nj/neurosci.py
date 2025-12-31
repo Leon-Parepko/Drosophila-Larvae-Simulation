@@ -4,7 +4,7 @@ import jax.numpy as jnp
 from jax import jit
 
 
-def save_exp(x, max_value: float = 50.0):
+def save_exp(x, max_value: float = 100.0):
     x = jnp.clip(x, a_min=-jnp.inf, a_max=max_value)
     return jnp.exp(x)
 
