@@ -52,10 +52,22 @@ __kernel void update_params(__global float* V, __global float* M, __global float
     float IK = gK*n*n*n*n*(v - EK);
     float Ileak = gL*(v - EL);
 
-    float I = (change_rate[left ]*(V[left ] - V[center])/100.0 +
-               change_rate[right]*(V[right] - V[center]) +
-               change_rate[up   ]*(V[up   ] - V[center]) +
-               change_rate[down ]*(V[down ] - V[center]))*conductivity;
+
+    float2 fp = (float2) ((float)pos.x, (float)pos.y) / ((float) sizes[0]);
+    float2 D = (float2) (fp.x, fp.y);
+    D = normalize(D);
+    //D += 2.0f;
+    D /= 400.0f;
+    float ks = (sin(fp.x*40) + 1.0f)/2.0;
+    float kc = 1.0f - ks;
+    float ks1 = (sin(fp.y*40) + 1.0f)/2.0;
+    float kc1 = 1.0f - ks1;
+    //ks = 3.0f*ks;
+    //kc = 3.0f*kc;
+    float I = (change_rate[left ]*(V[left ] - V[center])*ks +
+               change_rate[right]*(V[right] - V[center])*kc +
+               change_rate[up   ]*(V[up   ] - V[center])*kc1 +
+               change_rate[down ]*(V[down ] - V[center])*ks1)*conductivity;
 
     float dv_dt = (I-(INa + IK + Ileak)/C_coof);
     float dm_dt = (alpha_m(v)*(1-m) - beta_m(v)*m);
