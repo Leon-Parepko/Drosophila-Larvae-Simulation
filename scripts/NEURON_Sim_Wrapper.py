@@ -117,6 +117,12 @@ class Network:
 
             if verbose:
                 print(f"Neuron {neuron_id}   \t {graph.number_of_nodes()} nodes \t root={root_nodes[0] if root_nodes else 'NONE'}")
+
+        # TODO Rewrite to use this file
+        # data = np.load("./Datasets/Original/neurons.npz", allow_pickle=True)
+        # graphs = data["graphs"].item()
+        
+        # graphs[11279244]
         return
 
 
