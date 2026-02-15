@@ -89,9 +89,9 @@ def generate_hh_channels_functions_SGGE(C, ENa, EK, EL, gNa, gK, gL):
         "h_dynamic": h_dynamic,
     }
 
-def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V_m, C, alpha_syn_detector_treshold,
-                                synaptic_weights, dt, treshold_interval = 0.01, pre_key = 'V', post_key = 'V', name = 'alpha',
-                                delay_name = 'alpha_delay',
+def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, C, alpha_syn_detector_treshold,
+                                synaptic_weights, dt, treshold_interval = 0.1, pre_key = 'V', post_key = 'V', name = 'alpha',
+                                delay_name = 'alpha_delay', can_spike_name = "alpha_timer", detection_lower_speed = 1,
                                   *args, **kwargs):
     @jax.jit
     def u(alpha):
@@ -108,24 +108,33 @@ def get_alpha_synapce_pipeline(pre_synaptic, post_synaptic, tau, E_rev, G_max, V
     @jax.jit
     def pipeline(state, ds_dt):
         state = rbd(state)
-        ds_dt[name] += u(state[name])
-        
+        ds_dt[name] = ds_dt[name] + u(state[name])
+
         cin = C.at[post_synaptic[:, 1]].get()
-        vim = V_m.at[post_synaptic[:, 1]].get()
+        vim = state[post_key].at[post_synaptic[:, 1]].get()
         buffer_ind = ring_get(state, delay_name, dt)
         ain = state[delay_name].at[post_synaptic[:, 0], buffer_ind].get()
+        #ain = state[name].at[post_synaptic[:, 0]].get()
         ds_dt[post_key] = ds_dt[post_key].at[post_synaptic[:, 1]].add(-I(ain, vim)/cin)
 
-        # instant changes
+
+        # instant changes and timer
         v_ = state[pre_key].at[pre_synaptic[:, 0]].get()
         dv_dt_ = ds_dt[pre_key].at[pre_synaptic[:, 0]].get()
-
         is_near_threshold = jnp.abs(v_ - alpha_syn_detector_treshold) < treshold_interval
         is_rising = dv_dt_ > 0.0
+
+        # timer changes
+        able_spike = (state[can_spike_name] < 0.1)
+        ds_dt[can_spike_name] = -detection_lower_speed*(1 - able_spike)
+        state[can_spike_name] = is_near_threshold * is_rising * able_spike + state[can_spike_name]*(1 - able_spike)
+
+        # instant changes
         delta_x = is_near_threshold * is_rising * synaptic_weights
-        state[name] = state[name].at[pre_synaptic[:, 1], 0].add(delta_x)
+        state[name] = state[name].at[pre_synaptic[:, 1], 0].add(delta_x)*able_spike + (1 - able_spike)*state[name]
         return state, ds_dt
     return pipeline
+
 
 def ring_get(state, key, dt):
     current_step_idx = jnp.floor(state['time'] / dt).astype(jnp.int32)
