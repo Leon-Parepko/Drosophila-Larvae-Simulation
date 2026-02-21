@@ -5,6 +5,8 @@ import networkx as nx
 from pathlib import Path
 import os
 from random import random
+import json
+import pickle
 # structure: [neuron_id][node_id][iclamp_list]
 # arb.iclamp(100 * arb.units.ms, 10 * arb.units.ms, 40 * arb.units.nA)
 class basic_recipe(arb.recipe):
@@ -205,3 +207,77 @@ class basic_recipe(arb.recipe):
         somas = [arb.cable_probe_membrane_voltage("(on-components 0.0 (segment 0))", 'soma')] if self.record_soma else [] 
         other_segments = [arb.cable_probe_membrane_voltage(f"(on-components 0.5 (segment {self.n_to_arb_coords[gid][nr]}))", f'node{nr}') for nr in self.nodes_to_record] if gid in self.n_to_arb_coords else []
         return somas + other_segments
+
+
+
+class optimized_recipe(arb.recipe):
+    def __init__(self, connectome_dir,
+                record_soma = True,
+                nodes_to_record = None,
+                iclamp_schedule:dict[int:dict[[str|int]:list[arb.iclamp]]] = None,
+    ):
+        '''
+        загружает уже предопределенные компоненты, добавляя к ним контекстные свойства
+        '''
+        super().__init__()
+        self.iclamp_schedule:dict[int:dict[[str|int]:list[arb.iclamp]]] = {} if iclamp_schedule is None else iclamp_schedule
+        self.nodes_to_record = [] if nodes_to_record is None else nodes_to_record
+        self.record_soma = record_soma
+        self.connectome_dir = connectome_dir
+        with open(os.path.join(self.connectome_dir, 'gid_mapping.json'), 'r') as file:
+            self.mapping = json.load(file)
+        
+        self.gid_to_neuron_id = {v:int(k) for k, v in self.mapping.items()}
+
+        self.ncells = len(self.mapping)
+
+    def num_cells(self):
+        return self.ncells
+
+    def cell_kind(self, gid):
+        return arb.cell_kind.cable
+
+    def cell_description(self, gid):
+        print(gid)
+
+        # тут мы загружаем все компоненты
+        gp = os.path.join(self.connectome_dir, str(gid))
+        pd = os.path.join(gp, 'decor.arbc')
+        pt = os.path.join(gp, 'morphology.arbc')
+        pm = os.path.join(gp, 'mapping.json')
+        decor = arb.load_component(pd).component
+        morphology = arb.load_component(pt).component
+        with open(pm, 'r') as file:
+            node_to_segment = json.load(file)
+        neuron_id = self.gid_to_neuron_id[gid]
+        
+        # тут нужно к уже существующему декоратору `decor`, добавить iclamp
+
+        if neuron_id in self.iclamp_schedule:
+            for k, v in self.iclamp_schedule[neuron_id].items():
+                if k == 'soma':
+                    k = 0
+                assert type(k) is int
+                assert isinstance(v, arb.iclamp)
+                decor.place(f"(on-components 0.5 (segment {node_to_segment[k]}))", v, f'ic{k}')
+
+        # тут собраем cable_cell
+        cc = arb.cable_cell(morphology, decor)
+        return cc
+
+    def connections_on(self, gid):
+        gp = os.path.join(self.connectome_dir, str(gid))
+        pc = os.path.join(gp, 'connectors.pickle')
+        with open(pc, 'rb') as f:
+            connections = pickle.load(f)
+        return connections
+
+    def global_properties(self, kind):
+        return arb.neuron_cable_properties()
+    
+    def probes(self, gid):
+        #TODO это нужно переделать
+        #somas = [arb.cable_probe_membrane_voltage("(on-components 0.0 (segment 0))", 'soma')] if self.record_soma else [] 
+        #other_segments = [arb.cable_probe_membrane_voltage(f"(on-components 0.5 (segment {self.n_to_arb_coords[gid][nr]}))", f'node{nr}') for nr in self.nodes_to_record] if gid in self.n_to_arb_coords else []
+        #return somas + other_segments
+        return []

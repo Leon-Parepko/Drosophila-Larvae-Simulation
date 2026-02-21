@@ -1,0 +1,15 @@
+import os
+
+def change_to_root_directory(max_iterations=100):
+    iterations = 0
+    while iterations < max_iterations:
+        if "root" in os.listdir():
+            print(f"'root' найден в директории: {os.getcwd()}")
+            return
+        parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+        os.chdir(parent_dir)
+        iterations += 1
+    print("Достигнуто максимальное количество итераций, файл 'root' не найден.")
+
+# Пример использования
+change_to_root_directory()
