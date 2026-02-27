@@ -2,23 +2,15 @@ import arbor as arb
 import pandas as pd
 import os
 import json
-import pickle
 from multiprocessing import Process
 from random import random
-import logging
 from datetime import datetime
 from threading import current_thread
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s [Thread-%(threadName)s] Neuron-%(neuron_id)s: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
 
 # Helper function to log with neuron ID
 def log_with_neuron_id(neuron_id, message):
-    logging.info(message, extra={'neuron_id': neuron_id, 'threadName': current_thread().name})
+    print("(", 'neuron_id ', neuron_id, 'threadName ', current_thread().name, ")", message)
 
 def mk_dir(path, name):
     p = os.path.join(path, name)
