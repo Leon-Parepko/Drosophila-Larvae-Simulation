@@ -1,11 +1,16 @@
 import os
+import numpy.core.numeric
 import numpy as np
+import sys
+sys.modules['numpy._core.numeric'] = numpy.core.numeric
 import pandas as pd
 import networkx as nx
 from collections import deque
 from neuron import h, coreneuron
 from mpl_toolkits.mplot3d import Axes3D
 from tqdm.notebook import tqdm
+
+
 
 
 h.load_file('stdrun.hoc')
@@ -378,38 +383,61 @@ class Network:
                        verbose=False, 
                        allow_tqdm=False, 
                        synapse_params=None, 
-                       netcon_params=None):
+                       netcon_params=None,
+                       syn_types=None):
         """
         Build synaptic connections between neurons using metadata from a .pkl file.
         Synapses are created whenever two neurons share a connector ID but with opposite
-        pre/post roles.
+        pre/post roles. Supports excitatory and inhibitory synapses via syn_types and
+        per-type synapse_params.
 
         Parameters
         ----------
         verbose :        bool         - If True — prints debug information for each neuron pair.
         allow_tqdm :     bool         - If True — uses tqdm for progress visualization.
-        synapse_params : dict or None - Parameters for Exp2Syn synapse objects (tau1, tau2, e).
+        synapse_params : dict or None - Parameters for Exp2Syn (tau1, tau2, e). Can be a single
+                          dict (all synapses) or dict with 'exc' and 'inh' keys for per-type params.
         netcon_params :  dict or None - Parameters for NetCon objects (threshold, weight, delay).
+        syn_types :      dict or None - Mapping neuron_id (str) -> 'exc'|'inh' for presynaptic
+                          neuron type. If None, all synapses use excitatory params (backward compatible).
 
         Returns
         -------
         None
         """
         
-        default_synapse_params = {
+        default_synapse_params_exc = {
             'tau1': 0.5,  # время нарастания
             'tau2': 2.0,  # время спада
-            'e': 0.0  # reversal potential (возбуждающий, reversal ~ 0 mV)
+            'e': 0.0      # reversal potential (возбуждающий, reversal ~ 0 mV)
         }
-
+        default_synapse_params_inh = {
+            'tau1': 0.3,   # время нарастания (GABA быстрее нарастает)
+            'tau2': 5.0,   # время спада (типичный decay для GABA-A ~4–10 ms)
+            'e': -80.0     # reversal potential (подавляющий, GABA/Cl- ~ -75..-80 mV)
+        }
         default_netcon_params = {
             'threshold': 0.0,  # порог (мВ) - спайк когда V > 0
-            'weight': 0.01,  # вес синапса (микросименсы)
-            'delay': 1.0  # задержка (ms)
+            'weight': 0.01,   # вес синапса (микросименсы)
+            'delay': 1.0      # задержка (ms)
         }
 
-        # объединяем дефолтные параметры с переданными
-        synapse_params = {**default_synapse_params, **(synapse_params or {})}
+        # Разрешаем synapse_params: один общий dict ИЛИ dict с ключами 'exc' и 'inh'
+        use_per_type = (
+            syn_types is not None
+            and isinstance(synapse_params, dict)
+            and 'exc' in synapse_params
+            and 'inh' in synapse_params
+        )
+        if use_per_type:
+            params_exc = {**default_synapse_params_exc, **synapse_params['exc']}
+            params_inh = {**default_synapse_params_inh, **synapse_params['inh']}
+        else:
+            # один набор параметров для всех (старое поведение)
+            single = {**default_synapse_params_exc, **(synapse_params or {})}
+            params_exc = single
+            params_inh = single
+
         netcon_params = {**default_netcon_params, **(netcon_params or {})}
 
         meta = pd.read_pickle(self.META_PKL)
@@ -502,11 +530,13 @@ class Network:
                     if not pre_section:
                         continue
 
-                    # создаем синапс на постсинаптическом дендрите
+                    # Тип синапса по пресинаптическому нейрону: exc или inh (по умолчанию exc)
+                    stype = 'inh' if (syn_types and syn_types.get(pre_neuron) == 'inh') else 'exc'
+                    sp = params_inh if stype == 'inh' else params_exc
+
+                    # создаем синапс на постсинаптическом дендрите (Exp2Syn для exc и inh; e разный)
                     synapse = h.Exp2Syn(post_section(0.5))  # в центре секции
-                    
-                    # Synapse params
-                    for key, value in synapse_params.items():
+                    for key, value in sp.items():
                         setattr(synapse, key, value)
 
                     # создаем детектор спайков - voltage сомы пресинаптика
