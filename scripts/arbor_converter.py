@@ -12,7 +12,7 @@ def mk_dir(path, name):
     return p
 
 class converter:
-    def __init__(self, graphs, output_path, metadata, syn_data, replace_nan_by = {'radius':1.0}, keys = None, neurite_params = None, cable_type = 'hh', synapce_type = 'expsyn'):
+    def __init__(self, graphs, output_path, metadata, syn_data, replace_nan_by = {'radius':1.0}, keys = None, neurite_params = None, cable_type = 'hh', synapce_type = 'expsyn', synaptic_params = None, default_syn_params = {'weight':0.1, 'delay':0.1}):
         self.n_to_arb_coords = dict()
         self.graph = graphs
         self.output_path = output_path
@@ -24,6 +24,8 @@ class converter:
         self.syn_data = syn_data
         self.cablet = cable_type
         self.synt = synapce_type
+        self.default_syn_params = default_syn_params
+        self.synaptic_params = {} if synaptic_params is None else synaptic_params
         self.id_to_gid = {
             k:n for n, k in enumerate(self.keys)
         }
@@ -48,7 +50,10 @@ class converter:
 
     def __mr(self, l):
         for i in l:
-            self.run(i)
+            try:
+                self.run(i)
+            except Exception as e:
+                print(e)
 
     def convert(self, num_t):
         procs = []
@@ -120,6 +125,9 @@ class converter:
             pos = random() # TODO: поменять на более реалистичные координаты
             decor.place(f"(on-components {pos} (segment {segment_id}))", arb.synapse(self.synt), synapse_label)
         return decor
+    
+    def get_syn_params_for(self, connector_id):
+        return self.synaptic_params.get(connector_id, self.default_syn_params)
 
     def connections_on(self, ind):
         to_neuron_id = ind
@@ -138,14 +146,16 @@ class converter:
                 continue
             source_label = f"{connector_id}det_on{pre_node}"
             target_label = f"{connector_id}syn_on{post_node}"
+            
+            sparams = self.get_syn_params_for(connector_id)
 
-            cnn = arb.connection(
-                (from_gid, source_label),  # source: pre cell + detector label
-                target_label,              # target synapse label on THIS cell
-                0.1,                    # weight
-                0.1 * arb.units.ms      # delay
-            )
-            connections.append(cnn)
+            params = {
+                "source":(from_gid, source_label),  # source: pre cell + detector label
+                "target":target_label,              # target synapse label on THIS cell
+                "weight":sparams['weight'],                    # weight
+                "delay":sparams['delay']      # delay
+            }
+            connections.append(params)
         return connections
 
     def run(self, ind):
@@ -181,11 +191,11 @@ class converter:
         name_morphology = os.path.join(path, f"morphology.arbc")
         name_decor = os.path.join(path, f"decor.arbc")
         name_mapping = os.path.join(path, f"mapping.json")
-        name_connectors = os.path.join(path, f"connectors.pickle")
+        name_connectors = os.path.join(path, f"connectors.json")
         arb.write_component(arb.morphology(tree), name_morphology)
         arb.write_component(decor, name_decor)
-        with open(name_connectors, "wb") as f:
-            pickle.dump(connections, f)
+        with open(name_connectors, "w") as f:
+            json.dump(connections, f)
         with open(name_mapping, "w") as f:
             json.dump(node_to_segment, f)
         print(ind ,'finished')

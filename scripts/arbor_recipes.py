@@ -268,9 +268,14 @@ class optimized_recipe(arb.recipe):
     def connections_on(self, gid):
         gp = os.path.join(self.connectome_dir, str(gid))
         pc = os.path.join(gp, 'connectors.pickle')
-        with open(pc, 'rb') as f:
-            connections = pickle.load(f)
-        return connections
+        with open(pc, 'r') as f:
+            connections = json.load(f)
+        return [arb.connection(
+                source = c['source'],
+                target = c['target'],
+                weight = c['weight'],
+                delay = c['delay'] * arb.units.ms
+            ) for c in connections]
 
     def global_properties(self, kind):
         return arb.neuron_cable_properties()
