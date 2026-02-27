@@ -81,7 +81,7 @@ def plot_results_3d(t, voltages, save_path=None, interactive=False):
 
 
 
-def plot_results(t, voltages, stim_times=[], save_path=None, interactive=False):
+def plot_results_2d(t, voltages, stim_times=[], save_path=None, interactive=False):
     # Plotly interactive 2D
     if interactive:
         colors = px.colors.sequential.Viridis
