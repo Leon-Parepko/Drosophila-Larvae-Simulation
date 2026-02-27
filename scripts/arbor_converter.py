@@ -5,6 +5,20 @@ import json
 import pickle
 from multiprocessing import Process
 from random import random
+import logging
+from datetime import datetime
+from threading import current_thread
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [Thread-%(threadName)s] Neuron-%(neuron_id)s: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+
+# Helper function to log with neuron ID
+def log_with_neuron_id(neuron_id, message):
+    logging.info(message, extra={'neuron_id': neuron_id, 'threadName': current_thread().name})
 
 def mk_dir(path, name):
     p = os.path.join(path, name)
@@ -53,7 +67,7 @@ class converter:
             try:
                 self.run(i)
             except Exception as e:
-                print(e)
+                log_with_neuron_id(i, f"Error: {e}")
 
     def convert(self, num_t):
         procs = []
@@ -159,34 +173,36 @@ class converter:
         return connections
 
     def run(self, ind):
+        start_time = datetime.now()
+        log_with_neuron_id(ind, f"Start processing neuron {ind}")
         gid = self.id_to_gid[ind]
-        print(gid, 'is', ind)
+        log_with_neuron_id(ind, f"GID {gid} assigned")
+
         # --- дерево ---
         tree = arb.segment_tree()
         tp = self.graph[ind]
         root_candidates = [n for n, d in tp.nodes(data=True) if d['type'] == 'root']
         if len(root_candidates) != 1:
-            raise Exception(f"В нейроне {ind} найдено {len(root_candidates)} узлов с тегом root")
+            raise Exception(f"Neuron {ind} has {len(root_candidates)} root nodes")
         root_node = root_candidates[0]
 
-        # Добавляем корневой сегмент
+        # Add root segment
         soma_id = tree.append(parent=arb.mnpos, prox=arb.mpoint(*self.__get_node_geometry(root_node)),
-                            dist=arb.mpoint(*self.__get_node_geometry(root_node)), tag=int(root_node))
-        node_to_segment = {root_node:soma_id}
+                              dist=arb.mpoint(*self.__get_node_geometry(root_node)), tag=int(root_node))
+        node_to_segment = {root_node: soma_id}
 
-        # Рекурсивно добавляем остальные сегменты
+        # Recursively add other segments
         self.__in_graph(soma_id, root_node, node_to_segment, tree, tp)
-        print(ind ,'tree - finished')
-        
+        log_with_neuron_id(ind, "Tree construction finished")
 
         # --- декоратор ---
         decor = self.decorator(ind, node_to_segment)
-        print(ind ,'decorator - finished')
-        
+        log_with_neuron_id(ind, "Decorator setup finished")
+
         # --- connectors ---
         connections = self.connections_on(ind)
-        print(ind ,'connectors - finished')
-        
+        log_with_neuron_id(ind, "Connectors setup finished")
+
         path = mk_dir(self.output_path, f"{gid}")
         name_morphology = os.path.join(path, f"morphology.arbc")
         name_decor = os.path.join(path, f"decor.arbc")
@@ -198,4 +214,7 @@ class converter:
             json.dump(connections, f)
         with open(name_mapping, "w") as f:
             json.dump(node_to_segment, f)
-        print(ind ,'finished')
+
+        log_with_neuron_id(ind, f"Neuron {ind} processing finished")
+        end_time = datetime.now()
+        log_with_neuron_id(ind, f"Processing time: {end_time - start_time}")
