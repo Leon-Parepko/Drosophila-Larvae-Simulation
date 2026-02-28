@@ -10,7 +10,6 @@ import pickle
 # structure: [neuron_id][node_id][iclamp_list]
 # arb.iclamp(100 * arb.units.ms, 10 * arb.units.ms, 40 * arb.units.nA)
 class basic_recipe(arb.recipe):
-
     def __init__(self,
                 sc:simulation_context,
                 record_soma = True,
@@ -209,18 +208,18 @@ class basic_recipe(arb.recipe):
         return somas + other_segments
 
 
-
+# iclamp dtype dict[int:dict[[str|int]:list[arb.iclamp]]]
 class optimized_recipe(arb.recipe):
     def __init__(self, connectome_dir,
                 record_soma = True,
                 nodes_to_record = None,
-                iclamp_schedule:dict[int:dict[[str|int]:list[arb.iclamp]]] = None,
+                iclamp_schedule = None,
     ):
         '''
         загружает уже предопределенные компоненты, добавляя к ним контекстные свойства
         '''
         super().__init__()
-        self.iclamp_schedule:dict[int:dict[[str|int]:list[arb.iclamp]]] = {} if iclamp_schedule is None else iclamp_schedule
+        self.iclamp_schedule = {} if iclamp_schedule is None else iclamp_schedule
         self.nodes_to_record = [] if nodes_to_record is None else nodes_to_record
         self.record_soma = record_soma
         self.connectome_dir = connectome_dir
