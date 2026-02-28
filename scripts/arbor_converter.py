@@ -58,7 +58,7 @@ class converter:
 
     def convert(self, num_t):    
         with Pool(num_t) as pool:
-            pool.map(self.run, args = self.keys)
+            pool.map(self.run, self.keys)
 
     def decorator(self, ind, node_to_segment):
         decor = arb.decor()
@@ -154,6 +154,7 @@ class converter:
 
     def run(self, ind):
         gid = self.id_to_gid[ind]
+        print(ind)
 
         # --- дерево ---
         tree = arb.segment_tree()
