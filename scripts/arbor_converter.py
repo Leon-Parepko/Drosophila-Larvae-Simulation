@@ -2,15 +2,10 @@ import arbor as arb
 import pandas as pd
 import os
 import json
-from multiprocessing import Process
+from multiprocessing import Pool
 from random import random
-from datetime import datetime
-from threading import current_thread
 
 
-# Helper function to log with neuron ID
-def log_with_neuron_id(neuron_id, message):
-    print("(", 'neuron_id ', neuron_id, 'threadName ', current_thread().name, ")", message)
 
 def mk_dir(path, name):
     p = os.path.join(path, name)
@@ -59,17 +54,11 @@ class converter:
             try:
                 self.run(i)
             except Exception as e:
-                log_with_neuron_id(i, f"Error: {e}")
+                print(i, e)
 
-    def convert(self, num_t):
-        procs = []
-        for i in range(0, len(self.keys), num_t):
-            lk = self.keys[i:i + num_t]
-            procs.append(Process(target = self.__mr, args = (lk,)))
-        for p in procs:
-            p.start()
-        for p in procs:
-            p.join()
+    def convert(self, num_t):    
+        with Pool(num_t) as pool:
+            pool.map(self.run, args = self.keys)
 
     def decorator(self, ind, node_to_segment):
         decor = arb.decor()
@@ -148,7 +137,6 @@ class converter:
     ):
             from_gid = self.id_to_gid.get(from_neuron_id, None)
             if from_gid is None:
-                print(from_neuron_id, 'is not in the given network')
                 continue
             source_label = f"{connector_id}det_on{pre_node}"
             target_label = f"{connector_id}syn_on{post_node}"
@@ -165,10 +153,7 @@ class converter:
         return connections
 
     def run(self, ind):
-        start_time = datetime.now()
-        log_with_neuron_id(ind, f"Start processing neuron {ind}")
         gid = self.id_to_gid[ind]
-        log_with_neuron_id(ind, f"GID {gid} assigned")
 
         # --- дерево ---
         tree = arb.segment_tree()
@@ -185,15 +170,12 @@ class converter:
 
         # Recursively add other segments
         self.__in_graph(soma_id, root_node, node_to_segment, tree, tp)
-        log_with_neuron_id(ind, "Tree construction finished")
 
         # --- декоратор ---
         decor = self.decorator(ind, node_to_segment)
-        log_with_neuron_id(ind, "Decorator setup finished")
 
         # --- connectors ---
         connections = self.connections_on(ind)
-        log_with_neuron_id(ind, "Connectors setup finished")
 
         path = mk_dir(self.output_path, f"{gid}")
         name_morphology = os.path.join(path, f"morphology.arbc")
@@ -206,7 +188,3 @@ class converter:
             json.dump(connections, f)
         with open(name_mapping, "w") as f:
             json.dump(node_to_segment, f)
-
-        log_with_neuron_id(ind, f"Neuron {ind} processing finished")
-        end_time = datetime.now()
-        log_with_neuron_id(ind, f"Processing time: {end_time - start_time}")

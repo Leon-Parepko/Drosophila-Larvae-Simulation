@@ -1,6 +1,6 @@
 #arbor_recipies.py
 import arbor as arb
-from data_preparation import simulation_context
+from scripts.data_preparation import simulation_context
 import networkx as nx
 from pathlib import Path
 import os
