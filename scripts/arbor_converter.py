@@ -154,7 +154,6 @@ class converter:
 
     def run(self, ind):
         gid = self.id_to_gid[ind]
-        print(ind)
 
         # --- дерево ---
         tree = arb.segment_tree()
