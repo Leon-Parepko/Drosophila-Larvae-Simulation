@@ -255,10 +255,12 @@ class optimized_recipe(arb.recipe):
         if neuron_id in self.iclamp_schedule:
             for k, v in self.iclamp_schedule[neuron_id].items():
                 if k == 'soma':
-                    k = 0
-                assert type(k) is int
+                    q = 0
+                else:
+                    q = node_to_segment[k]
+                assert type(q) is int
                 assert isinstance(v, arb.iclamp)
-                decor.place(f"(on-components 0.5 (segment {node_to_segment[k]}))", v, f'ic{k}')
+                decor.place(f"(on-components 0.5 (segment {q}))", v, f'ic{k}')
 
         # тут собраем cable_cell
         cc = arb.cable_cell(morphology, decor)
@@ -280,8 +282,9 @@ class optimized_recipe(arb.recipe):
         return arb.neuron_cable_properties()
     
     def probes(self, gid):
+        # а это и так прекрасно работает
+        somas = [arb.cable_probe_membrane_voltage("(on-components 0.0 (segment 0))", 'soma')] if self.record_soma else [] 
         #TODO это нужно переделать
-        #somas = [arb.cable_probe_membrane_voltage("(on-components 0.0 (segment 0))", 'soma')] if self.record_soma else [] 
         #other_segments = [arb.cable_probe_membrane_voltage(f"(on-components 0.5 (segment {self.n_to_arb_coords[gid][nr]}))", f'node{nr}') for nr in self.nodes_to_record] if gid in self.n_to_arb_coords else []
         #return somas + other_segments
-        return []
+        return somas
