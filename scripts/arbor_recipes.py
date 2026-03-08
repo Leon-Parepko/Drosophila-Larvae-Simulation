@@ -268,12 +268,12 @@ class optimized_recipe(arb.recipe):
 
     def connections_on(self, gid):
         gp = os.path.join(self.connectome_dir, str(gid))
-        pc = os.path.join(gp, 'connectors.pickle')
+        pc = os.path.join(gp, 'connectors.json')
         with open(pc, 'r') as f:
             connections = json.load(f)
         return [arb.connection(
-                source = c['source'],
-                target = c['target'],
+                source = tuple(c['source']),
+                dest = c['target'],
                 weight = c['weight'],
                 delay = c['delay'] * arb.units.ms
             ) for c in connections]
