@@ -215,6 +215,7 @@ class optimized_recipe(arb.recipe):
                 nodes_to_record = None,
                 iclamp_schedule = None,
                 neurite_params = None,
+                cablet = 'hh'
     ):
         '''
         загружает уже предопределенные компоненты, добавляя к ним контекстные свойства
@@ -227,6 +228,7 @@ class optimized_recipe(arb.recipe):
         self.connectome_dir = connectome_dir
         with open(os.path.join(self.connectome_dir, 'gid_mapping.json'), 'r') as file:
             self.mapping = json.load(file)
+        self.cablet = cablet
         
         self.gid_to_neuron_id = {v:int(k) for k, v in self.mapping.items()}
 
@@ -239,7 +241,6 @@ class optimized_recipe(arb.recipe):
         return arb.cell_kind.cable
 
     def cell_description(self, gid):
-        print(gid)
 
         # тут мы загружаем все компоненты
         gp = os.path.join(self.connectome_dir, str(gid))
