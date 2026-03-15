@@ -214,11 +214,13 @@ class optimized_recipe(arb.recipe):
                 record_soma = True,
                 nodes_to_record = None,
                 iclamp_schedule = None,
+                neurite_params = None,
     ):
         '''
         загружает уже предопределенные компоненты, добавляя к ним контекстные свойства
         '''
         super().__init__()
+        self.neurite_params = neurite_params
         self.iclamp_schedule = {} if iclamp_schedule is None else iclamp_schedule
         self.nodes_to_record = [] if nodes_to_record is None else nodes_to_record
         self.record_soma = record_soma
@@ -249,6 +251,36 @@ class optimized_recipe(arb.recipe):
         with open(pm, 'r') as file:
             node_to_segment = json.load(file)
         neuron_id = self.gid_to_neuron_id[gid]
+
+        if self.neurite_params is not None and neuron_id in self.neurite_params.index:
+            params = self.neurite_params.loc[neuron_id]
+            # 1) Cable properties: cm, Ra
+            # In Arbor, axial resistivity is usually called rL (Ω·cm),
+            # so we map your DataFrame's "Ra" -> rL here:
+            if "cm" in params:
+                decor.set_property(cm=float(params["cm"]))
+            if "Ra" in params:
+                decor.set_property(rL=float(params["Ra"]))
+
+            # 2) HH mechanism parameters for this cell
+            # The exact parameter names depend on the 'hh' mechanism;
+            # typical names are gnabar, gkbar, gl, el. Check via:
+            #   cat = arb.default_catalogue()
+            #   info = cat['hh']  (or arb.mech_info)
+            hh_kwargs = {}
+            if "gnabar_hh" in params:
+                hh_kwargs["gnabar"] = float(params["gnabar_hh"])
+            if "gkbar_hh" in params:
+                hh_kwargs["gkbar"] = float(params["gkbar_hh"])
+            if "gl_hh" in params:
+                hh_kwargs["gl"] = float(params["gl_hh"])
+            if "el_hh" in params:
+                hh_kwargs["el"] = float(params["el_hh"])
+
+            decor.paint("(all)", arb.density(self.cablet, **hh_kwargs))
+        else:
+            # fallback: same parameters for everyone
+            decor.paint("(all)", arb.density(self.cablet))
         
         # тут нужно к уже существующему декоратору `decor`, добавить iclamp
 
