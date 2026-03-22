@@ -681,7 +681,7 @@ def load_data(ACTIVITY_PATH, POSITION_PATH):
 
 def create_connectome_mesh(ctx:connectome_context, name = None):
     if name is None:
-        name = ctx.activity_path
+        name = os.path.splitext(os.path.basename(ctx.activity_path))[0]
 
     mesh = bpy.data.meshes.new(f"N_{name}Mesh")
     obj = bpy.data.objects.new(f"N_{name}", mesh)
@@ -801,7 +801,7 @@ def register():
     bpy.types.Scene.path_to_activity = bpy.props.StringProperty(
         name="Activity",
         description="path to activity",
-        default= "D:/Iliuha_projects/blender generation/activity.npz",
+        default= "",
         maxlen=1024,
         subtype='FILE_PATH'
     )
@@ -809,7 +809,7 @@ def register():
     bpy.types.Scene.path_to_coords = bpy.props.StringProperty(
         name="Positions",
         description="path to positions",
-        default="D:/Iliuha_projects/blender generation/neuron_coordinates.npz",
+        default="",
         maxlen=1024,
         subtype='FILE_PATH'
     )
