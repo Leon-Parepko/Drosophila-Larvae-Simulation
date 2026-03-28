@@ -651,8 +651,7 @@ def load_data(ACTIVITY_PATH, POSITION_PATH):
     raw_coords = np.load(POSITION_PATH)
     raw_activity = np.load(ACTIVITY_PATH)
     neuron_ids = sorted([int(k) for k in raw_coords.keys() if k != '/t']) # можно не сортировать, но мне спокойней если отсортировать
-    print(neuron_ids)
-    time_points = raw_activity['/t']
+    time_points = raw_activity['/t' if '/t' in raw_activity.keys() else f"/voltages/{neuron_ids[0]}"]
     num_frames = len(time_points)
     num_neurons = len(neuron_ids)
     activity_matrix = np.zeros((num_frames, num_neurons), dtype=np.float32)
