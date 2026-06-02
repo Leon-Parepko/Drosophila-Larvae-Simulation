@@ -1,0 +1,167 @@
+import arbor as arb
+import pandas as pd
+import os
+import json
+from multiprocessing import Pool
+from random import random
+
+
+
+def mk_dir(path, name):
+    p = os.path.join(path, name)
+    os.mkdir(p)
+    return p
+
+class converter:
+    def __init__(self, graphs, output_path, metadata, syn_data, replace_nan_by = {'radius':1.0}, keys = None, neurite_params = None, cable_type = 'hh', synapce_type = 'expsyn', synaptic_params = None, default_syn_params = {'weight':0.1, 'delay':0.1}, soma_length = 20.0, soma_diam = 20.0):
+        # soma_length / soma_diam: NEURON-equivalent soma cylinder (default L=20, diam=20).
+        # Without this the root segment is degenerate (prox==dist) → zero area → silent soma.
+        self.soma_length = float(soma_length)
+        self.soma_diam = float(soma_diam)
+        self.n_to_arb_coords = dict()
+        self.graph = graphs
+        self.output_path = output_path
+        self.node_metadata:pd.DataFrame = metadata
+        for k, v in replace_nan_by.items():
+            self.node_metadata[k] = self.node_metadata[k].fillna(v)
+        self.keys = tuple(graphs.keys()) if keys is None else tuple(keys)
+        self.neurite_params = neurite_params
+        self.syn_data = syn_data
+        self.cablet = cable_type
+        self.synt = synapce_type
+        self.default_syn_params = default_syn_params
+        self.synaptic_params = {} if synaptic_params is None else synaptic_params
+        self.id_to_gid = {
+            k:n for n, k in enumerate(self.keys)
+        }
+        with open(os.path.join(self.output_path, "gid_mapping.json"), "w") as f:
+            json.dump(self.id_to_gid, f)
+        
+
+    def __get_node_geometry(self, ind):
+        '''x, y, z, r'''
+        ind = int(ind)
+        s = self.node_metadata[self.node_metadata['node_id'] == ind]
+        return s.to_numpy()[0, 1:5]
+
+    def __in_graph(self, parent_segment_id, current_node, node_to_segment, tree, tp):
+        for to_ in tp.predecessors(current_node):
+            if tp.nodes[to_].get('type') == 'connector':
+                continue
+            segment_id = tree.append(parent_segment_id, arb.mpoint(*self.__get_node_geometry(current_node)),
+                                    arb.mpoint(*self.__get_node_geometry(to_)), tag=int(to_))
+            node_to_segment[to_] = segment_id
+            self.__in_graph(segment_id, to_, node_to_segment, tree, tp)
+
+    def __mr(self, l):
+        for i in l:
+            try:
+                self.run(i)
+            except Exception as e:
+                print(i, e)
+
+    def convert(self, num_t):    
+        with Pool(num_t) as pool:
+            pool.map(self.run, self.keys)
+
+    def decorator(self, ind, node_to_segment):
+        decor = arb.decor()
+
+        neuron_id = ind
+        neuron_connectors_as_pre = self.syn_data[ self.syn_data['pre_neuron_id'] == neuron_id]
+        was = []
+        for cid, pnid in zip(neuron_connectors_as_pre['connector_id'], neuron_connectors_as_pre['pre_node_id']):
+            detector_label = f"{cid}det_on{pnid}"
+            segment_id = node_to_segment[str(pnid)]
+            
+            if (cid, pnid) in was:
+                continue
+            was.append((cid, pnid))
+            pos = random() # TODO: поменять на более реалистичные координаты
+            decor.place(f"(on-components {pos} (segment {segment_id}))", arb.threshold_detector(-10 * arb.units.mV), detector_label)  # I have changed there pre-became detector and post-became synapse(by arbor documentation)
+    
+        
+        neuron_connectors_as_post =  self.syn_data[ self.syn_data['post_neuron_id'] == neuron_id]
+        was = []
+        for cid, pnid in zip(neuron_connectors_as_post['connector_id'], neuron_connectors_as_post['post_node_id']):
+            synapse_label = f"{cid}syn_on{pnid}"
+            segment_id = node_to_segment[str(pnid)]
+            if (cid, pnid) in was:
+                continue
+            was.append((cid, pnid))
+            pos = random() # TODO: поменять на более реалистичные координаты
+            decor.place(f"(on-components {pos} (segment {segment_id}))", arb.synapse(self.synt), synapse_label)
+        return decor
+    
+    def get_syn_params_for(self, connector_id):
+        return self.synaptic_params.get(connector_id, self.default_syn_params)
+
+    def connections_on(self, ind):
+        to_neuron_id = ind
+        connections = []
+        neuron_connectors = self.syn_data[self.syn_data['post_neuron_id'] == to_neuron_id]
+
+        for from_neuron_id, connector_id, pre_node, post_node in zip(
+        neuron_connectors['pre_neuron_id'],
+        neuron_connectors['connector_id'],
+        neuron_connectors['pre_node_id'],
+        neuron_connectors['post_node_id']
+    ):
+            from_gid = self.id_to_gid.get(from_neuron_id, None)
+            if from_gid is None:
+                continue
+            source_label = f"{connector_id}det_on{pre_node}"
+            target_label = f"{connector_id}syn_on{post_node}"
+            
+            sparams = self.get_syn_params_for(connector_id)
+
+            params = {
+                "source":(from_gid, source_label),  # source: pre cell + detector label
+                "target":target_label,              # target synapse label on THIS cell
+                "weight":sparams['weight'],                    # weight
+                "delay":sparams['delay']      # delay
+            }
+            connections.append(params)
+        return connections
+
+    def run(self, ind):
+        gid = self.id_to_gid[ind]
+
+        # --- дерево ---
+        tree = arb.segment_tree()
+        tp = self.graph[ind]
+        root_candidates = [n for n, d in tp.nodes(data=True) if d['type'] == 'root']
+        if len(root_candidates) != 1:
+            raise Exception(f"Neuron {ind} has {len(root_candidates)} root nodes")
+        root_node = root_candidates[0]
+
+        # Add root segment as a real cylinder so it has nonzero area
+        # (NEURON's wrapper adds a soma section with L=20, diam=20; previously this was a
+        # degenerate point with prox==dist, which made the soma electrically invisible.)
+        rx, ry, rz, _r = self.__get_node_geometry(root_node)
+        soma_r = self.soma_diam / 2.0
+        soma_prox = arb.mpoint(rx, ry, rz, soma_r)
+        soma_dist = arb.mpoint(rx + self.soma_length, ry, rz, soma_r)
+        soma_id = tree.append(parent=arb.mnpos, prox=soma_prox, dist=soma_dist, tag=int(root_node))
+        node_to_segment = {root_node: soma_id}
+
+        # Recursively add other segments
+        self.__in_graph(soma_id, root_node, node_to_segment, tree, tp)
+
+        # --- декоратор ---
+        decor = self.decorator(ind, node_to_segment)
+
+        # --- connectors ---
+        connections = self.connections_on(ind)
+
+        path = mk_dir(self.output_path, f"{gid}")
+        name_morphology = os.path.join(path, f"morphology.arbc")
+        name_decor = os.path.join(path, f"decor.arbc")
+        name_mapping = os.path.join(path, f"mapping.json")
+        name_connectors = os.path.join(path, f"connectors.json")
+        arb.write_component(arb.morphology(tree), name_morphology)
+        arb.write_component(decor, name_decor)
+        with open(name_connectors, "w") as f:
+            json.dump(connections, f)
+        with open(name_mapping, "w") as f:
+            json.dump(node_to_segment, f)

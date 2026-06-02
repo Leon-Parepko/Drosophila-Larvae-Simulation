@@ -24,3 +24,6 @@ Datasets/Generated/metadata
 tututut.ipynb
 Datasets/Original/neurons.npz
 Datasets/Generated/arbor/test
+neurons_arb
+scripts/env_test/
+Adema/data/
